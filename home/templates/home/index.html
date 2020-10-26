@@ -1,6 +1,41 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block content %}
-    <h1 class="display-4 text-success"> It Works!</h1>
+{% block page_header %}
+       <header>
+        <nav class="navbar navbar-expand-lg w-100">
+            <!-- BRAND AND LOGO-->
+            <a class="navbar-brand uppercase" href="#"><img src="{{ MEDIA_URL}}kms_logo.png" alt="KMS Logo"  width="200" height="75" /></a>
+            <!-- HAMBURGER MENU FOR SMALLER SCREEN WIDTHS-->
+            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarToggler1" aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- NAVBAR -->
+            <div class="collapse navbar-collapse" id="navbarToggler1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-right mr-2">
+                    <a class="nav-link" href="#">Clubs</a>
+                    </li>
+                    <li class="nav-right mr-2">
+                    <a class="nav-link" href="#">How it Works</a>
+                    </li>
+                    <li class="nav-right mr-2 dropdown">
+                        <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               <i class="fas fa-user fa-lg"></i>
+                                My Account
+                        </a>
+                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                            {% if request.user.is_superuser %}
+                                <a href="#" class="dropdown-item">Product Management</a>
+                            {% endif %}
+                        </div>
+                    </li>
+                     <li class="nav-right mr-2">
+                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart icon"></i></a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
 {% endblock%}
