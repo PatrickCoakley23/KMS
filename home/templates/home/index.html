@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 {% block page_header %}
-    <nav class="navbar navbar-expand-lg w-100 navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg w-100">
         <!-- BRAND AND LOGO-->
         <a class="navbar-brand uppercase" href="#"><img src="{{ MEDIA_URL}}kms_logo.png" alt="404 image" class="logo_img"></a>
         <!-- HAMBURGER MENU FOR SMALLER SCREEN WIDTHS-->
-        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarToggler1" aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler1" aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <!-- NAVBAR -->
@@ -26,12 +26,9 @@
             </ul>
         </div>
     </nav>
-    <div class="container-fluid hero-image-container">
-        <div class="hero-image">
-            <img src="{{ MEDIA_URL}}patricks_bridge.jpg" alt="">
-        </div>
+    <div class="hero-image-container">
         <div class="cta">
-            <h2>World Class Service & Local Expertise</h2>
+            <h1>World Class Service & <br> <em>Local</em> Expertise</h1>
         </div>
     </div>
 
