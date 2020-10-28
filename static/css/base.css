@@ -70,6 +70,20 @@ h1, h2, h3, h4, h5 {
     font-weight: 700;
 }
 
+.about-kms {
+    position: absolute;
+    bottom: 10%;
+    left: 30%;  
+ 
+}
+
+.vertical { 
+    border-left: 3px solid #ffdd17;
+    height: 75px;
+    position: absolute;
+    left: 48%;
+} 
+
 
 
 
