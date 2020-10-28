@@ -72,18 +72,34 @@ h1, h2, h3, h4, h5 {
 
 .about-kms {
     position: absolute;
-    bottom: 10%;
+    bottom: 5%;
     left: 30%;  
+    color: #fff9e7;
  
 }
 
+/* Trick from https://www.geeksforgeeks.org/how-to-make-a-vertical-line-using-html/ */
+
 .vertical { 
-    border-left: 3px solid #ffdd17;
+    border-left: 3px solid #fff9e7;
     height: 75px;
     position: absolute;
     left: 48%;
 } 
 
+/* ABOUT SECTION  */
 
+.about-wrapper-cream {
+    background-color: linear-gradient(to top, #fff9e7 0%, #ffffff 100%);
+    color:  #574c52;
+}
 
+.about-header {
+    padding-left: 6em;
+}
+
+.about-paragraph {
+    
+    padding: 0 6em;
+}
 
