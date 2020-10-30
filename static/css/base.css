@@ -74,14 +74,14 @@ h1, h2, h3, h4, h5 {
     position: absolute;
     bottom: 5%;
     left: 30%;  
-    color: #fff9e7;
+    color: #F1F2F2;
  
 }
 
 /* Trick from https://www.geeksforgeeks.org/how-to-make-a-vertical-line-using-html/ */
 
 .vertical { 
-    border-left: 3px solid #fff9e7;
+    border-left: 3px solid #F1F2F2;
     height: 75px;
     position: absolute;
     left: 48%;
@@ -90,8 +90,9 @@ h1, h2, h3, h4, h5 {
 /* ABOUT SECTION  */
 
 .about-wrapper-cream {
-    background-color: linear-gradient(to top, #fff9e7 0%, #ffffff 100%);
+    background-color: #F1F2F2;
     color:  #574c52;
+    position: relative;
 }
 
 .about-header {
@@ -99,7 +100,28 @@ h1, h2, h3, h4, h5 {
 }
 
 .about-paragraph {
-    
     padding: 0 6em;
+}
+
+/* SERVICES SECTION */
+
+.vertical-services { 
+    border-left: 3px solid #EAC85E;
+    height: 75px;
+    position: fixed;
+    left: 48%;
+} 
+
+.services-kms {
+    position: absolute;
+    bottom: 5%;
+    left: 30%;  
+    color: #EAC85E;
+ 
+}
+
+.services-wrapper-yellow {
+    background-color: #EAC85E;
+    color: #000;
 }
 
