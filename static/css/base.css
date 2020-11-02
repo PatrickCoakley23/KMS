@@ -107,11 +107,14 @@ h1, h2, h3, h4, h5 {
 
 /* SERVICES SECTION */
 
-.vertical-services { 
+/* WIDGET */ 
+.services-vertical-widget { 
     border-left: 3px solid #EAC85E;
-    height: 75px;
-    position: absolute;
+    height: 50px;
     left: 50%;
+    bottom: 0;
+    position: absolute;
+
 }
 
 .services-wrapper-yellow {
@@ -119,8 +122,11 @@ h1, h2, h3, h4, h5 {
     color: #000;
 }
 
-.widget-container {
+.services-widget-container {
+    background-color: #F1F2F2;
     position: relative;
 }
 
-
+.margin-widget {
+    margin-bottom: 4rem;
+}
