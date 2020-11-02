@@ -13,6 +13,10 @@ h1, h2, h3, h4, h5 {
     letter-spacing: 3px;
 }
 
+.yellow-text {
+    color: #ffdd17;
+}
+
 .padding-row {
     padding: 60px 0;
 }
@@ -107,10 +111,34 @@ h1, h2, h3, h4, h5 {
 
 /* SERVICES SECTION */
 
+.charcoal-text {
+    color: #555555;
+}
+
+.charcoal-wrapper {
+    background-color: #555555;
+    color: white;
+}
+
+.information-column {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.services-image {
+    height: 400px;
+    width: 100%;
+    border: 0;
+}
+
 /* WIDGET */ 
 .services-vertical-widget { 
-    border-left: 3px solid #EAC85E;
-    height: 50px;
+    border-left: 2px solid #555555;
+    height: 35px;
     left: 50%;
     bottom: 0;
     position: absolute;
@@ -128,5 +156,5 @@ h1, h2, h3, h4, h5 {
 }
 
 .margin-widget {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
