@@ -13,6 +13,9 @@ h1, h2, h3, h4, h5 {
     letter-spacing: 3px;
 }
 
+.padding-row {
+    padding: 60px 0;
+}
 /* NAVBAR */
 
 .navbar {
@@ -91,8 +94,7 @@ h1, h2, h3, h4, h5 {
 
 .about-wrapper-cream {
     background-color: #F1F2F2;
-    color:  #574c52;
-    position: relative;
+    color:  #574c52;;
 }
 
 .about-header {
@@ -108,20 +110,17 @@ h1, h2, h3, h4, h5 {
 .vertical-services { 
     border-left: 3px solid #EAC85E;
     height: 75px;
-    position: fixed;
-    left: 48%;
-} 
-
-.services-kms {
     position: absolute;
-    bottom: 5%;
-    left: 30%;  
-    color: #EAC85E;
- 
+    left: 50%;
 }
 
 .services-wrapper-yellow {
     background-color: #EAC85E;
     color: #000;
 }
+
+.widget-container {
+    position: relative;
+}
+
 
