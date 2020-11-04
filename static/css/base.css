@@ -118,7 +118,7 @@ h1, h2, h3, h4, h5 {
 .charcoal-wrapper {
     background-color: #555555;
     color: white;
-    padding-bottom: 500px;
+    padding-bottom: 300px;
 }
 
 .information-column {
@@ -134,6 +134,9 @@ h1, h2, h3, h4, h5 {
     width: 100%;
     border: 0;
     border-left: 2px solid #555555;
+}
+
+#residential-property {
     margin-top: -23px;
 }
 
@@ -142,6 +145,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* WIDGET */ 
+
 .services-vertical-widget { 
     border-left: 3px solid #555555;
     height: 35px;
@@ -151,13 +155,26 @@ h1, h2, h3, h4, h5 {
 
 }
 
-.services-wrapper-yellow {
-    background-color: #EAC85E;
-    color: #000;
-}
-
 .services-widget-container {
     background-color: #F1F2F2;
+    position: relative;
+}
+
+.margin-widget {
+    margin-bottom: 3rem;
+}
+
+.testimonials-vertical-widget {
+    border-left: 3px solid #F1F2F2;
+    height: 35px;
+    left: 50%;
+    bottom: 0;
+    position: absolute;
+}
+
+.testimonials-widget-container {
+    background-color: #555555;
+    color: #F1F2F2;
     position: relative;
 }
 

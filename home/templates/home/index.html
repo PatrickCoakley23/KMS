@@ -75,7 +75,7 @@
                 <p>We pride ourselves on our “one to one” personal service, giving both vendors and customers our undivided personal attention.</p>
                 <p>Feel assured you are in safe hands with an experienced auctioneers in a wide range of residential sales, from country and equestrian houses, to waterfront property and new developments.</p>
             </div>
-            <div class="col-7 no-padding rellax" data-rellax-speed="-.5">
+            <div class="col-7 no-padding rellax" data-rellax-speed="-.5" id="residential-property">
                 <img src="{{ MEDIA_URL}}interior.jpg" alt="image of residential property" class="services-image">
             </div>
         </div>
@@ -92,18 +92,23 @@
         </div>
         <!--LAND SALES-->
         <div class="row">
-            <div class="col-5 text-center information-column  rellax" data-rellax-speed="-0.5">
+            <div class="col-5 text-center information-column  rellax" data-rellax-speed="-1.1">
                 <h3 class="yellow-text">Land Sales</h3>
                 <p>Whether you are buying or selling land for commercial or residential purposes, Keane Mahony Smith can work with you throughout the entire process, offering valuable insight and hands-on expertise at every stage.</p>
             </div>
-            <div class="col-7 no-padding rellax" data-rellax-speed="-1">
+            <div class="col-7 no-padding rellax" data-rellax-speed="-1.4">
                 <img src="{{ MEDIA_URL}}agriculture.jpg" alt="image of agriculture property" class="services-image">
             </div>
         </div>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js" integrity="sha512-f5HTYZYTDZelxS7LEQYv8ppMHTZ6JJWglzeQmr0CVTS70vJgaJiIO15ALqI7bhsracojbXkezUIL+35UXwwGrQ==" crossorigin="anonymous"></script>
-    <script>
-        var rellax = new Rellax('.rellax');
-    </script>
+      
+      <!--INFO WIDGET-->
+    <div class="container-fluid testimonials-widget-container">
+        <div class="row">
+            <div class="col-4 offset-3 testimonials-widget">
+                <h3 class="text-center margin-widget">Testimonials</h3>
+                <div class="testimonials-vertical-widget"></div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
