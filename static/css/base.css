@@ -203,6 +203,16 @@ h1, h2, h3, h4, h5 {
 .card {
     border: 0;
     border-radius: 0;
+    box-shadow: 5px 5px 15px #ffe139;
+    transition: all 0.3s ease-in;
+    webkit-transition: all 0.3s ease-in;
+    background-color: #968c8c;
+    color: white;
+}
+
+.card:hover {
+    background-color: #ffe139;
+    color: black;
 }
 
 .card-img, .card-img-top {
@@ -212,4 +222,12 @@ h1, h2, h3, h4, h5 {
 
 .img-fluid {
     height: 150px;
+    margin-top: -50px;
+    border: 2px solid white;
 }
+
+.card-deck {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
