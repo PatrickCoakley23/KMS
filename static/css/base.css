@@ -165,7 +165,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .testimonials-vertical-widget {
-    border-left: 3px solid #F1F2F2;
+    border-left: 3px solid #968c8c;
     height: 35px;
     left: 50%;
     bottom: 0;
@@ -174,7 +174,7 @@ h1, h2, h3, h4, h5 {
 
 .testimonials-widget-container {
     background-color: #555555;
-    color: #F1F2F2;
+    color: #968c8c;
     position: relative;
 }
 
@@ -182,9 +182,34 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 3rem;
 }
 
+/* TESTIMONIALS SECTION */
+
+.overlay {
+    background-color: #968c8c;
+} 
+
 /* CARD DECK */
 
 .align-bottom {
     position: absolute;
     bottom: 1rem;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card {
+    border: 0;
+    border-radius: 0;
+}
+
+.card-img, .card-img-top {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.img-fluid {
+    height: 150px;
 }
