@@ -1,13 +1,45 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block content %}
-    <div class="container">
+
+    <div class="container-fluid">
         <div class="row">
-            <div class="col">
-                <h1>hello </h1>
-                {{ properties }}
+            <div class="col text-center mt-3">
+                <h2>Properties</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="properties-container col-10 offset-1">
+                <div class="row">
+                    {% for properties in properties %}
+                    <div class="col-sm-6 col-md-6 col-lg-4">
+                        <div class="card h-100">
+                        {% if properties.image %}
+                        <a href="">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL}}{{ properties.image }}" alt="{{ properties.name }}">
+                        </a>
+                        {% else %}
+                        <a href="">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ properties.name }}">
+                        </a>
+                        {% endif %}
+                        <div class="card-body pb-0">
+                            <p class="mb-0">{{ properties.name }}</p>
+                        </div>
+                        <hr>
+                        <div class="card-footer bg-white pt-0 border-0 text-left">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="lead mb-0 text-left font-weight-bold">€{{ properties.price }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
+
 {% endblock %}
