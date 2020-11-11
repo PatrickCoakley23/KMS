@@ -1,11 +1,9 @@
 from django.shortcuts import render
 from .models import Property
-
-
 # Create your views here.
 
 def properties(request):
-    """ a view to return the properties page """
+    """ A view to show all products, including sorting and search queries """
 
     properties = Property.objects.all()
 
