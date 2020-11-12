@@ -1,64 +1,70 @@
-{% extends "base.html" %}
-{% load static %}
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col text-center mt-3">
-                <h2>Properties</h2>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="properties-container col-10 offset-1">
-                <div class="row">
-                    {% for properties in properties %}
-                    <div class="col-sm-6 col-md-6 col-lg-4">
-                        <div class="card h-100">
-                        {% if properties.image %}
-                        <a href="">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL}}{{ properties.image }}" alt="{{ properties.name }}">
-                        </a>
-                        {% else %}
-                        <a href="">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ properties.name }}">
-                        </a>
-                        {% endif %}
-                        <div class="card-body pb-0">
-                            <p class="mb-0">{{ properties.name }}</p>
-                            <p class="mb-0">{{ properties.address }}</p>
-                            <p class="mb-0">{{ properties.county }}</p>
-
-                        </div>
-                        <hr>
-                        {% if properties.price == 0 %}
-                        <p class="mb-0">Price Upon Request</p>
-                        <hr>
-                        {% else %}
-                        <p class="lead mb-0 font-weight-bold">€{{ properties.price }}</p>
-                        <hr>
-                        {% endif %}
-                        <div class="card-footer bg-white pt-0 border-0 text-left">
-                            <div class="row">
-                                <div class="col-4">
-                                <i class="fas fa-bed"></i>
-                                {{ properties.bedrooms }} beds
-                                </div>
-                                <div class="col-4">
-                                <i class="fas fa-bath"></i>
-                                {{ properties.bathrooms }} bathrooms
-                                </div>
-                                <div class="col-4">
-                                <i class="fas fa-ruler-combined"></i>
-                                {{ properties.size}}sqm
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col text-center mt-3">
+      <h2>Properties</h2>
     </div>
+  </div>
 
-{% endblock %}
+  <div class="row">
+    <div class="properties-container col-10 offset-1">
+      <div class="row">
+        {% for properties in properties %}
+        <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+          <div class="card h-100">
+            {% if properties.image %}
+            <a href="">
+              <img
+                class="card-img-top img-fluid properties-card-img"
+                src="{{ MEDIA_URL}}{{ properties.image }}"
+                alt="{{ properties.name }}"
+              />
+            </a>
+            {% else %}
+            <a href="">
+              <img
+                class="card-img-top img-fluid"
+                src="{{ MEDIA_URL }}noimage.jpg"
+                alt="{{ properties.name }}"
+              />
+            </a>
+            {% endif %}
+            <div class="card-body pb-0">
+              <p class="mb-0">{{ properties.name }}</p>
+              <p class="mb-0">{{ properties.address }}</p>
+              <p class="mb-0">{{ properties.county }}</p>
+            </div>
+            <hr />
+            {% if properties.price == 0 %}
+            <p class="mb-0">Price Upon Request</p>
+            <hr />
+            {% else %}
+            <p class="lead mb-0 font-weight-bold padding-price">€{{ properties.price }}</p>
+            <hr />
+            {% endif %}
+            <div class="card-footer card-footer-properties bg-white pt-0 border-0 text-left">
+              <div class="row">
+                <div class="col-4 text-center">
+                    <div><i class="fas fa-bed"></i></div>
+                    <p class="my-0">{{ properties.bedrooms }} beds</p>
+                </div>
+                <div class="col-4 text-center">
+                    <div><i class="fas fa-bath"></i></div>
+                    <p>{{ properties.bathrooms }} baths</p> 
+                </div>
+                <div class="col-4 text-center">
+                    <div><i class="fas fa-ruler-combined"></i></div> 
+                    <p>{{ properties.size}}sqm </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
+</div>

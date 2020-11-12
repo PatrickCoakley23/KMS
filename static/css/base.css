@@ -223,4 +223,15 @@ h1, h2, h3, h4, h5 {
 
 /* PROPERTIES-CARD */
 
+.properties-card-img {
+    height: 200px;
+}
 
+.padding-price {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.card-footer-properties {
+    padding: 0;
+}
