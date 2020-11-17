@@ -235,3 +235,13 @@ h1, h2, h3, h4, h5 {
 .card-footer-properties {
     padding: 0;
 }
+
+/* PROPERTIES-NAVBAR */
+
+.property-search-navbar {
+    position: relative;
+}
+
+.property-search-nav-item {
+    margin-right: 5rem;
+}
