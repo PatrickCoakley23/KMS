@@ -38,7 +38,7 @@ class Property(models.Model):
     bedrooms = models.DecimalField(max_digits=3, decimal_places=0)
     bathrooms = models.DecimalField(max_digits=3, decimal_places=0)
     price = models.DecimalField(max_digits=8, decimal_places=0)
-    size = models.DecimalField(max_digits=8, decimal_places=2)
+    size = models.DecimalField(max_digits=8, decimal_places=0)
     ber_rating = models.TextField()
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
