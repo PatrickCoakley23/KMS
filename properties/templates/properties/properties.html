@@ -5,111 +5,111 @@
       <h2>Properties</h2>
     </div>
 </div>
-    
-<div class="row">
-    
-    <div class="properties-container col-10 offset-1">
-        <form>
-            <div class="form-row">
-                <div class="form-group col-2">
-                    <label for="input-prop-type">Property Type</label>
-                    <select class="form-control" id="input-prop-type">
-                        <option value="residential">Residential</option>
-                        <option value="commercial">Commercial</option>
-                        <option value="farm-sales">Farm Sales</option>
-                    </select>
-                </div>
-                <div class="form-group col-2">
-                    <label for="input-county">County</label>
-                    <select class="form-control" id="input-county">
-                        <option value="cork">Cork</option>
-                        <option value="dublin">Dublin</option>
-                        <option value="galway">Galway</option>
-                    </select>
-                </div>
-                <div class="form-group col-2 ">
-                    <label for="price-min">Price Min</label>
-                    <select class="form-control" id="price-min">
-                        <option value="100k">100k</option>
-                        <option value="200k">200k</option>
-                        <option value="300k">300k</option>
-                    </select>
-                </div>
-                <div class="form-group col-2">
-                    <label for="price-max">Price Max</label>
-                    <select class="form-control" id="price-max">
-                        <option value="100k">100k</option>
-                        <option value="200k">200k</option>
-                        <option value="300k">300k</option>
-                    </select>    
-                </div>
-                <div class="form-group col-2">
-                    <label for="min-beds">Min Beds</label>
-                    <select class="form-control" id="price-min">
-                        <option value="100k">1</option>
-                        <option value="200k">2</option>
-                        <option value="300k">3</option>
-                    </select>
-                </div>
-                <div class="form-group col-2">
-                    <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
-                </div>
+
+<div class="container jumbotron">
+    <form>
+        <div class="form-row">
+            <div class="form-group col-3 p-0">
+                <label for="input-prop-type">Property Type</label>
+                <select class="form-control property-form-control" id="input-prop-type">
+                    {% for type in property_type %}
+                    <option value="{{type.name}}">{{type.friendly_name}}</option>
+                    {% endfor %}
+                </select>
             </div>
-        </form>
-        <div class="row">
-            {% for properties in properties %}
-            <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
-                <div class="card h-100">
-                    {% if properties.image %}
-                    <a href="">
-                    <img
-                        class="card-img-top img-fluid properties-card-img"
-                        src="{{ MEDIA_URL}}{{ properties.image }}"
-                        alt="{{ properties.name }}"
-                    />
-                    </a>
-                    {% else %}
-                    <a href="">
-                    <img
-                        class="card-img-top img-fluid"
-                        src="{{ MEDIA_URL }}noimage.jpg"
-                        alt="{{ properties.name }}"
-                    />
-                    </a>
-                    {% endif %}
-                    <div class="card-body pb-0">
-                    <p class="mb-0">{{ properties.name }}</p>
-                    <p class="mb-0">{{ properties.address }}</p>
-                    <p class="mb-0">{{ properties.county }}</p>
-                    </div>
-                    <hr />
-                    {% if properties.price == 0 %}
-                    <p class="mb-0">Price Upon Request</p>
-                    <hr />
-                    {% else %}
-                    <p class="lead mb-0 font-weight-bold padding-price">€{{ properties.price }}</p>
-                    <hr />
-                    {% endif %}
-                    <div class="card-footer card-footer-properties bg-white pt-0 border-0 text-left">
-                        <div class="row">
-                            <div class="col-4 text-center">
-                                <div><i class="fas fa-bed"></i></div>
-                                <p class="my-0">{{ properties.bedrooms }} beds</p>
-                            </div>
-                            <div class="col-4 text-center">
-                                <div><i class="fas fa-bath"></i></div>
-                                <p>{{ properties.bathrooms }} baths</p> 
-                            </div>
-                            <div class="col-4 text-center">
-                                <div><i class="fas fa-ruler-combined"></i></div> 
-                                <p>{{ properties.size}}sqm </p>
-                            </div>
+            <div class="form-group col-2 p-0">
+                <label for="input-county">County</label>
+                <select class="form-control property-form-control" id="input-county">
+                    {% for counties in counties %}
+                    <option value="">{{counties.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group col-2 p-0">
+                <label for="price-min">Price Min</label>
+                <select class="form-control property-form-control" id="price-min">
+                    <option value="100k">100k</option>
+                    <option value="200k">200k</option>
+                    <option value="300k">300k</option>
+                </select>
+            </div>
+            <div class="form-group col-2 p-0">
+                <label for="price-max">Price Max</label>
+                <select class="form-control property-form-control" id="price-max">
+                    <option value="100k">100k</option>
+                    <option value="200k">200k</option>
+                    <option value="300k">300k</option>
+                </select>    
+            </div>
+            <div class="form-group col-2 p-0">
+                <label for="min-beds">Min Beds</label>
+                <select class="form-control property-form-control" id="min-beds">
+                    <option value="100k">1</option>
+                    <option value="200k">2</option>
+                    <option value="300k">3</option>
+                </select>
+            </div>
+            <div class="form-group col-1 p-0">
+                <button class="btn btn-outline-success search-btn" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="properties-container col-10 offset-1">
+    <div class="row">
+        {% for properties in properties %}
+        <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+                {% if properties.image %}
+                <a href="">
+                <img
+                    class="card-img-top img-fluid properties-card-img"
+                    src="{{ MEDIA_URL}}{{ properties.image }}"
+                    alt="{{ properties.name }}"
+                />
+                </a>
+                {% else %}
+                <a href="">
+                <img
+                    class="card-img-top img-fluid"
+                    src="{{ MEDIA_URL }}noimage.jpg"
+                    alt="{{ properties.name }}"
+                />
+                </a>
+                {% endif %}
+                <div class="card-body pb-0">
+                <p class="mb-0">{{ properties.name }}</p>
+                <p class="mb-0">{{ properties.address }}</p>
+                <p class="mb-0">{{ properties.county }}</p>
+                </div>
+                <hr />
+                {% if properties.price == 0 %}
+                <p class="mb-0">Price Upon Request</p>
+                <hr />
+                {% else %}
+                <p class="lead mb-0 font-weight-bold padding-price">€{{ properties.price }}</p>
+                <hr />
+                {% endif %}
+                <div class="card-footer card-footer-properties bg-white pt-0 border-0 text-left">
+                    <div class="row">
+                        <div class="col-4 text-center">
+                            <div><i class="fas fa-bed"></i></div>
+                            <p class="my-0">{{ properties.bedrooms }} beds</p>
+                        </div>
+                        <div class="col-4 text-center">
+                            <div><i class="fas fa-bath"></i></div>
+                            <p>{{ properties.bathrooms }} baths</p> 
+                        </div>
+                        <div class="col-4 text-center">
+                            <div><i class="fas fa-ruler-combined"></i></div> 
+                            <p>{{ properties.size}}sqm </p>
                         </div>
                     </div>
                 </div>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Type(models.Model):
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
@@ -10,8 +11,9 @@ class Type(models.Model):
     def get_friendly_name(self):
         return self.friendly_name
 
+
 class County(models.Model):
-    
+
     class Meta:
         verbose_name_plural = 'Counties'
 
@@ -20,15 +22,18 @@ class County(models.Model):
     def __str__(self):
         return self.name
 
+
 class Property(models.Model):
 
     class Meta:
         verbose_name_plural = 'Properties'
 
     name = models.CharField(max_length=254)
-    property_type = models.ForeignKey('Type', null=True, blank=True, on_delete=models.SET_NULL)
+    property_type = models.ForeignKey('Type', null=True,
+                                      blank=True, on_delete=models.SET_NULL)
     address = models.CharField(max_length=254)
-    county = models.ForeignKey('County', null=True, blank=True, on_delete=models.SET_NULL)
+    county = models.ForeignKey('County', null=True,
+                               blank=True, on_delete=models.SET_NULL)
     description = models.TextField()
     bedrooms = models.DecimalField(max_digits=3, decimal_places=0)
     bathrooms = models.DecimalField(max_digits=3, decimal_places=0)
