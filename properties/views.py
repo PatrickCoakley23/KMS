@@ -16,9 +16,10 @@ def properties(request):
         price_min = request.GET['price-min']
         price_max = request.GET['price-max']
         beds_min = request.GET['beds-min']
-        beds_max = Property.objects.aggregate(Max('bedrooms'))
+        beds_max = Property.objects.aggregate(Max('bedrooms'))['bedrooms__max']
                    
-        properties = Property.objects.filter(property_type=prop_type)
+        properties = Property.objects.filter(property_type=prop_type, county=county, price__range=(price_min, price_max), bedrooms__range=(beds_min, beds_max))
+    
 
     context = {
         'properties': properties,
