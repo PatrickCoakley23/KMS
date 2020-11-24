@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'home',
     'properties',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -77,7 +78,6 @@ TEMPLATES = [
 SITE_ID = 1
 
 WSGI_APPLICATION = 'KMS.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
