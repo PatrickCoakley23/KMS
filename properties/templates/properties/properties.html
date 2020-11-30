@@ -40,6 +40,18 @@
 
 
 <div class="properties-container col-10 offset-1">
+
+   <div class="row mt-1 mb-2">
+        <div class="col-3 offset-9 my-auto d-flex justify-content-md-end">
+            <button class="btn dropdown-toggle btn-dropdown rounded-0 w-75" type="button" data-toggle="dropdown">Sort By.. </button>
+            
+                <ul class="dropdown-menu w-100 rounded-0">
+                    <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?sort=price&direction=asc">Price High to Low</a></li>
+                    <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?sort=price&direction=desc">Price Low to High</a></li>
+                </ul>
+        </div>
+   </div>
+    
     <div class="row">
         {% for properties in filter.qs %}
         <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
