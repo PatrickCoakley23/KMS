@@ -11,3 +11,11 @@ def properties_url(value, field_name, urlencode=None):
         encoded_querystring = '&'.join(filtered_querystring)
         url = '{}&{}'.format(url, encoded_querystring)
     return url
+
+@register.simple_tag
+def query_transform(request, **kwargs):
+    updated = request.GET.copy()
+    for k, v in kwargs.items():
+        updated[k] = v
+
+    return updated.urlencode()

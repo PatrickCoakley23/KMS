@@ -46,8 +46,8 @@
             <button class="btn dropdown-toggle btn-dropdown rounded-0 w-75" type="button" data-toggle="dropdown">Sort By.. </button>
             
                 <ul class="dropdown-menu w-100 rounded-0">
-                    <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?sort=price&direction=asc">Price High to Low</a></li>
-                    <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?sort=price&direction=desc">Price Low to High</a></li>
+                    <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?{% query_transform request sort='price' direction='asc' %}">Price High to Low</a></li>
+                    <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?{% query_transform request sort='price' direction='desc' %}">Price Low to High</a></li>
                 </ul>
         </div>
    </div>
@@ -107,6 +107,7 @@
         {% endfor %}
     </div>
 </div>
+
 <div class="pagination">
     <span class="step-links">
         {% if page_obj.has_previous %}
@@ -124,4 +125,5 @@
         {% endif %}
     </span>
 </div>
+
 {% endblock %}

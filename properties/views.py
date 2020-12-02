@@ -12,13 +12,7 @@ def properties(request):
     propFilter = PropertyFilter(request.GET, queryset=properties)
     sort = None 
     direction = None 
-
-    context['filter'] = propFilter
-
-    paginated_properties = Paginator(propFilter.qs, 2)
-    page_number = request.GET.get('page')
-    page_obj = paginated_properties.get_page(page_number)
-
+    
     if request.GET: 
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
@@ -33,8 +27,11 @@ def properties(request):
                     sortkey = f'-{sortkey}'
             properties = properties.order_by(sortkey)
             propFilter = PropertyFilter(request.GET, queryset=properties)
-            
 
+    paginated_properties = Paginator(propFilter.qs, 2)
+    page_number = request.GET.get('page')
+    page_obj = paginated_properties.get_page(page_number)
+            
 
     context = {
     'filter': propFilter, 
