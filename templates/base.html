@@ -29,20 +29,45 @@
     {% endblock %}
 
     {% block extra_js%}
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        var zero = 0;
+        $(document).ready(function(){
+         
+            $(window).scroll(function() {
+                var scroll = $(window).scrollTop();
+
+                if (scroll >= 10) {
+                    $('.navbar').removeClass('navbar-expand-lg');
+                } else {
+                    $('.navbar').addClass('navbar-expand-lg');
+                }
+            });
+
+            $(".navbar").mouseenter(function(){
+                $(this).addClass('navbar-expand-lg');
+            });
+            $(".navbar").mouseleave(function(){
+                $(this).removeClass('navbar-expand-lg');
+            });
+
+
+        })
+    </script>
     {% endblock %}
 
-    <title>Keane Mahony Smith {% block extra_title %}{% endblock %}</title>
-  </head>
-  <body>
+
     {% if messages %}
         <div class="message-container">
         </div>
     {% endif %}
 
     {% block page_header%}
+
     {% endblock %}
 
     {% block content %}
+
     {% endblock %}
 
     {% block postloadjs %}

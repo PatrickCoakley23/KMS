@@ -1,11 +1,40 @@
-{% extends "base.html" %} {% load static %} {% block content %} {% load properties_extras %}
+{% extends "base.html" %} {% load static %} {% load properties_extras %}
 
-<div class="row">
-    <div class="col text-center my-3">
-      <h2>Properties</h2>
+{% block page_header%}
+ <nav class="navbar navbar-expand-lg w-100">
+        <!-- BRAND AND LOGO-->
+        <a class="navbar-brand uppercase" href="#"><img src="{{ MEDIA_URL}}kms_logo.png" alt="404 image" class="logo_img"></a>
+        <!-- HAMBURGER MENU FOR SMALLER SCREEN WIDTHS-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler1" aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- NAVBAR -->
+        <div class="collapse navbar-collapse" id="navbarToggler1">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-right mr-2">
+                <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-right mr-2">
+                <a class="nav-link" href="#">Properties</a>
+                </li>
+                <li class="nav-right mr-2">
+                <a class="nav-link" href="#">Selling</a>
+                </li>
+                <li class="nav-right mr-2">
+                <a class="nav-link" href="#">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<div class="container-fluid properties-hero-image-container">
+    <div class="row h-100">
+        <div class="col-7 col-md-6 my-auto text-center text-white">
+            <h1>Properties</h1>
+        </div>
     </div>
 </div>
-
+{% endblock %}
+{% block content %} 
 <div class="container jumbotron">
     <form method="get">
         <div class="form-row">
@@ -42,9 +71,13 @@
 <div class="properties-container col-10 offset-1">
 
    <div class="row mt-1 mb-2">
+        <div class="col-12 col-md-6">
+        <p class="text-muted my-auto text-center text-md-left">
+        {{ filter.qs|length}} Properties 
+        </p>
+        </div>
         <div class="col-3 offset-9 my-auto d-flex justify-content-md-end">
             <button class="btn dropdown-toggle btn-dropdown rounded-0 w-75" type="button" data-toggle="dropdown">Sort By.. </button>
-            
                 <ul class="dropdown-menu w-100 rounded-0">
                     <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?{% query_transform request sort='price' direction='asc' %}">Price High to Low</a></li>
                     <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?{% query_transform request sort='price' direction='desc' %}">Price Low to High</a></li>
@@ -125,5 +158,8 @@
         {% endif %}
     </span>
 </div>
+
+{% endblock %}
+{% block postloadjs %}
 
 {% endblock %}

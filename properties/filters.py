@@ -35,7 +35,7 @@ class PropertyFilter(django_filters.FilterSet):
     property_type = django_filters.ModelChoiceFilter(queryset=Type.objects.all(), empty_label="All", label="")
     county = django_filters.ModelChoiceFilter(queryset=County.objects.all(), empty_label="All", label="")
     price__gte = django_filters.ChoiceFilter(choices=PRICE_CHOICES, field_name='price', lookup_expr='gte', label="", empty_label="No Min")
-    price__lte = django_filters.ChoiceFilter(choices=PRICE_CHOICES, field_name='price', lookup_expr='gte', label="", empty_label="No Max")
+    price__lte = django_filters.ChoiceFilter(choices=PRICE_CHOICES, field_name='price', lookup_expr='lte', label="", empty_label="No Max")
     bedrooms__gte = django_filters.ChoiceFilter(choices=BED_CHOICES, field_name='bedrooms', lookup_expr='gte', label="", empty_label="No Min" )
    
     

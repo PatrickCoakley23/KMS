@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5 {
 .navbar {
     position: fixed;
     z-index: 100;
-    padding: .5rem 4rem;
+    padding: 0 4rem;
 
     
 }
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .navbar-toggler {
-    border: 1px solid #ffdd17;
+    border: 1px solid black;
 }
 
 .logo_img {
@@ -220,6 +220,15 @@ h1, h2, h3, h4, h5 {
     padding-top: 7rem;
     padding-bottom: 7rem;
 }
+/* PROPERTIES PAGE */
+
+ .properties-hero-image-container {
+    background: url('/media/balsamiq_banner.jpg') no-repeat center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    height: 60vh;
+ }
 
 /* PROPERTIES-CARD */
 
@@ -282,7 +291,47 @@ h1, h2, h3, h4, h5 {
     appearance: none;
 }
 
+.navbar-blue   {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in { 
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
 
-    background: #fff url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e) no-repeat right .75rem center/8px 10px;
+    .navbar-static-top { 
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        margin: 0; 
+    }
+}
+
 
 
