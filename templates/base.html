@@ -31,24 +31,22 @@
     {% block extra_js%}
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script type="text/javascript">
-        var zero = 0;
+
         $(document).ready(function(){
-         
-            $(window).scroll(function() {
-                var scroll = $(window).scrollTop();
-
-                if (scroll >= 30) {
-                    $('.navbar-nav').addClass('fade-out').delay(3900).queue(function(next){
-                        $('.navbar').removeClass('navbar-expand-lg');
-                        next();
-                    });
-                } else {
-                    $('.navbar').addClass('navbar-expand-lg')
-                    $('.navbar-nav').removeClass('fade-out')
+            $(window).on('scroll', function(){
+                if ($(window).scrollTop()) {
+                        $('.navbar-nav').fadeOut(3000, function() {
+                            $('nav').removeClass('navbar-expand-lg');   
+                        });
+                    
+                }else{
+                    $('nav').addClass('navbar-expand-lg'); 
+                    $('.navbar-nav').fadeIn(3000);
+                    
                 }
-            });
-        })
-
+            });     
+        });         
+         
 
     </script>
     {% endblock %}
