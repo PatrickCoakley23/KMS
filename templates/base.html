@@ -37,22 +37,19 @@
             $(window).scroll(function() {
                 var scroll = $(window).scrollTop();
 
-                if (scroll >= 10) {
-                    $('.navbar').removeClass('navbar-expand-lg');
+                if (scroll >= 30) {
+                    $('.navbar-nav').addClass('fade-out').delay(3900).queue(function(next){
+                        $('.navbar').removeClass('navbar-expand-lg');
+                        next();
+                    });
                 } else {
-                    $('.navbar').addClass('navbar-expand-lg');
+                    $('.navbar').addClass('navbar-expand-lg')
+                    $('.navbar-nav').removeClass('fade-out')
                 }
             });
-
-            $(".navbar").mouseenter(function(){
-                $(this).addClass('navbar-expand-lg');
-            });
-            $(".navbar").mouseleave(function(){
-                $(this).removeClass('navbar-expand-lg');
-            });
-
-
         })
+
+
     </script>
     {% endblock %}
 
