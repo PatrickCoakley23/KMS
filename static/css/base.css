@@ -117,14 +117,12 @@ h1, h2, h3, h4, h5 {
     background-color: #555555;
     color: white;
     padding-bottom: 300px;
+    overflow: hidden;
+    height: 100%;
 }
 
 .information-column {
     padding-top: 5rem;
-}
-
-.no-padding {
-    padding: 0;
 }
 
 .services-image {
@@ -134,8 +132,8 @@ h1, h2, h3, h4, h5 {
     border-left: 2px solid #555555;
 }
 
-#residential-property {
-    margin-top: -23px;
+#residential-img {
+    margin-top: -239px;
 }
 
 .image-pt {
