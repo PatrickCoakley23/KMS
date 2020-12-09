@@ -116,13 +116,12 @@ h1, h2, h3, h4, h5 {
 .charcoal-wrapper {
     background-color: #555555;
     color: white;
-    padding-bottom: 300px;
+    padding-bottom: 1000px;
     overflow: hidden;
     height: 100%;
 }
 
 .information-column {
-    padding-top: 5rem;
 }
 
 .services-image {
@@ -130,15 +129,62 @@ h1, h2, h3, h4, h5 {
     width: 100%;
     border: 0;
     border-left: 2px solid #555555;
+    object-fit: cover;
 }
 
-#residential-img {
-    margin-top: -239px;
+.residential-img {
+    margin-top: -125px;
+    object-fit: cover;
+}
+
+.residential-info {
+    
 }
 
 .image-pt {
     padding-top: 1.5rem;
 }
+
+.mobile-services-img-overlay {
+
+}
+
+@media (min-width: 992px) {
+    .commercial-property-img {
+        margin-top: -270px;
+    }
+ }
+
+@media (min-width: 1101px) {
+    .commercial-property-img {
+        margin-top: -220px;
+    }
+ }
+
+@media (min-width: 1300px) {
+    .commercial-property-img {
+        margin-top: -180px;
+    }
+ }
+
+ @media (min-width: 1581px) {
+    .commercial-property-img {
+        margin-top: -125px;
+    }
+ }
+
+ @media (min-width: 2500px) {
+    .residential-img {
+        margin-top: -210px;
+    }
+
+    .residential-info {
+    transform: translate(0, 90%);
+    }
+    
+ }
+  
+
 
 /* WIDGET */ 
 
