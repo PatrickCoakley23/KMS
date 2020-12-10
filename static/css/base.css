@@ -133,7 +133,6 @@ h1, h2, h3, h4, h5 {
 }
 
 .residential-img {
-    margin-top: -125px;
     object-fit: cover;
 }
 
@@ -151,41 +150,61 @@ h1, h2, h3, h4, h5 {
 
 @media (min-width: 992px) {
     .commercial-property-img {
-        margin-top: -270px;
+        margin-top: -60px;
     }
- }
 
-@media (min-width: 1101px) {
-    .commercial-property-img {
-        margin-top: -220px;
+    .residential-img {
+        margin-top: -215px;
     }
+
+    .residential-info {
+        margin-top: -50px;
+    }
+
+    .commercial-info {
+        margin-top: -40px;
+    }
+
  }
 
 @media (min-width: 1300px) {
     .commercial-property-img {
-        margin-top: -180px;
+        margin-top: -45px;
+    }
+
+    .residential-img {
+        margin-top: -240px;
+    }
+
+    .residential-info {
+        margin-top: -40px;
+    }
+
+    .commercial-info {
+        margin-top: 15px;
     }
  }
 
  @media (min-width: 1581px) {
     .commercial-property-img {
-        margin-top: -125px;
+        margin-top: -20px;
+    }
+
+     .commercial-info {
+        margin-top: 40px;
     }
  }
-
+    
  @media (min-width: 2500px) {
     .residential-img {
-        margin-top: -210px;
+        margin-top: -235px;
     }
 
     .residential-info {
-    transform: translate(0, 90%);
+    margin-top: -3px;
     }
-    
  }
   
-
-
 /* WIDGET */ 
 
 .services-vertical-widget { 
