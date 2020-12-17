@@ -77,18 +77,18 @@
             </div>
             <div class="col-10 offset-1 col-lg-7 offset-lg-0 order-first order-lg-second p-lg-0 parallax-scroll" data-rate="0.27">
                 <img src="{{ MEDIA_URL}}interior.jpg" alt="image of residential property" class="services-image residential-img">
-                <span class="d-lg-none services-header-small-extra"><h3>Residential</h3></span>
-                <span class="d-lg-none services-header-small"><h3>Property</h3></span>
+                <span class="d-lg-none services-header-small-extra"><h2 data-aos="fade-left">Residential</h2></span>
+                <span class="d-lg-none services-header-small"><h2 data-aos="fade-left">Property</h2></span>
             </div>
         </div>
         <!--COMMERCIAL PROPERTY-->
         <div class="row">
             <div class="col-10 offset-1 col-lg-7 offset-lg-0 p-lg-0 parallax-scroll" data-rate="0.32">
                 <img src="{{ MEDIA_URL}}office.jpg" alt="image of office property" class="services-image commercial-property-img">
-                <span class="d-lg-none services-header-small-extra"><h3>Commercial</h3></span>
-                <span class="d-lg-none services-header-small"><h3>Property</h3></span>
+                <span class="d-lg-none services-header-small-extra"><h2 data-aos="fade-left">Commercial</h2></span>
+                <span class="d-lg-none services-header-small"><h2 data-aos="fade-left">Property</h2></span>
             </div>
-            <div class="col-10 col-lg-4 offset-1 text-center information-column commercial-info parallax-scroll" data-rate="0.33">
+            <div class="col-10 col-lg-4 offset-1 offset-lg-0 text-center information-column commercial-info parallax-scroll" data-rate="0.33">
                 <span class="d-none d-lg-inline"><h3 class="yellow-text">Commercial Property</h3></span>
                 <p>Working with national and international commercial property owners, occupiers, investors and developers, our specialist teams have an in-depth knowledge of, and experience in, all aspects of commercial property markets in Ireland.</p>
                 <p>From offices to business parks and industrial units to development land, our exceptional commercial acumen allows us to respond to a wide range of commercial property needs across Ireland and globally.</p>
@@ -102,7 +102,8 @@
             </div>
             <div class="col-10 offset-1 col-lg-7 offset-lg-0 order-first order-lg-second p-lg-0 parallax-scroll" data-rate="0.38">
                 <img src="{{ MEDIA_URL}}agriculture.jpg" alt="image of agriculture property" class="services-image land-img">
-                <span class="d-lg-none services-header-small"><h3>Land Sales</h3></span>
+                <span class="d-lg-none services-header-small-extra"><h2 data-aos="fade-left">Land</h2></span>
+                <span class="d-lg-none services-header-small"><h2 data-aos="fade-left">Sales</h2></span>
             </div>
         </div>
     </div>
@@ -151,8 +152,13 @@
 {% endblock %}
 
 
-{% block postloadjs %}
-      
+{% block postloadjs %}    
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>AOS.init({
+    duration: 500,
+});
+</script>
+
 <script type = "text/javascript" >
     // Listen to scroll and add parallax to elements with class name "scroll"
     window.addEventListener('scroll', function(e) {
@@ -181,8 +187,6 @@ function myFunction(screenSize) {
 var screenSize = window.matchMedia("(max-width: 992px)")
 myFunction(screenSize) // Call listener function at run time
 screenSize.addListener(myFunction) // Attach listener function on state changes 
-
 </script>
-
   
 {% endblock %}
