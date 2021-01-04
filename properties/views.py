@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.db.models import Max
 from django.core.paginator import Paginator
 from .models import Property, Type, County
@@ -35,6 +35,19 @@ def properties(request):
     context = {
     'filter': propFilter, 
     'page_obj': page_obj
-}
+    }
   
     return render(request, 'properties/properties.html', context )
+
+
+    
+def property_selected(request, properties_id): 
+    """ A view that gives more details on the property selected """
+
+    property = get_object_or_404(Property, pk=properties_id)
+
+    context = {
+        'property': property,
+    }
+
+    return render(request, 'properties/property_selected.html', context)

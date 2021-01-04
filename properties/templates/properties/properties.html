@@ -90,7 +90,7 @@
         <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
             <div class="card h-100">
                 {% if properties.image %}
-                <a href="">
+                <a href="{% url 'property_selected' properties.id %}">
                 <img
                     class="card-img-top img-fluid properties-card-img"
                     src="{{ MEDIA_URL}}{{ properties.image }}"
