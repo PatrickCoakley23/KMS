@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Max
 from django.core.paginator import Paginator
-from .models import Property, Type, County
+from .models import Property, Type, County, PropertyImage
 from .filters import PropertyFilter
 
 
@@ -45,9 +45,11 @@ def property_selected(request, properties_id):
     """ A view that gives more details on the property selected """
 
     property = get_object_or_404(Property, pk=properties_id)
+    images = PropertyImage.objects.filter(property=property)
 
     context = {
         'property': property,
+        'images': images,
     }
 
     return render(request, 'properties/property_selected.html', context)

@@ -45,3 +45,11 @@ class Property(models.Model):
 
     def __str__(self):
         return self.name
+
+class PropertyImage(models.Model):
+    property = models.ForeignKey(Property, default=None, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='media/')
+
+    def __str__(self):
+        return self.property.name
+        

@@ -1,16 +1,19 @@
 from django.contrib import admin
-from .models import Property, Type, County
+from .models import Property, Type, County, PropertyImage
 
+class PropertyImageAdmin(admin.StackedInline):
+    model=PropertyImage
 
+@admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
-    list_display = (
-        'name',
-        'property_type',
-        'address',
-        'price',
-        'bedrooms',
-        'image',
-    )
+    inlines = [PropertyImageAdmin]
+
+    class Meta:
+        model=Property
+
+@admin.register(PropertyImage)
+class PropertyImageAdmin(admin.ModelAdmin):
+    pass
 
 class TypeAdmin(admin.ModelAdmin):
     list_display = (
@@ -18,8 +21,7 @@ class TypeAdmin(admin.ModelAdmin):
         'name',
     )
 
-
-admin.site.register(Property, PropertyAdmin)
 admin.site.register(Type, TypeAdmin)
 admin.site.register(County)
+
 
