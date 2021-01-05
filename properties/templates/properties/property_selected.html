@@ -28,15 +28,28 @@
     </nav>
 {% endblock %}
 {% block content %} 
-   <div class="container">
-    <img src="{{ MEDIA_URL}}{{ property.image }}">
-   </div>
-    
+<div class="property-selected-card">
+    <div class="slider">
+        {% for image in images %}
+        <div class="selected-card-inner">
+            <img src="{{ MEDIA_URL}}{{ image.image }}" alt="{{ MEDIA_URL}}{{ image.image }}">
+        </div>
+        {% endfor %}  
+    </div>
+</div>    
+
    
 
 {% endblock %}
 {% block postloadjs %}
+<script>
+        $('.slider').slick({
+            centerMode: true,
+            slidesToShow: 3,
+            focusOnSelect: true
+        });
 
+</script>
 
 
 {% endblock %}
