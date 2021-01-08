@@ -46,10 +46,13 @@ def property_selected(request, properties_id):
 
     property = get_object_or_404(Property, pk=properties_id)
     images = PropertyImage.objects.filter(property=property)
-
+    lat = property.latitude
+    lng = property.longitude
     context = {
         'property': property,
         'images': images,
+        'lat': lat,
+        'lng': lng,
     }
 
     return render(request, 'properties/property_selected.html', context)

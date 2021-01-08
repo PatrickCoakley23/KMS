@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class Type(models.Model):
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
@@ -34,6 +33,8 @@ class Property(models.Model):
     address = models.CharField(max_length=254)
     county = models.ForeignKey('County', null=True,
                                blank=True, on_delete=models.SET_NULL)
+    latitude = models.DecimalField(max_digits=25, decimal_places=5, null=True, blank=True)
+    longitude = models.DecimalField(max_digits=25, decimal_places=5, null=True, blank=True)
     description = models.TextField()
     bedrooms = models.DecimalField(max_digits=3, decimal_places=0)
     bathrooms = models.DecimalField(max_digits=3, decimal_places=0)
@@ -42,6 +43,8 @@ class Property(models.Model):
     ber_rating = models.TextField()
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+    
+
 
     def __str__(self):
         return self.name

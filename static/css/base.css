@@ -420,6 +420,7 @@ h1, h2, h3, h4, h5 {
 
 /* PROPERTY-SELECTED */
 
+/* Carousel */
 .slider-container {
     margin: 0;
     padding: 0;
@@ -453,11 +454,15 @@ h1, h2, h3, h4, h5 {
     -ms-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1);
-
-
 }
 
+.listing-border {
+    border-right: 1px solid #000;
+}
 
-
+#map {
+   min-height: 360px;
+   width: 50%;
+}
 
 

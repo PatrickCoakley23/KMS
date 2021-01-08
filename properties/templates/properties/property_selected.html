@@ -2,18 +2,59 @@
 {% block content %} 
 
 
-<div class="container-fluid slider-container">
+<div class="container-fluid slider-container my-5">
     <div class="slider">
-    {% for image in images %}
-    <div class="selected-card-inner">
-        <img src="{{ MEDIA_URL}}{{ image.image }}" alt="{{ MEDIA_URL}}{{ image.image }}">
+        {% for image in images %}
+        <div class="selected-card-inner">
+            <img src="{{ MEDIA_URL}}{{ image.image }}" alt="{{ MEDIA_URL}}{{ image.image }}">
+        </div>
+        {% endfor %}  
     </div>
-    {% endfor %}  
 </div>
+
+<div class="container prop-details-container">   
+    <div class="row mb-5">
+        <div class="col listing-address" data-val="51.903614" data-atr="-8.468399">
+            <h3 class="text-center text-uppercase">{{ property.name }}</h3> 
+            <h3 class="text-center text-uppercase">{{ property.address }}</h3> 
+            <h3 class="text-center text-uppercase">{{ property.county }}</h3> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="row mb-5">
+                <div class="col-3 text-center listing-border py-4">
+                    <h5>{{ property.price}}</h5>
+                    <div><i class="fas fa-euro-sign"></i></div>
+                </div>
+                <div class="col-3 text-center listing-border py-4">
+                    <h5>{{ property.bedrooms}}</h5>
+                    <div><i class="fas fa-bed"></i></div>
+                </div>
+                <div class="col-3 text-center listing-border py-4">
+                    <h5>{{ property.bathrooms}}</h5>
+                    <div><i class="fas fa-bath"></i></div>
+                </div>
+                <div class="col-3 text-center py-4">
+                    <h5>{{ property.size }}</h5>
+                    <div><i class="fas fa-ruler-combined"></i></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10 offset-1 text-justify">              
+                    <p>{{ property.description|linebreaksbr }}</p>
+            </div>
+        </div>
+    </div>
 </div>
+<div id="map"></div>
+
+
 {% endblock %}
 
 {% block postloadjs %}
+{{ lat|json_script:"id_latitude" }}
+{{ lng|json_script:"id_longitude" }}
 <script>
 $(".slider").slick({
     slidesToShow: 1,
@@ -21,8 +62,23 @@ $(".slider").slick({
     centerPadding: '25%',
     focusOnSelect: true,
 });
-
 </script>
+    <script>
+        var latitude = $('#id_latitude').text().slice(1, -1);
+        var lat = parseFloat(latitude);
+        var longitude = $('#id_longitude').text().slice(1, -1);
+        var lng = parseFloat(longitude);
 
-
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 16,
+            center: {
+                lat: lat,
+                lng: lng
+            }
+        });
+    } 
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmYxefh_aXTZKZqCik9mU6WiPmVMC7huU&callback=initMap"></script>
 {% endblock %}
