@@ -33,8 +33,8 @@ class Property(models.Model):
     address = models.CharField(max_length=254)
     county = models.ForeignKey('County', null=True,
                                blank=True, on_delete=models.SET_NULL)
-    latitude = models.DecimalField(max_digits=25, decimal_places=5, null=True, blank=True)
-    longitude = models.DecimalField(max_digits=25, decimal_places=5, null=True, blank=True)
+    latitude = models.DecimalField(max_digits=25, decimal_places=5, null=False, blank=False)
+    longitude = models.DecimalField(max_digits=25, decimal_places=5, null=False, blank=False)
     description = models.TextField()
     bedrooms = models.DecimalField(max_digits=3, decimal_places=0)
     bathrooms = models.DecimalField(max_digits=3, decimal_places=0)

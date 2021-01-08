@@ -12,7 +12,7 @@
     </div>
 </div>
 
-<div class="container prop-details-container">   
+<div class="container-fluid prop-details-container">   
     <div class="row mb-5">
         <div class="col listing-address" data-val="51.903614" data-atr="-8.468399">
             <h3 class="text-center text-uppercase">{{ property.name }}</h3> 
@@ -43,11 +43,18 @@
             <div class="row">
                 <div class="col-10 offset-1 text-justify">              
                     <p>{{ property.description|linebreaksbr }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10 offset-1">
+                    <div id="map"></div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<div id="map"></div>
+   
+
 
 
 {% endblock %}
@@ -70,14 +77,35 @@ $(".slider").slick({
         var lng = parseFloat(longitude);
 
         function initMap() {
+
             var map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 16,
-            center: {
+                zoom: 13,
+                center: {
+                    lat: lat,
+                    lng: lng
+                }
+            });
+
+            var labels = "ABCDEFGHIJKLMONPQRSTUVWXYZ";
+
+            var locations = [{    
                 lat: lat,
                 lng: lng
-            }
-        });
-    } 
+            }];
+
+            var markers = locations.map(function(location, i) {
+                return new google.maps.Marker({
+                    position: location,
+                    label: labels[i % labels.length]
+                });
+            });
+
+            var markerCluster = new MarkerClusterer(map, markers, {
+                imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+            });
+
+
+        } 
     </script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmYxefh_aXTZKZqCik9mU6WiPmVMC7huU&callback=initMap"></script>
