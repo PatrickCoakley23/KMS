@@ -116,24 +116,17 @@ h1, h2, h3, h4, h5 {
 .charcoal-wrapper {
     background-color: #0f0f0fd9;
     color: white;
-    padding-bottom: 1150px;
+    padding-bottom: 100px;
     overflow: hidden;
     height: 100%;
 }
 
 .services-image {
-    height: 400px;
+    height: 100%;
     width: 100%;
     border: 0;
     border-left: 2px solid #0f0f0fd9;
     position: relative;
-}
-
-.residential-img {
-}
-
-.image-pt {
-    padding-top: 1.5rem;
 }
 
 .services-header-small {
@@ -150,108 +143,24 @@ h1, h2, h3, h4, h5 {
 
 .services-header-small-extra {
     position: absolute;
-    bottom: 10%;
+    bottom: 2rem;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
     font-size: 2rem;
     font-weight: 900;
     letter-spacing: 3px;
-    text-decoration: underline;
 }
 
-@media (min-width: 992px) {
-    .commercial-property-img {
-        margin-top: -60px;
-    }
-
-    .residential-img {
-        margin-top: -215px;
-    }
-
-    .residential-info {
-        margin-top: -50px;
-    }
-
-    .commercial-info {
-        margin-top: -40px;
-    }
-
-    .land-img {
-        margin-top: -70px;
-    }
-
-    .land-info {
-        margin-top: 70px;
-    }
-
- }
-
-@media (min-width: 1300px) {
-    .commercial-property-img {
-        margin-top: -45px;
-    }
-
-    .residential-img {
-        margin-top: -240px;
-    }
-
-    .residential-info {
-        margin-top: -40px;
-    }
-
-    .commercial-info {
-        margin-top: 15px;
-        margin-left: 1rem;
-    }
-
-    .land-img {
-        margin-top: -60px;
-    }
-
-    .land-info {
-        margin-top: 120px;
-        padding-bottom: 0;
-    }
- }
-
- @media (min-width: 1581px) {
-    .commercial-property-img {
-        margin-top: -20px;
-    }
-
-     .commercial-info {
-        margin-top: 40px;
-    }
- }
-    
- @media (min-width: 2500px) {
-    .residential-img {
-        margin-top: -235px;
-    }
-
-    .residential-info {
-        margin-top: -3px;
-    }
- }
-  
 @media (max-width: 991.98px) {
-    .charcoal-wrapper {
-        padding: 3rem;
+    .services-image {
+        height: 360px;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        border: none;
     }
+ }
 
-    .information-column {
-        padding: 2rem;
-    }
-
-    .land-info {
-        padding-bottom: 0;
-    }
-
-    .parallax-scroll {
-        transform: translate3d(0px, 0px, 0px)!important;
-    }
-}
 
 /* WIDGET */ 
 
@@ -464,5 +373,4 @@ h1, h2, h3, h4, h5 {
    min-height: 360px;
    width: 100%;
 }
-
 
