@@ -104,26 +104,26 @@
             <!--COMMERCIAL PROPERTY-->
             <div class="row">
                 <div class="col-10 offset-1 col-lg-5 offset-lg-0 p-lg-0" data-aos="fade-right">
-                    <img src="{{ MEDIA_URL}}office.jpg" alt="image of office property" class="services-image commercial-property-img">
-                    <span class="d-lg-none services-header-small-extra"><h2 data-aos="fade-right">Commercial</h2></span>
-                    <span class="d-lg-none services-header-small"><h2 data-aos="fade-right">Property</h2></span>
-                </div>
-                <div class="col-10 col-lg-5 offset-1 offset-lg-1 information-column commercial-info my-auto d-none d-lg-inline" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-                    <span><h3 class="yellow-text">Commercial Property</h3></span>
-                    <p>Working with national and international commercial property owners, occupiers, investors and developers, our specialist teams have an in-depth knowledge of, and experience in, all aspects of commercial property markets in Ireland.</p>
-                    <p>From offices to business parks and industrial units to development land, our exceptional commercial acumen allows us to respond to a wide range of commercial property needs across Ireland and globally.</p>
-                </div>
-            </div>
-            <!--LAND SALES-->
-            <div class="row land-padding">
-                <div class="col-10 col-lg-3 offset-1 offset-lg-2 order-second order-lg-first information-column land-info my-auto d-none d-lg-inline" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-                    <span><h3 class="yellow-text">Land Sales</h3></span>
-                    <p>Whether you are buying or selling land for commercial or residential purposes, Keane Mahony Smith can work with you throughout the entire process, offering valuable insight and hands-on expertise at every stage.</p>
-                </div>
-                <div class="col-10 offset-1 col-lg-7 offset-lg-0 order-first order-lg-second p-lg-0" data-aos="fade-left">
                     <img src="{{ MEDIA_URL}}agriculture.jpg" alt="image of agriculture property" class="services-image land-img">
                     <span class="d-lg-none services-header-small-extra"><h2 data-aos="fade-left">Land</h2></span>
                     <span class="d-lg-none services-header-small"><h2 data-aos="fade-left">Sales</h2></span>
+                </div>
+                <div class="col-10 col-lg-5 offset-1 offset-lg-1 information-column land-info my-auto d-none d-lg-inline" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+                    <span><h3 class="yellow-text">Land Sales</h3></span>
+                    <p>Whether you are buying or selling land for commercial or residential purposes, Keane Mahony Smith can work with you throughout the entire process, offering valuable insight and hands-on expertise at every stage.</p>
+                </div>
+            </div>
+            <!--LAND SALES-->
+            <div class="row padding-lg">
+                <div class="col-10 col-lg-3 offset-1 offset-lg-2 order-second order-lg-first information-column commercial-info my-auto d-none d-lg-inline" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+                     <span><h3 class="yellow-text">Commercial Property</h3></span>
+                    <p>Working with national and international commercial property owners, occupiers, investors and developers, our specialist teams have an in-depth knowledge of, and experience in, all aspects of commercial property markets in Ireland.</p>
+                    <p>From offices to business parks and industrial units to development land, our exceptional commercial acumen allows us to respond to a wide range of commercial property needs across Ireland and globally.</p>
+                </div>
+                <div class="col-10 offset-1 col-lg-7 offset-lg-0 order-first order-lg-second p-lg-0" data-aos="fade-left">
+                    <img src="{{ MEDIA_URL}}office.jpg" alt="image of office property" class="services-image commercial-property-img">
+                    <span class="d-lg-none services-header-small-extra"><h2 data-aos="fade-right">Commercial</h2></span>
+                    <span class="d-lg-none services-header-small"><h2 data-aos="fade-right">Property</h2></span>
                 </div>
             </div>
         </div>
@@ -250,50 +250,16 @@
         </section>
     </div>    
     -->
-
-    <div class=" para-container">
-        <div class="para-img">
-        </div>
-    </div>
     
    
 {% endblock %}
 
-
 {% block postloadjs %}    
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>AOS.init({
-    disable: 'tablet'
+    offset:200,
 });
 </script>
-<script type = "text/javascript" >
-    // Listen to scroll and add parallax to elements with class name "scroll"
-    window.addEventListener('scroll', function(e) {
-        const parallax = document.querySelectorAll('.scroll');
 
-
-        var index = 0,
-            length = parallax.length;
-        for (index; index < length; index++) {
-            var pos = window.pageYOffset * parallax[index].dataset.rate;
-
-
-            parallax[index].style.transform = `translate3d(0px, ${pos}px, 0px)`;
-        }
-    });
-
-// Media query to remove parallax below 992px screen width
-function myFunction(screenSize) {
-    if (screenSize.matches) { // If media query matches
-        document.querySelectorAll('.parallax-scroll').forEach(e => e.classList.remove("scroll"));
-    } else {
-        document.querySelectorAll('.parallax-scroll').forEach(e => e.classList.add("scroll"));
-    }
-}
-
-var screenSize = window.matchMedia("(max-width: 992px)")
-myFunction(screenSize) // Call listener function at run time
-screenSize.addListener(myFunction) // Attach listener function on state changes 
-</script>
   
 {% endblock %}

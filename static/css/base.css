@@ -99,7 +99,7 @@ h1, h2, h3, h4, h5 {
 
 .about-wrapper-cream {
     background-color: #F1F2F2;
-    color:  #574c52;;
+    color:  #9e8492;;
 }
 
 .about-container {
@@ -129,7 +129,6 @@ h1, h2, h3, h4, h5 {
 .charcoal-wrapper {
     background-color: #0f0f0fd9;
     color: white;
-    padding-bottom: 100px;
     overflow: hidden;
     height: 100%;
 }
@@ -165,6 +164,10 @@ h1, h2, h3, h4, h5 {
     letter-spacing: 3px;
 }
 
+.padding-lg {
+    padding-bottom: 3rem;
+}
+
 @media (max-width: 991.98px) {
     .services-image {
         height: 360px;
@@ -172,7 +175,15 @@ h1, h2, h3, h4, h5 {
         padding-bottom: 3rem;
         border: none;
     }
+    [data-aos-delay] {
+    transition-delay: 0s !important;
+    }
+    .padding-lg {
+    padding-bottom: 0;
+}
+
  }
+
 
 
 /* WIDGET */ 
