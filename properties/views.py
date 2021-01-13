@@ -3,6 +3,7 @@ from django.db.models import Max
 from django.core.paginator import Paginator
 from .models import Property, Type, County, PropertyImage
 from .filters import PropertyFilter
+from django.conf import settings
 
 
 def properties(request):
@@ -46,6 +47,7 @@ def property_selected(request, properties_id):
 
     property = get_object_or_404(Property, pk=properties_id)
     images = PropertyImage.objects.filter(property=property)
+    google_api_key = settings.GOOGLE_API_KEY
     lat = property.latitude
     lng = property.longitude
     context = {
@@ -53,6 +55,7 @@ def property_selected(request, properties_id):
         'images': images,
         'lat': lat,
         'lng': lng,
+        'google_api_key': google_api_key
     }
 
     return render(request, 'properties/property_selected.html', context)

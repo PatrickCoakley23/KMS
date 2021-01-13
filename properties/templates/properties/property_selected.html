@@ -60,53 +60,18 @@
 {% endblock %}
 
 {% block postloadjs %}
-{{ lat|json_script:"id_latitude" }}
-{{ lng|json_script:"id_longitude" }}
-<script>
-$(".slider").slick({
-    slidesToShow: 1,
-    centerMode: true,
-    centerPadding: '25%',
-    focusOnSelect: true,
-});
-</script>
+    {{ lat|json_script:"id_latitude" }}
+    {{ lng|json_script:"id_longitude" }}
+    <script src="{% static 'properties/js/map.js' %}"></script>
     <script>
-        var latitude = $('#id_latitude').text().slice(1, -1);
-        var lat = parseFloat(latitude);
-        var longitude = $('#id_longitude').text().slice(1, -1);
-        var lng = parseFloat(longitude);
-
-        function initMap() {
-
-            var map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 13,
-                center: {
-                    lat: lat,
-                    lng: lng
-                }
-            });
-
-            var labels = "ABCDEFGHIJKLMONPQRSTUVWXYZ";
-
-            var locations = [{    
-                lat: lat,
-                lng: lng
-            }];
-
-            var markers = locations.map(function(location, i) {
-                return new google.maps.Marker({
-                    position: location,
-                    label: labels[i % labels.length]
-                });
-            });
-
-            var markerCluster = new MarkerClusterer(map, markers, {
-                imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
-            });
-
-
-        } 
+    $(".slider").slick({
+        slidesToShow: 1,
+        centerMode: true,
+        centerPadding: '25%',
+        focusOnSelect: true,
+    });
     </script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-   
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ google_api_key}}&callback=initMap"><script>
+
 {% endblock %}
