@@ -3,7 +3,7 @@
 {% block page_header %}
     <nav class="navbar navbar-expand-lg w-100">
         <!-- BRAND AND LOGO-->
-        <a class="navbar-brand uppercase" href="#"><img src="{{ MEDIA_URL}}kms_logo.png" alt="404 image" class="logo_img"></a>
+        <a class="navbar-brand uppercase" href="{% url 'home' %}"><img src="{{ MEDIA_URL}}kms_logo.png" alt="404 image" class="logo_img"></a>
         <!-- HAMBURGER MENU FOR SMALLER SCREEN WIDTHS-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler1" aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -42,12 +42,12 @@
 {% block content %}
     <!--ABOUT CONTAINER-->
     <section class="about">
-        <div class="container-fluid about-container about-wrapper-cream">    
+        <div class="container-fluid about-container about-wrapper-cream about">    
             <div class="row padding-row">
-                <div class="col-3 offset-1 about-header">
-                    <h5 class="text-uppercase">a Boutique Agency who cares</h5>
+                <div class="col-12 col-lg-3 offset-lg-1">
+                    <h4 class="text-uppercase">a Boutique Agency who cares</h4>
                 </div>
-                <div class="col-7 offset-1 about-paragraph">
+                <div class="col-12 col-lg-6 offset-lg-1 about-paragraph">
                     <p>Keane Mahony Smith auctioneers and estate agents are one of the largest and most established property selling agents in the south of Ireland, 
                     specializing in quality residential and commercial property, farms and lands, coastal and country.
                     </p>
@@ -55,6 +55,24 @@
                     We are confident that, whatever your property requirements, 
                     selling or purchasing we can cater for them at Keane Mahony Smith Cork.
                     </p>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col col-lg-7 offset-lg-5 about-paragraph">
+                    <p>Yours Faithfully,</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 offset-4 col-lg-3 offset-lg-1 order-second order-lg-first ">
+                    <h3 class="signature">Darragh Taaffe</h3>
+                </div>
+                <div class="col-4 col-lg-6 offset-lg-1 order-first order-lg-second about-paragraph">
+                    <p>Darragh Taaffe & Anthony O'Regan</p>
+                </div>
+            </div>
+            <div class="row pb-container">
+                <div class="col-4 offset-8 col-lg-3 offset-lg-1">
+                    <h3 class="signature">Anthony O'Regan</h3>
                 </div>
             </div>
             <!--INFO WIDGET-->
