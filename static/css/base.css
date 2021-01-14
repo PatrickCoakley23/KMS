@@ -264,6 +264,7 @@ h1, h2, h3, h4, h5 {
 
 .charcoal-overlay {
     background-color: #181b1e;
+    padding-bottom: 75px;
 }
 
 .team-img {
@@ -317,7 +318,7 @@ hr {
     opacity: 1;
 }
 
-.team-card:hover .hover-content p i {
+.team-card:hover .hover-content span i {
     color: black;
 }
 
@@ -325,9 +326,11 @@ hr {
     filter: grayscale(0%);
 }
 
-.team-padding {
-    padding-left: 2.5px;
-    padding-right: 2.5px;
+@media (min-width: 992px) and (max-width:1200px) {
+    .team-padding {
+        padding-left: 2.5px;
+        padding-right: 2.5px;
+    }
 }
 
 .job-title {
@@ -346,9 +349,16 @@ hr {
     padding-top: 75px;
 }
 
-.mb-team {
-    margin-bottom: 75px;
-}
+@media (max-width: 991.98px) {
+    .team-padding {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+ }
+
+
+
+
 
 /* PROPERTIES PAGE */
 
