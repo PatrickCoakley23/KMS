@@ -237,16 +237,18 @@ h1, h2, h3, h4, h5 {
 .card-testimonials {
     border: 0;
     border-radius: 0;
-    box-shadow: 5px 5px 15px #000000;
+    box-shadow: 5px 5px 15px #f8f9fa;
     transition: all 0.3s ease-in;
     webkit-transition: all 0.3s ease-in;
-    background-color: #968c8c;
+    background-color: #332f2f;
     color: white;
 }
 
 .card-testimonials:hover {
     background:linear-gradient(#ffd900, #ffc510);
     color: black;
+    box-shadow: 5px 5px 15px #111111;
+    transition: all 0.3s ease-in;
 }
 
 .img-fluid-testimonials {

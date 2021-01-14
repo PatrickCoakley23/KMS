@@ -141,30 +141,21 @@
         <section class="testimonials">
             <div class="container testimonials-container">
                 <div class="card-deck">
+                    {% for testimonial in testimonials %}
                     <div class="card card-testimonials">
-                        <img src="{{ MEDIA_URL}}test1.jpg" alt="image of agriculture property" class="img-fluid img-fluid-testimonials  rounded-circle w-50 mx-auto">
+                        {% if testimonial.image %}
+                        <img src="{{ MEDIA_URL}}{{ testimonial.image }}" alt="{{ testimonial.clients_name }}" class="img-fluid img-fluid-testimonials  rounded-circle w-50 mx-auto">
+                        {% else %}
+                          <img class="img-fluid img-fluid-testimonials  rounded-circle w-50 mx-auto" src="{{ MEDIA_URL }}noimage.jpg" 
+                          alt="{{ testimonial.clients_name }}"/>
+                        {% endif %}
                         <div class="card-body h-100">
-                        <h5 class="card-title">Olivia O'Keeffe</h5>
-                        <p class="card-text mb-4">We sold our home through KMS and was so impressed by the service, care, and effort of the team gave us the entire way through the process. It was a challenging time to sell a house, right in the middle of a pandemic (!), and KMS team were a huge support and counsel throughout. Importantly they got us a great price for our property. </p>
-                        <p class="card-text d-flex align-bottom"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <h5 class="card-title">{{ testimonial.clients_name }}</h5>
+                        <p class="card-text mb-4">{{ testimonial.comment }}</p>
+                        <p class="card-text d-flex align-bottom"><small class="text-muted">{{ testimonial.date_published }}</small></p>
                         </div>
                     </div>
-                    <div class="card card-testimonials">
-                        <img src="{{ MEDIA_URL}}test2.jpg" alt="image of agriculture property" class="img-fluid img-fluid-testimonials rounded-circle w-50 mx-auto">
-                        <div class="card-body h-100">
-                        <h5 class="card-title">Ger Kelleher</h5>
-                        <p class="card-text mb-4">I recently sold a house using KMS and would highly recommend. I was extremely impressed with their knowledge of the local market and with the marketing of the property to achieve optimal return. Darragh and Anthony and the team were great to work with throughout the entire process and I was delighted with the price we ended up getting</p>
-                        <p class="card-text d-flex align-bottom"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card card-testimonials">
-                        <img src="{{ MEDIA_URL}}test3.jpg" alt="image of agriculture property" class="img-fluid img-fluid-testimonials rounded-circle w-50 mx-auto">
-                        <div class="card-body h-100">
-                        <h5 class="card-title">Don Lucey</h5>
-                        <p class="card-text mb-4">Firstly our house was well marketed to get the best possible price whilst Darragh and Anthony ensured that potential purchasers were vetted properly to achieve a good match. This was set against the onset of the lockdown and the difficulties that ensued. Worth every penny of their fee! Now we are on the hunt for a new home in the country </p>
-                        <p class="card-text d-flex align-bottom"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div> 
             <!--INFO WIDGET-->
@@ -271,6 +262,7 @@
     once: true,
 });
 </script>
+
 
   
 {% endblock %}
