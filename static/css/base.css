@@ -263,17 +263,18 @@ h1, h2, h3, h4, h5 {
 /* MEET THE TEAM SECTION */
 
 .charcoal-overlay {
-    background-color: #0f0f0fd9;
+    background-color: #181b1e;
 }
 
 .team-img {
     height: 250px;
     width: 100%;
+    filter: grayscale(100%);
 }
+
 
 .p-lighter {
     font-weight: lighter;
-    color: gray;
 }
 
 .contact-team {
@@ -281,29 +282,73 @@ h1, h2, h3, h4, h5 {
     z-index: 2;
 }
 
+.hover-content {
+    opacity: 0;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 2px solid #ffd900;
+    width: 50px;
+}
+
 .info {
     text-align: center;
     padding: 35px 0 45px 0;
-    background-color:#ECEFF0;
+    background-color:#33393e;
     transition: all 0.3s ease;
     position: relative;
-    z-index: 1;
+    color: white;
 }
 
 .team-card:hover .info {
-    padding: 35px 0 130px 0;
-    margin: -85px 0 0 0;
-    background-color: green;
+    padding: 35px 0 100px 0;
+    margin: -55px 0 0 0;
+    background: linear-gradient(#ffd900, #ffc510);
 }
 
+.team-card:hover hr {
+    border-top: 2px solid #111111;
+}
+
+.team-card:hover .hover-content {
+    opacity: 1;
+}
+
+.team-card:hover .hover-content p i {
+    color: black;
+}
+
+.team-card:hover .team-img {
+    filter: grayscale(0%);
+}
 
 .team-padding {
     padding-left: 2.5px;
     padding-right: 2.5px;
 }
 
+.job-title {
+    color: #ffd900;
+}
 
+.team-card:hover .job-title {
+    color: black;
+}
 
+.team-card:hover .team-name {
+    color: black;
+}
+
+.pt-team {
+    padding-top: 75px;
+}
+
+.mb-team {
+    margin-bottom: 75px;
+}
 
 /* PROPERTIES PAGE */
 
