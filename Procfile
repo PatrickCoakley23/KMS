@@ -1,1 +1,1 @@
-web: gunicorn KMS.wsgi:application 
+web: gunicorn KMS.wsgi:application
