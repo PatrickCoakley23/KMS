@@ -1,0 +1,117 @@
+/* PROPERTIES PAGE */
+
+ .properties-hero-image-container {
+    background: url('/media/balsamiq_banner.jpg') no-repeat center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    height: 60vh;
+ }
+
+/* PROPERTIES-CARD */
+
+.properties-card-img {
+    height: 200px;
+}
+
+.padding-price {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.card-footer-properties {
+    padding: 0;
+}
+
+/* PROPERTIES-NAVBAR */
+
+.property-search-navbar {
+    position: relative;
+}
+
+.property-search-nav-item {
+    margin-right: 5rem;
+}
+
+.search-btn {
+    margin-top: 2rem;
+    width: 100%;
+    height: 3rem;
+}
+
+.form-control {
+    height: 3rem;
+}
+
+/* JUMBOTRON */
+
+.jumbotron {
+    padding: 2rem;
+}
+
+/* dropdown button */ 
+
+.btn-dropdown {
+    display: inline-block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem 1.75rem .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: left;
+    vertical-align: middle;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* PROPERTY-SELECTED */
+
+/* Carousel */
+.slider-container {
+    margin: 0;
+    padding: 0;
+}
+
+.slider {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.slick-slide img {
+    width: 100%;
+    height: 500px;
+}
+
+.slick-slide {
+    transform: scale(.6);
+    transition: transform .99s ease-in-out,filter 1s ease-in-out;
+    will-change: transform,filter;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    transition: 2000ms ease;
+   
+}
+
+.slick-current {
+    filter: grayscale(0);
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
+.listing-border {
+    border-right: 1px solid #000;
+}
+
+#map {
+   min-height: 360px;
+   width: 100%;
+}

@@ -1,4 +1,9 @@
 {% extends "base.html" %} {% load static %} {% load properties_extras %} 
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'properties/css/properties.css' %}">
+{% endblock %}
+
 {% block content %} 
 
 

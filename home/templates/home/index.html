@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/testimonial.css' %}">
+{% endblock %}
+
 {% block page_header %}
     <nav class="navbar navbar-expand-lg w-100">
         <!-- BRAND AND LOGO-->
@@ -140,20 +146,22 @@
     <div class="overlay">
         <section class="testimonials">
             <div class="container testimonials-container">
-                <div class="card-deck">
+                <div class="testimonial-carousel">
                     {% for testimonial in testimonials %}
-                    <div class="card card-testimonials">
+                    <div class="card-testimonials">
                         {% if testimonial.image %}
-                        <img src="{{ MEDIA_URL}}{{ testimonial.image }}" alt="{{ testimonial.clients_name }}" class="img-fluid img-fluid-testimonials  rounded-circle w-50 mx-auto">
+                        <img src="{{ MEDIA_URL}}{{ testimonial.image }}" alt="{{ testimonial.clients_name }}" class="rounded-circle w-50 mx-auto">
                         {% else %}
-                          <img class="img-fluid img-fluid-testimonials  rounded-circle w-50 mx-auto" src="{{ MEDIA_URL }}noimage.jpg" 
+                          <img class="rounded-circle w-50 mx-auto" src="{{ MEDIA_URL }}noimage.jpg" 
                           alt="{{ testimonial.clients_name }}"/>
                         {% endif %}
-                        <div class="card-body h-100">
-                        <h5 class="card-title">{{ testimonial.clients_name }}</h5>
-                        <p class="card-text mb-4">{{ testimonial.comment }}</p>
-                        <p class="card-text d-flex align-bottom"><small class="text-muted">{{ testimonial.date_published }}</small></p>
-                        </div>
+                            <div class="testimonial-body h-100">
+                                <h5 class="card-title">{{ testimonial.clients_name }}</h5>
+                                <p class="card-text mb-4">{{ testimonial.comment }}</p>
+                                <p class="card-text d-flex align-bottom">
+                                <small class="text-muted">{{ testimonial.date_published }}</small>
+                                </p>
+                            </div>
                     </div>
                     {% endfor %}
                 </div>
@@ -257,12 +265,18 @@
 
 {% block postloadjs %}    
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>AOS.init({
-    offset:200,
-    once: true,
-});
-</script>
-
-
+    <script>
+        AOS.init({
+            offset:200,
+            once: true,
+        });
+    </script>
+    <script>
+        $('.testimonial-carousel').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3
+        });
+    </script>
   
 {% endblock %}
