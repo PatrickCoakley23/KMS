@@ -6,8 +6,6 @@
     webkit-transition: all 0.3s ease-in;
     background-color: #332f2f;
     color: white;
-    padding-top: 7rem;
-    padding-bottom: 7rem;
 }
 
 .card-testimonials:hover {
@@ -19,6 +17,21 @@
 
 .slick-slide img {
     height: 150px;
-    margin-top: -50px;
+    margin-top: 1rem;
     border: 2px solid white;
 }
+
+.testimonial-body {
+    padding: 1rem;
+}
+
+.slick-slide {
+    height: 600px !important;
+}
+
+@media (min-width:380px) and (max-width: 768px) {
+    .slick-slide {
+    height: 500px !important;
+    }
+}
+

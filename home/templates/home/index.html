@@ -46,7 +46,8 @@
 {% endblock%}
 
 {% block content %}
-    <!--ABOUT CONTAINER-->
+
+
     <section class="about">
         <div class="container-fluid about-container about-wrapper-cream about">    
             <div class="row padding-row">
@@ -81,7 +82,7 @@
                     <h3 class="signature">Anthony O'Regan</h3>
                 </div>
             </div>
-            <!--INFO WIDGET-->
+           
             <div class="row services-widget-container">
                 <div class="col-4 offset-3 services-widget">
                     <h3 class="text-center margin-widget charcoal-text">Our Services</h3>
@@ -90,11 +91,10 @@
             </div>
         </div>
     </section>
-    
-    <!--SERVICES CONTAINER-->
+  
     <section class="services">
         <div class="container-fluid charcoal-wrapper">
-            <!--RESIDENTIAL PROPERTY-->
+           
             <div class="row">
                 <div class="col-10 col-lg-3 offset-1 offset-lg-2 order-second order-lg-first information-column residential-info my-auto d-none d-lg-inline" data-aos="fade-up"  data-aos-duration="1000" data-aos-offset="200">
                     <span><h3 class="yellow-text">Residential Property</h3></span>
@@ -107,7 +107,7 @@
                     <span class="d-lg-none services-header-small"><h2 data-aos="fade-left">Property</h2></span>
                 </div>
             </div>
-            <!--COMMERCIAL PROPERTY-->
+          
             <div class="row">
                 <div class="col-10 offset-1 col-lg-5 offset-lg-0 p-lg-0" data-aos="fade-right">
                     <img src="{{ MEDIA_URL}}agriculture.jpg" alt="image of agriculture property" class="services-image land-img">
@@ -119,7 +119,7 @@
                     <p>Whether you are buying or selling land for commercial or residential purposes, Keane Mahony Smith can work with you throughout the entire process, offering valuable insight and hands-on expertise at every stage.</p>
                 </div>
             </div>
-            <!--LAND SALES-->
+         
             <div class="row padding-lg">
                 <div class="col-10 col-lg-3 offset-1 offset-lg-2 order-second order-lg-first information-column commercial-info my-auto d-none d-lg-inline" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
                      <span><h3 class="yellow-text">Commercial Property</h3></span>
@@ -134,7 +134,7 @@
             </div>
         </div>
     </section>
-     <!--INFO WIDGET-->
+
     <div class="container-fluid testimonials-widget-container">
         <div class="row">
             <div class="col-4 offset-3 testimonials-widget">
@@ -143,6 +143,7 @@
             </div>
         </div>
     </div>
+ 
     <div class="overlay">
         <section class="testimonials">
             <div class="container testimonials-container">
@@ -152,21 +153,23 @@
                         {% if testimonial.image %}
                         <img src="{{ MEDIA_URL}}{{ testimonial.image }}" alt="{{ testimonial.clients_name }}" class="rounded-circle w-50 mx-auto">
                         {% else %}
-                          <img class="rounded-circle w-50 mx-auto" src="{{ MEDIA_URL }}noimage.jpg" 
-                          alt="{{ testimonial.clients_name }}"/>
+                        <img class="rounded-circle w-50 mx-auto" src="{{ MEDIA_URL }}noimage.jpg" 
+                        alt="{{ testimonial.clients_name }}"/>
                         {% endif %}
-                            <div class="testimonial-body h-100">
+                            <div class="testimonial-body">
                                 <h5 class="card-title">{{ testimonial.clients_name }}</h5>
                                 <p class="card-text mb-4">{{ testimonial.comment }}</p>
                                 <p class="card-text d-flex align-bottom">
                                 <small class="text-muted">{{ testimonial.date_published }}</small>
                                 </p>
                             </div>
+                        
                     </div>
                     {% endfor %}
                 </div>
             </div> 
-            <!--INFO WIDGET-->
+
+      
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-4 offset-3 services-widget">
@@ -177,7 +180,7 @@
             </div> 
         </section>
     </div>
-    <!--MEET THE TEAM-->
+   
     <div class="charcoal-overlay">
         <div class="container team-container">
             <section class="meet-the-team">
@@ -260,7 +263,7 @@
             </section>
         </div>    
     </div>
-   
+
 {% endblock %}
 
 {% block postloadjs %}    
@@ -275,7 +278,25 @@
         $('.testimonial-carousel').slick({
             infinite: true,
             slidesToShow: 3,
-            slidesToScroll: 3
+            slidesToScroll: 3,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    dots: true,
+                    }
+                }
+              ]
         });
     </script>
   
