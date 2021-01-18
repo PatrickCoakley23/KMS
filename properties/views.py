@@ -87,10 +87,10 @@ def property_selected(request, properties_id):
         ber_image = 'D2_BER_RGB_Web_and_PC.png'
 
     elif ber_rating == 'E1':
-        ber_image = 'E1_BER_RGB_Web_and_PC.png'
+        ber_image = 'E1_RGB_BER.png'
 
     elif ber_rating == 'E2':
-        ber_image = 'E2_BER_RGB_Web_and_PC.png'
+        ber_image = 'E2_RGB_BER.png'
 
     elif ber_rating == 'F':
         ber_image = 'F_BER_RGB_Web_and_PC.png'

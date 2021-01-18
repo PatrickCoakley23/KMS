@@ -32,17 +32,20 @@
                     <h5>{{ property.price}}</h5>
                     <div><i class="fas fa-euro-sign"></i></div>
                 </div>
-                <div class="col-3 text-center listing-border py-4">
+                <div class="col-2 text-center listing-border py-4">
                     <h5>{{ property.bedrooms}}</h5>
                     <div><i class="fas fa-bed"></i></div>
                 </div>
-                <div class="col-3 text-center listing-border py-4">
+                <div class="col-2 text-center listing-border py-4">
                     <h5>{{ property.bathrooms}}</h5>
                     <div><i class="fas fa-bath"></i></div>
                 </div>
-                <div class="col-3 text-center py-4">
-                    <h5>{{ property.size }}</h5>
+                <div class="col-3 text-center listing-border py-4">
+                    <h5>{{ property.size }} m</h5>
                     <div><i class="fas fa-ruler-combined"></i></div>
+                </div>
+                <div class="col-2 text-center py-4">
+                    <img src="{{MEDIA_URL}}{{ ber_image }}" alt="" class="ber_image">
                 </div>
             </div>
             <div class="row">
@@ -55,15 +58,9 @@
                     <div id="map"></div>
                 </div>
             </div>
-            <div class="row">
-                <img src="{{MEDIA_URL}}{{ ber_image }}" alt="">
-            </div>
         </div>
     </div>
 </div>
-   
-
-
 
 {% endblock %}
 
@@ -81,4 +78,4 @@
     </script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ google_api_key}}&callback=initMap"></script>
-{% endblock %}
+{% endblock %} 

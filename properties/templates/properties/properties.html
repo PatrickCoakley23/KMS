@@ -116,13 +116,21 @@
                 <p class="mb-0">{{ properties.county }}</p>
                 </div>
                 <hr />
-                {% if properties.price == 0 %}
-                <p class="mb-0">Price Upon Request</p>
-                <hr />
-                {% else %}
-                <p class="lead mb-0 font-weight-bold padding-price">€{{ properties.price }}</p>
-                <hr />
-                {% endif %}
+                <div class="row">
+                    {% if properties.price == 0 %}
+                    <div class="col-8">
+                    <p class="mb-0">Price Upon Request</p>
+                    </div>
+                    {% else %}
+                    <div class="col-8">
+                    <p class="lead mb-0 font-weight-bold padding-price">€{{ properties.price }}</p>
+                    </div>
+                    {% endif %}
+                    <div class="col-4">
+                    <img src="{{ MEDIA_URL }}A1_BER_RGB_Web_and_PC.png" alt="" class="ber_image-card">
+                    </div> 
+                </div>
+                 <hr />
                 <div class="card-footer card-footer-properties bg-white pt-0 border-0 text-left">
                     <div class="row">
                         <div class="col-4 text-center">
