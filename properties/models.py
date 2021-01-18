@@ -23,9 +23,24 @@ class County(models.Model):
 
 
 class Property(models.Model):
-
-    class Meta:
-        verbose_name_plural = 'Properties'
+    
+    BER_RATING_CHOICES = (
+        ('A1', ('A1')),
+        ('A2', ('A2')),
+        ('A3', ('A3')),
+        ('B1', ('B1')),
+        ('B2', ('B2')),
+        ('B3', ('B3')),
+        ('C1', ('C1')),
+        ('C2', ('C2')),
+        ('C3', ('C3')),
+        ('D1', ('D1')),
+        ('D2', ('D2')),
+        ('E1', ('E1')),
+        ('E2', ('E2')),
+        ('FG', ('FG')),
+        ('Exempt', ('EXEMPT')),
+    )
 
     name = models.CharField(max_length=254)
     property_type = models.ForeignKey('Type', null=True,
@@ -40,11 +55,12 @@ class Property(models.Model):
     bathrooms = models.DecimalField(max_digits=3, decimal_places=0)
     price = models.DecimalField(max_digits=8, decimal_places=0)
     size = models.DecimalField(max_digits=8, decimal_places=0)
-    ber_rating = models.TextField()
+    ber_rating = models.CharField(max_length=10, choices=BER_RATING_CHOICES, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     
-
+    class Meta:
+        verbose_name_plural = 'Properties'
 
     def __str__(self):
         return self.name
