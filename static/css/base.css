@@ -133,7 +133,7 @@ h1, h2, h3, h4, h5 {
 
 @media (max-width: 310px) {
     .signature {
-    font-size: 20px;
+    font-size: 20qpx;
     }
 }
 
