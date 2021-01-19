@@ -82,7 +82,7 @@
         {{ filter.qs|length}} Properties 
         </p>
         </div>
-        <div class="col-8 offset-1 col-sm-5 offset-sm-1 my-auto d-flex justify-content-md-end">
+        <div class="col-8 offset-1 col-sm-5 offset-sm-1 col-md-3 offset-md-3 my-auto d-flex justify-content-md-end">
             <button class="btn dropdown-toggle btn-dropdown w-75" type="button" data-toggle="dropdown">Sort By: </button>
                 <ul class="dropdown-menu w-100 rounded-0">
                     <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?{% query_transform request sort='price' direction='asc' %}">Price High to Low</a></li>
@@ -158,22 +158,37 @@
     </div>
 </div>
 
-<div class="pagination">
-    <span class="step-links">
-        {% if page_obj.has_previous %}
-            <a href="{% properties_url 1 'page' request.GET.urlencode  %}">&laquo; first</a>
-            <a href="{% properties_url page_obj.previous_page_number 'page' request.GET.urlencode %}">previous</a>
-        {% endif %}
 
-        <span class="current">
+    <div class="row">
+        <div class="col-12">
+            <div class="pagination">
+                {% if page_obj.has_previous %}
+                    <a href="{% properties_url 1 'page' request.GET.urlencode  %}">&laquo; first</a>
+                    <a href="{% properties_url page_obj.previous_page_number 'page' request.GET.urlencode %}">previous</a>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                    <a class="btn btn-info" href="{% properties_url num 'page' request.GET.urlencode%}">{{num}}</a>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <a class="btn btn-outline-info" href="{%properties_url num 'page' request.GET.urlencode%}">{{num}}</a>
+                    {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                    <a href="{% properties_url page_obj.next_page_number 'page' request.GET.urlencode %}">next</a>
+                    <a href="{% properties_url page_obj.paginator.num_pages 'page' request.GET.urlencode %}">last &raquo;</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p>
             Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-        </span>
-
-        {% if page_obj.has_next %}
-            <a href="{% properties_url page_obj.next_page_number 'page' request.GET.urlencode %}">next</a>
-            <a href="{% properties_url page_obj.paginator.num_pages 'page' request.GET.urlencode %}">last &raquo;</a>
-        {% endif %}
-    </span>
+            </p>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

@@ -29,9 +29,9 @@ def properties(request):
             properties = properties.order_by(sortkey)
             propFilter = PropertyFilter(request.GET, queryset=properties)
 
-    paginated_properties = Paginator(propFilter.qs, 15)
-    page_number = request.GET.get('page')
-    page_obj = paginated_properties.get_page(page_number)
+    paginator = Paginator(propFilter.qs, 3)
+    page = request.GET.get('page')
+    page_obj = paginator.get_page(page)
 
     context = {
     'filter': propFilter, 
