@@ -80,14 +80,17 @@
         {{ filter.qs|length}} Properties 
         </p>
         </div>
-        <div class="col-3 offset-9 my-auto d-flex justify-content-md-end">
+        <div class="col-3 offset-md-3 my-auto d-flex justify-content-md-end">
             <button class="btn dropdown-toggle btn-dropdown rounded-0 w-75" type="button" data-toggle="dropdown">Sort By.. </button>
                 <ul class="dropdown-menu w-100 rounded-0">
                     <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?{% query_transform request sort='price' direction='asc' %}">Price High to Low</a></li>
                     <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?{% query_transform request sort='price' direction='desc' %}">Price Low to High</a></li>
+                    <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?{% query_transform request sort='date_added' direction='asc' %}">Date: Oldest to Newest</a></li>
+                    <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?{% query_transform request sort='date_added' direction='desc' %}">Date: Newest to Oldest</a></li>
                 </ul>
         </div>
    </div>
+   
     
     <div class="row">
         {% for properties in page_obj %}
