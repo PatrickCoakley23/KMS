@@ -30,46 +30,44 @@
             </ul>
         </div>
     </nav>
-<div class="container-fluid properties-hero-image-container">
-    <div class="row h-100">
-        <div class="col-7 col-md-6 my-auto text-center text-white">
-            <h1>Properties</h1>
+
+<div class="container-fluid properties-hero-image-container mb-3">
+    <div class="properties-hero-image">
+    </div>
+    <div class="row padding-left-right-off">
+        <div class="col-10 offset-1 col-xl-8 offset-xl-2  filter-jumbotron">
+            <form method="get">
+                <div class="form-row">
+                    <div class="form-group col-6 col-md-3 p-md-0">
+                        <label for="input-prop-type">Property Type</label>
+                        {{ filter.form.property_type |as_crispy_field}}
+                    </div>
+                    <div class="form-group col-6 col-md-2 p-md-0">
+                        <label for="input-county">County</label>
+                        {{ filter.form.county |as_crispy_field}}
+                    </div>
+                    <div class="form-group d-none d-md-block col-md-2 p-0">
+                        <label for="price-min">Price Min</label>
+                        {{ filter.form.price__gte |as_crispy_field}}
+                    </div>
+                    <div class="form-group  d-none d-md-block col-md-2 p-0">
+                        <label for="price-max">Price Max</label>
+                        {{ filter.form.price__lte |as_crispy_field}}
+                    </div>
+                    <div class="form-group  d-none d-md-block col-md-2 p-0">
+                        <label for="min-beds">Min Beds</label>
+                        {{ filter.form.bedrooms__gte |as_crispy_field}}
+                    </div>
+                    <div class="form-group col-6 offset-3 col-md-1 offset-md-0 p-0">
+                        <button class="btn search-btn" type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
 {% endblock %}
 {% block content %} 
-<div class="container jumbotron">
-    <form method="get">
-        <div class="form-row">
-            <div class="form-group col-3 p-0">
-                <label for="input-prop-type">Property Type</label>
-                {{ filter.form.property_type |as_crispy_field}}
-            </div>
-            <div class="form-group col-2 p-0">
-                <label for="input-county">County</label>
-                {{ filter.form.county |as_crispy_field}}
-            </div>
-            <div class="form-group col-2 p-0">
-                <label for="price-min">Price Min</label>
-                {{ filter.form.price__gte |as_crispy_field}}
-            </div>
-            <div class="form-group col-2 p-0">
-                <label for="price-max">Price Max</label>
-                {{ filter.form.price__lte |as_crispy_field}}
-            
-            </div>
-            <div class="form-group col-2 p-0">
-                <label for="min-beds">Min Beds</label>
-                {{ filter.form.bedrooms__gte |as_crispy_field}}
-            </div>
-            <div class="form-group col-1 p-0">
-                <button class="btn btn-outline-success search-btn" type="submit"><i class="fas fa-search"></i></button>
-            </div>
-        </div>
-    </form>
-</div>
-
 
 
 <div class="properties-container col-10 offset-1">
