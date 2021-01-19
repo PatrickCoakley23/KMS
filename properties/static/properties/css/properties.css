@@ -20,6 +20,19 @@
     height: 200px;
 }
 
+@media (min-width: 992px) {
+    .properties-card-img {
+    height: 250px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .properties-card-img {
+    height: 300px;
+    }
+}
+
+
 .padding-price {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -29,7 +42,16 @@
     padding: 0;
 }
 
+.card-img, .card-img-top {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
 /* PROPERTIES-NAVBAR */
+
+.properties-card {
+   border-radius: 0;
+}
 
 .property-search-navbar {
     position: relative;
@@ -101,14 +123,21 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    color: #ffdd17;
     text-align: left;
     vertical-align: middle;
-    border: 1px solid #ced4da;
+    border: 1px solid #ffdd17;
     border-radius: .25rem;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    background: black;
+}
+
+.btn-dropdown:hover {
+    background-color: #ffdd17;
+    color: black;
+    border: 1px solid black;
 }
 
 /* PROPERTY-SELECTED */
