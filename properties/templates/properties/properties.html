@@ -156,40 +156,39 @@
         </div>
         {% endfor %}
     </div>
+   
+    <div class="pagination d-flex justify-content-center mt-3 mb-2">
+        <div class="row">
+            {% if page_obj.has_previous %}
+                <a href="{% properties_url 1 'page' request.GET.urlencode  %}" class="btn btn-pagination-reg btn-pagination btn-pagination-arrow"><i class="fas fa-angle-double-left"></i></a>
+                <a href="{% properties_url page_obj.previous_page_number 'page' request.GET.urlencode %}" class="btn btn-pagination-reg btn-pagination btn-pagination-arrow"><i class="fas fa-angle-left"></i></a>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                <a class="btn btn-pagination-focused btn-pagination" href="{% properties_url num 'page' request.GET.urlencode%}">{{num}}</a>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                <a class="btn btn-pagination-reg btn-pagination" href="{%properties_url num 'page' request.GET.urlencode%}">{{num}}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+                <a href="{% properties_url page_obj.next_page_number 'page' request.GET.urlencode %}" class="btn btn-pagination-reg btn-pagination btn-pagination-arrow"><i class="fas fa-angle-right"></i></a>
+                <a href="{% properties_url page_obj.paginator.num_pages 'page' request.GET.urlencode %}" class="btn btn-pagination-reg btn-pagination btn-pagination-arrow"><i class="fas fa-angle-double-right"></i></a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="text-center mb-3">
+        <p>
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+        </p>
+    </div>                   
 </div>
 
 
-    <div class="row">
-        <div class="col-12">
-            <div class="pagination">
-                {% if page_obj.has_previous %}
-                    <a href="{% properties_url 1 'page' request.GET.urlencode  %}">&laquo; first</a>
-                    <a href="{% properties_url page_obj.previous_page_number 'page' request.GET.urlencode %}">previous</a>
-                {% endif %}
 
-                {% for num in page_obj.paginator.page_range %}
-                    {% if page_obj.number == num %}
-                    <a class="btn btn-info" href="{% properties_url num 'page' request.GET.urlencode%}">{{num}}</a>
-                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                    <a class="btn btn-outline-info" href="{%properties_url num 'page' request.GET.urlencode%}">{{num}}</a>
-                    {% endif %}
-                {% endfor %}
-
-                {% if page_obj.has_next %}
-                    <a href="{% properties_url page_obj.next_page_number 'page' request.GET.urlencode %}">next</a>
-                    <a href="{% properties_url page_obj.paginator.num_pages 'page' request.GET.urlencode %}">last &raquo;</a>
-                {% endif %}
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <p>
-            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-            </p>
-        </div>
-    </div>
-</div>
+     
+   
 
 {% endblock %}
 {% block postloadjs %}

@@ -82,8 +82,6 @@
     
 }
 
-
-
 .form-control {
     height: 3rem;
     background: black;
@@ -139,6 +137,78 @@
     color: black;
     border: 1px solid black;
 }
+
+/* Pagination */
+
+.btn-pagination {
+    margin: 0 4px;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    padding: 8px;
+}
+
+.btn-pagination-arrow {
+    height: 32px;
+    width: 32px;
+    margin-top: 6.5px;
+    padding: 7px 0px;
+    font-size: 8px;
+}
+
+@media (max-width: 992px) {
+    
+    .btn-pagination {
+        margin: 0 2px;
+        height: 30px;
+        width: 30px;
+        padding: 7px 0px;
+        font-size: 8px;
+    }
+
+    .btn-pagination-arrow {
+        height: 20px;
+        width: 20px;
+        padding: 5px 0px;
+        font-size: 6px;
+        margin-top: 5px;
+    }
+
+}
+
+
+.btn-pagination-reg {
+    color: #ffdd17;
+    background-color: #343a40;
+    box-shadow: 0px 2px 7px 1px #ffc107;
+}
+
+.btn-pagination-reg:hover {
+    color: #212529;
+    background-color: #ffc107;
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 1); 
+}
+
+.btn-pagination-reg:focus {
+    box-shadow: 0 0 0 0.2rem #ffdd17;
+}
+
+.btn-pagination-focused {
+    color: #212529;
+    background-color: #ffc107;
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 1);
+}
+
+.btn-pagination-focused:hover {
+    color: #212529;
+    background-color: white;
+    box-shadow: 0px 2px 7px 1px #ffc107;
+}
+
+.btn-pagination-focused:focus {
+    box-shadow: 0 0 0 0.8rem black;
+}
+
 
 /* PROPERTY-SELECTED */
 
