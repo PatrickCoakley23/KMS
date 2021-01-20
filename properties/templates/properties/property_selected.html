@@ -53,6 +53,18 @@
                     <p>{{ property.description|linebreaksbr }}</p>
                 </div>
             </div>
+            {% if property.rooms_description %}
+            <div class="row">
+                <div class="col-10 offset-1 text-justify"> 
+                    <h4>Rooms</h4>
+                    <ol>
+                        {% for rooms_desc in rooms_list %}
+                        <li>{{ rooms_desc }}</li>
+                        {% endfor%}
+                    </ol>
+            </div>
+            {% else %}
+            {% endif %}
             <div class="row">
                 <div class="col-10 offset-1">
                     <div id="map"></div>

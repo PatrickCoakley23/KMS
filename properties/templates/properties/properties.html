@@ -140,11 +140,11 @@
                     <div class="row">
                         <div class="col-4 text-center">
                             <div><i class="fas fa-bed"></i></div>
-                            <p class="my-0">{{ properties.bedrooms }} beds</p>
+                            <p class="my-0">{{ properties.bedrooms }} bed{{ properties.bedrooms|pluralize }}</p>
                         </div>
                         <div class="col-4 text-center">
                             <div><i class="fas fa-bath"></i></div>
-                            <p>{{ properties.bathrooms }} baths</p> 
+                            <p>{{ properties.bathrooms }} bath{{ properties.bathrooms|pluralize }}</p> 
                         </div>
                         <div class="col-4 text-center">
                             <div><i class="fas fa-ruler-combined"></i></div> 

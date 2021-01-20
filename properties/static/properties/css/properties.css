@@ -190,7 +190,7 @@
 }
 
 .btn-pagination-reg:focus {
-    box-shadow: 0 0 0 0.2rem #ffdd17;
+    box-shadow: 0 0 0 0.4rem #ffdd17;
 }
 
 .btn-pagination-focused {
@@ -206,7 +206,7 @@
 }
 
 .btn-pagination-focused:focus {
-    box-shadow: 0 0 0 0.8rem black;
+    box-shadow: 0 0 0 0.4rem black;
 }
 
 
