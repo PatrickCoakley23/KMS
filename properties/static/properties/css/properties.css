@@ -252,7 +252,69 @@
     border-right: 1px solid #000;
 }
 
+@media (max-width: 575.98px ) {
+
+    .listing-border-xs-none {
+        border-right: none;
+    }
+
+    .xs-bottom-border {
+        border-bottom: 1px solid #000;
+    }
+}
+
+.prop-desc-padding {
+    padding: 0 3rem;
+}
+
 #map {
    min-height: 360px;
    width: 100%;
+}
+
+/* CONTACT AGENT */
+
+.agent-container {
+    background-color: #33393e;
+    color: white;
+    border-radius: .3rem;
+}
+
+.agent-header {
+    padding-top: 3rem;
+    padding-left: 2rem;
+    color: #ffdd17;
+}
+
+.agent-body {
+    padding: 2rem;
+}
+
+.agent-icon-yellow {
+    color: #ffdd17;
+}
+
+.agent-img {
+    height: 200px;
+    width: 100%;
+    filter: grayscale(100%);
+}
+
+@media (min-width: 1315px) {
+    
+    .agent-img {    
+        width: fit-content;
+    }
+}
+
+.agent-img:hover {
+    filter: grayscale(0%);
+}
+
+.agent-kms-logo {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    height: 100px;
+    padding-bottom: 1rem;
 }

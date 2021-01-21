@@ -28,7 +28,6 @@ class Agent(models.Model):
     phone_number = models.CharField(max_length=20, null=True, blank=True)
     email_address = models.EmailField(max_length=254)
     image = models.ImageField(null=True, blank=True)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
 
 
     def clean(self):
@@ -74,7 +73,6 @@ class Property(models.Model):
     size = models.DecimalField(max_digits=8, decimal_places=0)
     description = models.TextField()
     ber_rating = models.CharField(max_length=10, choices=BER_RATING_CHOICES, null=True, blank=True)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
     agent = models.ForeignKey('Agent', null=True,
@@ -92,4 +90,3 @@ class PropertyImage(models.Model):
 
     def __str__(self):
         return self.property.name
-        

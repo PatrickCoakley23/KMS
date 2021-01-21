@@ -190,8 +190,6 @@
                             <div class="item">
                             {% if agent.image %}
                                 <img src="{{ MEDIA_URL}}{{ agent.image }}" alt="{{ agent.name }}" class="team-img img-fluid">
-                            {% elif agent.image_url %}
-                                <img src="{{ MEDIA_URL}}{{ agent.image_url }}" alt="{{ agent.name }}" class="team-img img-fluid">
                             {% else %}
                                 <img class="team-img img-fluid" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ agent.name }}"/>
                             {% endif %}

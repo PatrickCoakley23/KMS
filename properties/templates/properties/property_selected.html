@@ -19,48 +19,90 @@
 
 <div class="container-fluid prop-details-container">   
     <div class="row mb-5">
-        <div class="col listing-address" data-val="51.903614" data-atr="-8.468399">
+        <div class="col listing-address">
             <h3 class="text-center text-uppercase">{{ property.name }}</h3> 
             <h3 class="text-center text-uppercase">{{ property.address }}</h3> 
             <h3 class="text-center text-uppercase">{{ property.county }}</h3> 
         </div>
     </div>
     <div class="row">
-        <div class="col-8 offset-2">
+        <div class="col-lg-8 offset-lg-2">
             <div class="row mb-5">
-                <div class="col-3 text-center listing-border py-4">
+                <div class="col-6 col-sm-3 text-center listing-border xs-bottom-border py-4">
                     <h5>{{ property.price}}</h5>
                     <div><i class="fas fa-euro-sign"></i></div>
                 </div>
-                <div class="col-2 text-center listing-border py-4">
+                <div class="col-6 col-sm-2 text-center listing-border listing-border-xs-none xs-bottom-border  py-4">
                     <h5>{{ property.bedrooms}}</h5>
                     <div><i class="fas fa-bed"></i></div>
                 </div>
-                <div class="col-2 text-center listing-border py-4">
+                <div class="col-6 col-sm-2 text-center listing-border py-4">
                     <h5>{{ property.bathrooms}}</h5>
                     <div><i class="fas fa-bath"></i></div>
                 </div>
-                <div class="col-3 text-center listing-border py-4">
+                
+                <div class="col-6 col-sm-3 text-center listing-border listing-border-xs-none py-4">
                     <h5>{{ property.size }} m</h5>
                     <div><i class="fas fa-ruler-combined"></i></div>
                 </div>
-                <div class="col-2 text-center py-4">
+                <div class="d-none d-sm-block col-sm-2 text-center py-4">
                     <img src="{{MEDIA_URL}}{{ ber_image }}" alt="" class="ber_image">
                 </div>
             </div>
             <div class="row">
-                <div class="col-10 offset-1 text-justify">              
-                    <p>{{ property.description|linebreaksbr }}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-10 offset-1">
-                    <div id="map"></div>
+                <div class="col-md-10 offset-md-1 text-justify">              
+                    <p class="prop-desc-padding">{{ property.description|linebreaksbr }}</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<div class="container-fluid my-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="row">
+                <div class="col-10 offset-1">
+                <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if property.agent %}
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-12 col-lg-8 offset-lg-2">
+            <div class="row">
+                <div class="col-12 col-sm-6 offset-sm-3 col-md-10 offset-md-1 col-xl-8 offset-xl-2 agent-container mb-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="agent-header text-uppercase">Agent</h4>
+                            <img src="{{ MEDIA_URL}}kms_logo.png" alt="" class="agent-kms-logo">
+                        </div>
+                    </div>
+                    <div class="row agent-body">
+                        <div class="col-md-6 col-lg-5">
+                            <img src="{{MEDIA_URL}}{{ property.agent.image }}" alt="{{property.agent.name}}" class="agent-img">
+                        </div>
+                        <div class="col-md-6 col-lg-7 m-auto">
+                            <h5>{{ property.agent.name}}</h5>
+                            <small class="text-uppercase">{{ property.agent.position }}</small>
+                            <div class="pt-2">               
+                                <p><span class="d-block d-md-inline"><i class="fas fa-phone-alt agent-icon-yellow"></i></span> {{ property.agent.phone_number }}</p>
+                                <p ><span class="d-block d-md-inline"><i class="fas fa-phone-alt agent-icon-yellow"></i></span>  (021) 427 0311 </p>
+                                <p> <span class="d-block d-md-inline"><i class="fas fa-envelope agent-icon-yellow"></i></span> {{ property.agent.email_address }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+{% endif%}
 
 {% endblock %}
 
