@@ -27,6 +27,9 @@ class Agent(models.Model):
     position = models.CharField(max_length=50)
     phone_number = models.CharField(max_length=20, null=True, blank=True)
     email_address = models.EmailField(max_length=254)
+    image = models.ImageField(null=True, blank=True)
+    image_url = models.URLField(max_length=1024, null=True, blank=True)
+
 
     def clean(self):
         self.name = self.name.capitalize()
@@ -70,9 +73,6 @@ class Property(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=0)
     size = models.DecimalField(max_digits=8, decimal_places=0)
     description = models.TextField()
-    rooms_description = models.TextField(null=True, blank=True)
-    property_features = models.TextField(null=True, blank=True)
-    property_facilities = models.TextField(null=True, blank=True)
     ber_rating = models.CharField(max_length=10, choices=BER_RATING_CHOICES, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)

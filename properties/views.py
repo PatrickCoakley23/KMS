@@ -101,9 +101,6 @@ def property_selected(request, properties_id):
     elif ber_rating == 'Exempt':
         ber_image = 'BER-exempt.png'
 
-    rooms_desc = property.property_features
-    rooms_list = rooms_desc.splitlines()
-
     context = {
         'property': property,
         'images': images,
@@ -111,7 +108,6 @@ def property_selected(request, properties_id):
         'lng': lng,
         'google_api_key': google_api_key,
         'ber_image' : ber_image,
-        'rooms_list': rooms_list,
     }
 
     return render(request, 'properties/property_selected.html', context)

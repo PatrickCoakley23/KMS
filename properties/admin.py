@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Property, Type, County, PropertyImage
+from .models import Property, Type, County, PropertyImage, Agent
 
 class PropertyImageAdmin(admin.StackedInline):
     model=PropertyImage
@@ -23,5 +23,7 @@ class TypeAdmin(admin.ModelAdmin):
 
 admin.site.register(Type, TypeAdmin)
 admin.site.register(County)
+admin.site.register(Agent)
+
 
 
