@@ -28,10 +28,18 @@
     <div class="row">
         <div class="col-lg-8 offset-lg-2">
             <div class="row mb-5">
+                {% if property.price == 5000000 %}
+                <div class="col-6 col-sm-3 text-center listing-border xs-bottom-border py-4">
+                    <h5>Price</h5>
+                    <h5>Upon</h5>
+                    <h5>Request</h5>
+                </div>
+                {% else %}
                 <div class="col-6 col-sm-3 text-center listing-border xs-bottom-border py-4">
                     <h5>{{ property.price}}</h5>
                     <div><i class="fas fa-euro-sign"></i></div>
                 </div>
+                {% endif %}
                 <div class="col-6 col-sm-2 text-center listing-border listing-border-xs-none xs-bottom-border  py-4">
                     <h5>{{ property.bedrooms}}</h5>
                     <div><i class="fas fa-bed"></i></div>
