@@ -109,9 +109,10 @@ else:
         }
     }
 
-DATABASES = {
-   'default': dj_database_url.parse('postgres://nvptjgzyymicvd:0441d06cb91753be6c64eca3d6b597871b7ab8d932ce428811eee3f6ef792093@ec2-99-81-238-134.eu-west-1.compute.amazonaws.com:5432/dcmdb0ou11jeb')   
-}
+#DATABASES = {
+#   'default': dj_database_url.parse()   
+# }
+
 
 
 # Password validation
