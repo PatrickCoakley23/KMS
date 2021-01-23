@@ -35,33 +35,22 @@
 
     {% block extra_js %}
     <script type="text/javascript">
-        $(document).ready(function(){                         
-        var last_scroll_top = 0;
-        $(window).on('scroll', function() {
-            scroll_top = $(this).scrollTop();
-            if(scroll_top < last_scroll_top) {
-                $('nav').fadeIn(1000); 
-                
-        }
-        else {
-            $('nav').fadeOut(1000);                  
-        }
-        last_scroll_top = scroll_top;
-    });
-
-});  
-    </script>
-    <script type="text/javascript">
-         $(document).ready(function(){
-            $(window).on('scroll', function(){
-                if ($(window).scrollTop() > 400) {
-                        $('nav').addClass('black');                                              
-                }else{
-                    $('nav').removeClass('black');   
+        $(document).ready(function(){
+            var previousScroll = 0;
+            $(window).scroll(function () {
+                var currentScroll = $(this).scrollTop();
+                if (currentScroll < 100) { //if less than 100px show navbar
+                    $('nav').removeClass('black');
+                } else if (currentScroll > 0 && currentScroll < $(document).height() - $(window).height()) {  
+                    if (currentScroll > previousScroll) { // if scrolled down
+                        $('nav').fadeOut(1000).removeClass('black');
+                    } else { 
+                        $('nav').fadeIn(750).addClass('black');
+                    }7
+                    previousScroll = currentScroll;
                 }
-            });     
-        });         
-
+            });
+        });  
     </script>
    
     {% endblock %}

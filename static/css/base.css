@@ -25,10 +25,6 @@ h1, h2, h3, h4, h5 {
     padding: 0 4rem;
 }
 
-.black {
-    background: rgba(0, 0, 0, 0.8);
-}
-
 .navbar-nav .nav-link {
     color: white;
     font-family: 'IBM Plex Serif', serif;
@@ -47,9 +43,20 @@ h1, h2, h3, h4, h5 {
     border: 1px solid black;
 }
 
+.black {
+    background: rgba(0, 0, 0, 0.8);
+    transition: background 2000ms linear;
+}
+
 .logo_img {
     width: 60%;
+    
 }
+
+nav.black a img {
+    width: 45%;
+    transition: .5s;
+} 
 
 /* Hero Image */
 
