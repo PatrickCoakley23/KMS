@@ -9,7 +9,7 @@ from django.conf import settings
 def properties(request):
     """ A view to show all products, including sorting and search queries """
     context = {}
-    properties = Property.objects.all()
+    properties = Property.objects.all().order_by('?')
     propFilter = PropertyFilter(request.GET, queryset=properties)
     sort = None 
     direction = None 

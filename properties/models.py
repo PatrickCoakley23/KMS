@@ -46,6 +46,12 @@ class Ber_Rating(models.Model):
     
 
 class Property(models.Model):
+    SALE_STATUS_CHOICES = (
+        ('For_Sale', ('For Sale')),
+        ('Sale_Agreed', ('Sale Agreed')),
+        ('Sold', ('Sold')),
+    )
+
     name = models.CharField(max_length=254)
     property_type = models.ForeignKey('Type', null=True,
                                       blank=True, on_delete=models.SET_NULL)
@@ -65,7 +71,8 @@ class Property(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
     agent = models.ForeignKey('Agent', null=True,
                              blank=True, on_delete=models.SET_NULL)
-    
+    sale_status =  models.CharField(max_length=30, choices=SALE_STATUS_CHOICES, default="For_Sale",)
+                            
     class Meta:
         verbose_name_plural = 'Properties'
 

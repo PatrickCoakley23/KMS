@@ -45,6 +45,25 @@
 .card-img, .card-img-top {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+    z-index: 0;
+}
+
+.sale-status-banner {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+}
+
+.sold-banner {
+    color: black;
+    background: #ffdd17ab;
+    padding: 2px;
+}
+
+.sale-agreed-banner {
+    color: #ffdd17;
+    background: rgba(0,0,0,.6);
+    padding: 2px;   
 }
 
 /* PROPERTIES-NAVBAR */

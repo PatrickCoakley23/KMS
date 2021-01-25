@@ -98,6 +98,12 @@
         {% for properties in page_obj %}
         <div class="col-10 offset-1 col-sm-6 offset-sm-0 col-lg-4 mb-4">
             <div class="card properties-card h-100">
+                {% if properties.sale_status == 'Sale_Agreed' %}
+                <h5 class="sale-status-banner sale-agreed-banner text-uppercase">Sale Agreed </h5>
+                {% elif properties.sale_status == 'Sold' %}
+                <h5 class="sale-status-banner sold-banner text-uppercase"> Sold </h5>
+                {% else %}
+                {% endif %}
                 {% if properties.image %}
                 <a href="{% url 'property_selected' properties.id %}">
                 <img
