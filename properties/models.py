@@ -68,7 +68,7 @@ class Property(models.Model):
     description = models.TextField()
     ber_rating = models.ForeignKey('Ber_Rating', null=True, blank=True, on_delete=models.SET_NULL)
     image = models.ImageField(null=True, blank=True)
-    date_added = models.DateTimeField(auto_now_add=True)
+    date_added = models.DateTimeField(auto_now_add=False)
     agent = models.ForeignKey('Agent', null=True,
                              blank=True, on_delete=models.SET_NULL)
     sale_status =  models.CharField(max_length=30, choices=SALE_STATUS_CHOICES, default="For Sale",)
