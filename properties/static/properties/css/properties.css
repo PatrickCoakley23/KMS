@@ -281,7 +281,26 @@
 
 .slick-slide img {
     width: 100%;
-    height: 500px;
+    height: 250px;
+}
+
+@media (min-width: 576px) {
+    .slick-side img {
+        height: 296px;
+    }
+}
+
+@media (min-width: 768px) {
+    .slick-side img {
+        height: 400px;
+    }
+} 
+
+@media (min-width: 992px) {
+    .slick-slide img {
+        width: 100%;
+        height: 500px;
+    }
 }
 
 .slick-slide {
@@ -387,6 +406,10 @@
     .email-xs-font {
         font-size: small;
         word-break: break-word;
+    }
+
+    .agent-kms-logo {
+        display: none;
     }
 
 }
