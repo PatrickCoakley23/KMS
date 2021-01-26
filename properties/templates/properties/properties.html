@@ -34,13 +34,13 @@
 <div class="container-fluid properties-hero-image-container mb-3">
     <div class="properties-hero-image">
         <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto text-center text-white">
-                <h1>Properties</h1>
+            <div class="col-6 offset-2 col-sm-6 offset-sm-6 my-auto text-center text-white">
+                <h1 class="font-w700">Properties</h1>
             </div>
         </div>    
     </div>
     <div class="row padding-left-right-off">
-        <div class="col-10 offset-1 col-md-12 offset-md-0 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2  filter-jumbotron">
+        <div class="col-10 offset-1 col-md-12 offset-md-0 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 filter-jumbotron">
             <form method="get">
                 <div class="form-row properties-filter">
                     <div class="form-group col-12 col-sm-6 col-md-2 p-md-0">
@@ -48,7 +48,7 @@
                         {{ filter.form.property_type |as_crispy_field}}
                     </div>
                     <div class="form-group col-12 col-sm-6 col-md-2 p-md-0">
-                        <label for="input-prop-type">Status</label>
+                        <label for="input-sale-status">Status</label>
                         {{ filter.form.sale_status |as_crispy_field}}
                     </div>
                     <div class="form-group col-12 col-sm-6 col-md-2 p-md-0">
@@ -59,7 +59,7 @@
                         <label for="price-min">Price Min</label>
                         {{ filter.form.price__gte |as_crispy_field}}
                     </div>
-                    <div class="form-group  d-none d-md-block col-md-2 p-0">
+                    <div class="form-group d-none d-md-block col-md-2 p-0">
                         <label for="price-max">Price Max</label>
                         {{ filter.form.price__lte |as_crispy_field}}
                     </div>
@@ -85,8 +85,8 @@
         <div class="col-8 offset-1 col-sm-5 offset-sm-7 col-md-3 offset-md-9 my-auto d-flex           justify-content-md-end">
             <button class="btn dropdown-toggle btn-dropdown w-75" type="button" data-toggle="dropdown">Sort By: </button>
                 <ul class="dropdown-menu w-100 rounded-0">
-                    <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?{% query_transform request sort='price' direction='asc' %}">Price High to Low</a></li>
-                    <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?{% query_transform request sort='price' direction='desc' %}">Price Low to High</a></li>
+                    <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?{% query_transform request sort='price' direction='asc' %}">Price: High to Low</a></li>
+                    <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?{% query_transform request sort='price' direction='desc' %}">Price: Low to High</a></li>
                     <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?{% query_transform request sort='date_added' direction='asc' %}">Date: Oldest to Newest</a></li>
                     <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?{% query_transform request sort='date_added' direction='desc' %}">Date: Newest to Oldest</a></li>
                 </ul>
@@ -144,6 +144,7 @@
                  <hr />
                 <div class="card-footer card-footer-properties bg-white pt-0 border-0 text-left">
                     <div class="row">
+                        {% if properties.property_type.name == 'Residential Sales' %}
                         <div class="col-4 text-center">
                             <div><i class="fas fa-bed"></i></div>
                             <p class="my-0">{{ properties.bedrooms }} bed{{ properties.bedrooms|pluralize }}</p>
@@ -154,12 +155,22 @@
                         </div>
                         <div class="col-4 text-center">
                             <div><i class="fas fa-ruler-combined"></i></div> 
+                            <p>{{ properties.size}}{% if properties.property_type.name == 'Farm Sales' %}<small>Acres</small>{% else %}<small>sqm</small>{% endif %}</p>
+                        </div>
+                        {% else %}
+                        <div class="col-4 text-center">
+                            <i class="fas fa-ruler-combined"></i>
                             <p>{{ properties.size}}<small>sqm</small> </p>
                         </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
         </div>
+           {% empty %}
+            <div class="col-12 mx-auto card text-center p-1">
+                <p class="">Sorry, we currently do not have any properties listed under those filtered terms</p>
+            </div>
         {% endfor %}
     </div>
    
@@ -190,11 +201,6 @@
         </p>
     </div>                   
 </div>
-
-
-
-     
-   
 
 {% endblock %}
 {% block postloadjs %}
