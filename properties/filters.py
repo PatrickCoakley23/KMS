@@ -32,7 +32,15 @@ class PropertyFilter(django_filters.FilterSet):
         (5, ('5+')),
     )
 
+    SALE_STATUS_CHOICES = (
+        ('For Sale', ('For Sale')),
+        ('Sale Agreed', ('Sale Agreed')),
+        ('Sold', ('Sold')),
+    )
+    
+
     property_type = django_filters.ModelChoiceFilter(queryset=Type.objects.all(), empty_label="All", label="")
+    sale_status = django_filters.ChoiceFilter(choices=SALE_STATUS_CHOICES, field_name='sale_status', label="", empty_label="All")
     county = django_filters.ModelChoiceFilter(queryset=County.objects.all(), empty_label="All", label="")
     price__gte = django_filters.ChoiceFilter(choices=PRICE_CHOICES, field_name='price', lookup_expr='gte', label="", empty_label="No Min")
     price__lte = django_filters.ChoiceFilter(choices=PRICE_CHOICES, field_name='price', lookup_expr='lte', label="", empty_label="No Max")
@@ -44,6 +52,7 @@ class PropertyFilter(django_filters.FilterSet):
         model = Property
         fields = [
             'property_type',
+            'sale_status',
             'county',
             'price__gte',
             'price__lte',
