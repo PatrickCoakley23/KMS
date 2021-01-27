@@ -427,7 +427,7 @@ footer {
     color: #ffdd17;
 }
 
-.social-links {
+.social-links-i {
     font-size: 25px;
 }
 
@@ -440,3 +440,29 @@ footer {
 .underline {
     text-decoration: underline;
 }
+
+.web-design a:hover {
+    color: #ffdd17;
+}
+
+.contact-links i, .address-links i, .social-links i {
+    color: #ffdd17;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.contact-links a:hover i, .address-links a:hover i, .social-links a:hover i {
+    color: #df7b13;
+}
+
+.contact-links i:hover, .address-links i:hover, .social-links i:hover {
+    color: #df7b13;
+}
+
+.contact-links a:hover, .address-links a:hover, .social-links a:hover  {
+    text-decoration: none;
+    color: white;
+}
+
