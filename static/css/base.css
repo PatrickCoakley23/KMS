@@ -385,3 +385,58 @@ nav.black a img {
     height: 25px;
     width: 50px;
 }
+
+/* FOOTER */
+
+footer {
+    background-color:  #000;
+    color: #fafafa;
+    min-height: 120px;
+    border-top: 2px solid #ffdd17;
+}
+
+.footer-co-heading {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffdd17;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.footer-body {
+    padding: 25px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.white-color {
+    color: white;
+}
+
+.block {
+    display: block;
+    padding-bottom: 12px;
+}
+
+.daft-logo {
+    height: 50px;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+
+.color-yellow {
+    color: #ffdd17;
+}
+
+.social-links {
+    font-size: 25px;
+}
+
+/*
+.padding-left-col-footer {
+    padding-left: 200px;
+}
+*/
+
+.underline {
+    text-decoration: underline;
+}

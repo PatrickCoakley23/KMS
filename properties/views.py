@@ -51,12 +51,23 @@ def property_selected(request, properties_id):
     lat = property.latitude
     lng = property.longitude
 
+    referer = str(request.META.get('HTTP_REFERER'))
+    host = str(request.META.get('HTTP_HOST'))
+    try:
+	    if host in referer:
+	        referer = request.META.get('HTTP_REFERER')
+	    else:
+	        referer = None
+    except:
+    	referer = None
+
     context = {
         'property': property,
         'images': images,
         'lat': lat,
         'lng': lng,
         'google_api_key': google_api_key,
+        'referrer': referer,
     }
 
     return render(request, 'properties/property_selected.html', context)

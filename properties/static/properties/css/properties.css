@@ -425,3 +425,14 @@
     height: 100px;
     padding-bottom: 1rem;
 }
+
+/* Back Button */
+
+.btn-black {
+    background-color: #000;
+    color: white;
+}
+
+.btn-next-prev {
+    border-radius: 0;
+}
