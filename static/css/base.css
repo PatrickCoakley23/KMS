@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&family=Montserrat:ital,wght@0,600;0,700;1,600&family=Mrs+Saint+Delafield&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;600;700&family=Montserrat:ital,wght@0,600;0,700;1,600&family=Mrs+Saint+Delafield&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
 
 html {
     height: 100%;
@@ -423,6 +423,10 @@ footer {
     margin-left: -10px;
 }
 
+.daft-logo:hover {
+    filter: grayscale(100%);
+}
+
 .color-yellow {
     color: #ffdd17;
 }
@@ -430,12 +434,6 @@ footer {
 .social-links-i {
     font-size: 25px;
 }
-
-/*
-.padding-left-col-footer {
-    padding-left: 200px;
-}
-*/
 
 .underline {
     text-decoration: underline;
@@ -466,3 +464,8 @@ footer {
     color: white;
 }
 
+@media (max-width: 768px) {
+    .text-align {
+        text-align: right;
+    }
+}
