@@ -69,6 +69,25 @@ nav.black a img {
     width: 100%;
  }
 
+ @media (max-width: 576px) {
+
+    .hero-image-container {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/media/hero_image_small.jpg') no-repeat center center fixed;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        height: 100vh;
+        width: 100%;
+    }
+ }
+
+ @media (max-width: 462px) {
+
+    .small-screen-display-none {
+        display: none;
+    }
+}
+
 .cta {
     position: absolute;
     top: 50%;
@@ -178,24 +197,34 @@ nav.black a img {
 
 .services-header-small {
     position: absolute;
-    bottom: 0;
+    top: 90px;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
-    font-size: 2rem;
-    font-weight: 900;
-    letter-spacing: 3px;
     text-decoration: underline;
 }
 
 .services-header-small-extra {
     position: absolute;
-    bottom: 2rem;
+    top: 55px;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
-    font-size: 2rem;
-    font-weight: 900;
+}
+
+.plus-icon {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: 2rem;
+}
+
+.fa-plus {
+    font-size: 55px;
+}
+
+.small-h2-service {
+     color: white;
+    font-size: 35px;
+    font-weight: 800;
     letter-spacing: 3px;
 }
 
