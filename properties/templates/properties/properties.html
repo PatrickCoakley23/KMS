@@ -147,20 +147,21 @@
                         {% if properties.property_type.name == 'Residential Sales' %}
                         <div class="col-4 text-center">
                             <div><i class="fas fa-bed"></i></div>
-                            <p class="my-0">{{ properties.bedrooms }} bed{{ properties.bedrooms|pluralize }}</p>
+                            <p class="my-0">{{ properties.bedrooms }} <span class="d-none_300">bed{{ properties.bedrooms|pluralize }}</span></p>
                         </div>
                         <div class="col-4 text-center">
                             <div><i class="fas fa-bath"></i></div>
-                            <p>{{ properties.bathrooms }} bath{{ properties.bathrooms|pluralize }}</p> 
+                            <p>{{ properties.bathrooms }} <span class="d-none_300">
+                                bath{{ properties.bathrooms|pluralize }}</span></p> 
                         </div>
                         <div class="col-4 text-center">
                             <div><i class="fas fa-ruler-combined"></i></div> 
-                            <p>{{ properties.size}}{% if properties.property_type.name == 'Farm Sales' %}<small>Acres</small>{% else %}<small>sqm</small>{% endif %}</p>
+                            <p>{{ properties.size}}{% if properties.property_type.name == 'Farm Sales' %}<small>Acres</small>{% else %}<small class="d-none_300">sqm</small>{% endif %}</p>
                         </div>
                         {% else %}
                         <div class="col-4 text-center">
                             <i class="fas fa-ruler-combined"></i>
-                            <p>{{ properties.size}}<small>sqm</small> </p>
+                            <p>{{ properties.size}}<small class="d-none_300">sqm</small> </p>
                         </div>
                         {% endif %}
                     </div>

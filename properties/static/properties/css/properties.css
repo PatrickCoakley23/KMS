@@ -77,6 +77,36 @@
     padding: 2px;   
 }
 
+@media (max-width:300px) {
+
+    .properties-card {
+        font-size: small;
+    }
+
+    .padding-price {
+        padding-left: 0;
+        padding-right: 0;
+        font-size: small;
+    }
+
+    .card-footer-properties {
+        font-size: small;
+    } 
+
+    .ber_image-card {
+        width: 30px;
+        margin-left: -15px;
+    }
+
+    .d-none_300 {
+        display: none;
+    }
+
+    .font-w700 {
+        font-size: 30px;
+    }
+}
+
 /* PROPERTIES-NAVBAR */
 
 .properties-card {
