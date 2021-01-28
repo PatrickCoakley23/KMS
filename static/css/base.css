@@ -61,7 +61,7 @@ nav.black a img {
 /* Hero Image */
 
  .hero-image-container {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/media/hero_image.jpg') no-repeat center center fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/media/hero_image.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
     overflow: hidden;
@@ -69,10 +69,11 @@ nav.black a img {
     width: 100%;
  }
 
+ /*
  @media (max-width: 576px) {
 
     .hero-image-container {
-        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/media/hero_image_small.jpg') no-repeat center center fixed;
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/media/hero_image.jpg') no-repeat center center;
         background-size: cover;
         position: relative;
         overflow: hidden;
@@ -80,11 +81,12 @@ nav.black a img {
         width: 100%;
     }
  }
+*/ 
 
- @media (max-width: 462px) {
+ @media (max-width: 576px) {
 
-    .small-screen-display-none {
-        display: none;
+    .cta h2  {
+        font-size: 20px;
     }
 }
 
@@ -228,6 +230,14 @@ nav.black a img {
     letter-spacing: 3px;
 }
 
+@media (max-width: 310px) {
+
+    .small-h2-service {
+        font-size: 25px;
+    }
+
+}
+
 .padding-lg {
     padding-bottom: 3rem;
 }
@@ -281,6 +291,18 @@ nav.black a img {
     background-color: #0f0f0fd9;
     color: #968c8c;
     position: relative;
+}
+
+@media (max-width: 310px) {
+    
+    .testimonials-widget {
+        margin-left: 0;
+    }
+
+    .testimonials-vertical-widget {
+        left: 75%;
+    }
+
 }
 
 .margin-widget {
@@ -424,11 +446,18 @@ footer {
     border-top: 2px solid #ffdd17;
 }
 
-.footer-co-heading {
+.footer-co-heading h4 {
     font-family: 'Montserrat', sans-serif;
     color: #ffdd17;
     font-weight: 400;
     letter-spacing: 3px;
+}
+
+@media (max-width:398px) {
+    
+    .footer-co-heading h4 {
+        font-size: large;
+    }
 }
 
 .footer-body {

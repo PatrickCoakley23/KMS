@@ -35,7 +35,7 @@
     <div class="hero-image-container">
         <div class="cta">
             <h1 class="text-uppercase">KMS</h1>
-            <h2 class="small-screen-display-none">World Class Service & <br> Local Expertise</h2>
+            <h2 class="small-screen-display">World Class Service <br> & <br> Local Expertise</h2>
         </div>
         <div class="about-kms">
             <h3>About Us</h3>
@@ -50,7 +50,7 @@
 
 
     <section class="about">
-        <div class="container-fluid about-container about-wrapper-cream about">    
+        <div class="container-fluid about-container about-wrapper-cream about overflow-hidden">    
             <div class="row padding-row">
                 <div class="col-12 col-lg-3 offset-lg-1">
                     <h4 class="text-uppercase">a Boutique Agency who cares</h4>
@@ -71,15 +71,19 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-4 offset-4 col-lg-3 offset-lg-1 order-second order-lg-first ">
+                <div class="col-4 offset-3 col-lg-3 offset-lg-1 order-second order-lg-first ">
                     <h3 class="signature">Darragh Taaffe</h3>
                 </div>
                 <div class="col-4 col-lg-6 offset-lg-1 order-first order-lg-second about-paragraph">
-                    <p>Darragh Taaffe & Anthony O'Regan</p>
+                    <p class="d-none d-lg-inline">Darragh Taaffe & Anthony O'Regan</p>
+                    <p class="d-lg-none">Darragh Taaffe</p>
                 </div>
             </div>
             <div class="row pb-container">
-                <div class="col-4 offset-8 col-lg-3 offset-lg-1">
+                <div class="col-4 d-lg-none">
+                    <p>Anthony O'Regan</p>
+                </div>
+                <div class="col-4 offset-3 col-lg-3 offset-lg-1">
                     <h3 class="signature">Anthony O'Regan</h3>
                 </div>
             </div>
@@ -185,7 +189,7 @@
     </div>
    
     <div class="charcoal-overlay">
-        <div class="container team-container">
+        <div class="container team-container overflow-hidden">
             <section class="meet-the-team">
                 <div class="row pt-team">
                     {% for agent in agents %}
@@ -202,7 +206,7 @@
                                 <div class="info">
                                 <h5 class="team-name">{{ agent.name }}</h5>
                                 <hr class="team-hr">
-                                <small class="job-title">{{ agent.position }}</small>
+                                <small class="job-title text-capitalize">{{ agent.position }}</small>
                                     <div class="contact-links hover-content pt-2">
                                         <span><i class="fas fa-phone-alt"></i> </span>
                                         <p class="p-lighter">{{ agent.phone_number }}</p>
