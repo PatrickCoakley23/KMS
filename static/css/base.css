@@ -43,11 +43,6 @@ h1, h2, h3, h4, h5 {
     border: 1px solid black;
 }
 
-.black {
-    background: rgba(0, 0, 0, 0.8);
-    transition: background 2000ms linear;
-}
-
 .logo_img {
     width: 60%;
     
@@ -57,6 +52,39 @@ nav.black a img {
     width: 45%;
     transition: .5s;
 } 
+
+/* 2nd Navbar */
+
+.black-header {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+}
+
+/*
+.navbar-black {
+    background: rgba(0, 0, 0, 0.6);
+}
+*/
+
+.navbar-nav-2 .nav-link {
+    color: black;
+    font-weight: 500;
+}
+
+
+.header-container {
+    padding-top: 120px;
+}
+
+.black {
+    background: rgba(0, 0, 0, 0.8);
+    transition: background 2000ms linear;
+}
+
+.black .nav-link {
+    color: white;
+}
 
 /* Hero Image */
 

@@ -6,32 +6,7 @@
     <link rel="stylesheet" href="{% static 'css/testimonial.css' %}">
 {% endblock %}
 
-{% block page_header %}
-    <nav class="navbar navbar-expand-lg w-100">
-        <!-- BRAND AND LOGO-->
-        <a class="navbar-brand uppercase" href="{% url 'home' %}"><img src="{{ MEDIA_URL}}kms_logo.png" alt="404 image" class="logo_img"></a>
-        <!-- HAMBURGER MENU FOR SMALLER SCREEN WIDTHS-->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler1" aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- NAVBAR -->
-        <div class="collapse navbar-collapse" id="navbarToggler1">
-            <ul class="nav navbar-nav ml-auto">
-                <li class="nav-right mr-2">
-                <a class="nav-link" href="#">About Us</a>
-                </li>
-                <li class="nav-right mr-2">
-                <a class="nav-link" href="{% url 'properties' %}">Properties</a>
-                </li>
-                <li class="nav-right mr-2">
-                <a class="nav-link" href="#">Selling</a>
-                </li>
-                <li class="nav-right mr-2">
-                <a class="nav-link" href="#">Contact Us</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+{% block content %}
     <div class="hero-image-container">
         <div class="cta">
             <h1 class="text-uppercase">KMS</h1>
@@ -43,11 +18,6 @@
         </div>
         
     </div>
-
-{% endblock%}
-
-{% block content %}
-
 
     <section class="about">
         <div class="container-fluid about-container about-wrapper-cream about overflow-hidden">    

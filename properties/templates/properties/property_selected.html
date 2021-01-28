@@ -4,6 +4,41 @@
     <link rel="stylesheet" href="{% static 'properties/css/properties.css' %}">
 {% endblock %}
 
+{% block page_header %}
+    <header class="black-header">
+        <nav class="navbar navbar-black navbar-expand-lg w-100">
+        <!-- BRAND AND LOGO-->
+        <a class="navbar-brand uppercase" href="{% url 'home' %}"><img src="{{ MEDIA_URL}}kms_logo.png" alt="404 image" class="logo_img black-logo_img"></a>
+        <!-- HAMBURGER MENU FOR SMALLER SCREEN WIDTHS-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler1" aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- NAVBAR -->
+        <div class="collapse navbar-collapse" id="navbarToggler1">
+            <ul class="nav navbar-nav navbar-nav-2 ml-auto">
+                <li class="nav-right mr-2">
+                <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-right mr-2">
+                <a class="nav-link" href="{% url 'properties' %}">Properties</a>
+                </li>
+                <li class="nav-right mr-2">
+                <a class="nav-link" href="#">Selling</a>
+                </li>
+                <li class="nav-right mr-2">
+                <a class="nav-link" href="#">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+       <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %} 
 
 <div class="container-fluid slider-container my-5">
