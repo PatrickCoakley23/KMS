@@ -571,11 +571,9 @@ footer {
 	z-index: -1;
 }
 
-/*
 .padding-content-down {
     padding-top: 200px;
 }
-*/
 
 .selling-guide-hero-image {
     background: url('/media/property-management.jpg') no-repeat center center;
@@ -592,4 +590,8 @@ footer {
     bottom: 0;
     left: 50%;
 
+}
+
+.contact-img {
+    height: 200px;
 }

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="overlay-black-page"></div>
+    <div class="padding-content-down">
+        <h1 class="color-yellow text-center">Contact Us</h1>
+    </div>
+    <div class="container">
+        <div class="row my-5">
+            <div class="col-6 white-color mt-3">
+                <div class="row">
+                    <div class="col">
+                        <p><i class="fas fa-map-marker-alt color-yellow pr-1"></i>
+                        City Park House,<br>
+                        21 Sullivans Quay,<br>
+                        Cork <br>
+                        T12 N6CW
+                        </P>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p><a href="tel:+0214270311" target="_blank" class="white-color"><span class="block"><i class="fas fa-phone-alt pr-1 color-yellow"></i> (021) 4270311</span></a></p>
+                        <p><a href="tel:+0214271296" target="_blank" class="white-color"><span class="block"><i class="fas fa-fax pr-1 color-yellow"></i> (021) 4271296</span></a></p>
+                        <p><a href="mailto:info@keanemahonysmith.ie" target="_blank" class="white-color"><span class="block"><i class="far fa-envelope pr-1 color-yellow"></i> info@keanemahonysmith.ie</span></a></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 white-color">
+                <form id="contact-form" method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        {{ contact_form|crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-warning" type="submit">Send</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
