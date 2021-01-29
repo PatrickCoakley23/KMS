@@ -43,6 +43,10 @@
     }
 }
 
+.properties-card a {
+    color: #000;
+    text-decoration: none;
+}
 
 .padding-price {
     padding-left: 1.25rem;

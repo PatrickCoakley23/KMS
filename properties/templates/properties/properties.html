@@ -94,6 +94,7 @@
                 />
                 </a>
                 {% endif %}
+                <a href="{% url 'property_selected' properties.id %}">
                 <div class="card-body pb-0">
                 <p class="mb-0">{{ properties.name }}</p>
                 <p class="mb-0">{{ properties.address }}</p>
@@ -114,7 +115,9 @@
                     <img src="{{ MEDIA_URL }}{{ properties.ber_rating.image}}" alt="" class="ber_image-card">
                     </div> 
                 </div>
+                 </a>
                  <hr />
+                <a href="{% url 'property_selected' properties.id %}">
                 <div class="card-footer card-footer-properties bg-white pt-0 border-0 text-left">
                     <div class="row">
                         {% if properties.property_type.name == 'Residential Sales' %}
@@ -139,7 +142,9 @@
                         {% endif %}
                     </div>
                 </div>
+                </a>
             </div>
+           
         </div>
            {% empty %}
             <div class="col-12 mx-auto card text-center p-1">
