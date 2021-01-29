@@ -15,3 +15,8 @@ def index(request):
     }
 
     return render(request, 'home/index.html', context)
+
+def SellingGuide(request):
+    """ a view to return the selling guide """
+
+    return render(request, "home/selling_guide.html")

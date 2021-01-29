@@ -28,15 +28,18 @@ h1, h2, h3, h4, h5 {
 .navbar-nav .nav-link {
     color: white;
     font-family: 'IBM Plex Serif', serif;
-    letter-spacing: 3px;
-    font-size: 1.25em;
+    letter-spacing: 1px;
+    font-size: 20px;
+    font-weight: 300;
+    text-transform: uppercase;
 }
+
 
 .navbar-nav .nav-link:hover {
     color: #ffdd17;
     font-family: 'IBM Plex Serif', serif;
-    letter-spacing: 3px;
-    font-size: 1.25em;
+    letter-spacing: 1px;
+    font-size: 20px;
 }
 
 .navbar-toggler {
@@ -554,4 +557,28 @@ footer {
     .text-align {
         text-align: right;
     }
+}
+
+/* Selling Guide Page */ 
+
+.overlay-black-page {
+    height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background:#181b1e;
+	z-index: -1;
+}
+
+.padding-content-down {
+    padding-top: 200px;
+}
+
+.img-area {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
