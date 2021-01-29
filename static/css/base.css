@@ -255,7 +255,7 @@ nav.black a img {
 }
 
 .small-h2-service {
-     color: white;
+    color: white;
     font-size: 35px;
     font-weight: 800;
     letter-spacing: 3px;
@@ -571,14 +571,25 @@ footer {
 	z-index: -1;
 }
 
+/*
 .padding-content-down {
     padding-top: 200px;
 }
+*/
 
-.img-area {
-    overflow: hidden;
+.selling-guide-hero-image {
+    background: url('/media/property-management.jpg') no-repeat center center;
+    background-size: cover;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
+    height: 70vh;
+    z-index: 1; 
+}
+
+.selling-page-heading {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    bottom: 0;
+    left: 50%;
+
 }
