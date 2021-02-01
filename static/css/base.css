@@ -100,20 +100,6 @@ nav.black a img {
     width: 100%;
  }
 
- /*
- @media (max-width: 576px) {
-
-    .hero-image-container {
-        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/media/hero_image.jpg') no-repeat center center;
-        background-size: cover;
-        position: relative;
-        overflow: hidden;
-        height: 100vh;
-        width: 100%;
-    }
- }
-*/ 
-
  @media (max-width: 576px) {
 
     .cta h2  {
@@ -208,6 +194,37 @@ nav.black a img {
     }
 }
 
+/* PARALLAX IMAGE SECTIONS */   
+
+.parallax-image-container {
+    background: url('/media/port_of_cork2.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    background-attachment: fixed;
+}
+
+.parallax-image-container-two {
+    background: url('/media/blackrock_castle.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    background-attachment: fixed;
+}
+
+.slogan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
 /* SERVICES SECTION */
 
 .charcoal-text {
@@ -275,35 +292,45 @@ nav.black a img {
 
 
 @media (max-width: 991.98px) {
+
     .services-image {
         height: 360px;
         padding-top: 3rem;
         padding-bottom: 3rem;
         border: none;
     }
+
     [data-aos-delay] {
     transition-delay: 0s !important;
     }
+
     .padding-lg {
     padding-bottom: 0;
+    }
 }
-
- }
 
 /* WIDGET */ 
 
 .services-vertical-widget { 
-    border-left: 3px solid #0f0f0fd9;
+    border-left: 3px solid #ffffff;
     height: 35px;
     left: 50%;
     bottom: 0;
     position: absolute;
-    margin-left: -3px
 }
 
 .services-widget-container {
-    background-color: #F1F2F2;
+    background-color: transparent;
     position: relative;
+    margin-top: -81.5px;
+}
+
+@media (min-width: 1397px) {
+
+    .services-widget-container {
+        margin-top: -81.2px;
+    }
+
 }
 
 .margin-widget {
@@ -361,6 +388,14 @@ nav.black a img {
     margin-left: 2rem;
     margin-right: 2rem;
     height: 500px;
+}
+
+.testimonial-vertical-widget { 
+    border-left: 3px solid #ffd900;
+    height: 35px;
+    left: 50%;
+    bottom: 0;
+    position: absolute;
 }
 
 /* MEET THE TEAM SECTION */
@@ -466,6 +501,14 @@ nav.black a img {
 .ber_image-card {
     height: 25px;
     width: 50px;
+}
+
+.team-vertical-widget { 
+    border-left: 3px solid #0f0f0fd9;
+    height: 35px;
+    left: 50%;
+    bottom: 0;
+    position: absolute;
 }
 
 /* FOOTER */
