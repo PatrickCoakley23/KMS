@@ -1,4 +1,4 @@
-{% load static %}
+{% load static %}{% load active_link_tags %}
 
 <!doctype html>
 <html lang="en">
@@ -71,21 +71,25 @@
         <a class="navbar-brand uppercase" href="{% url 'home' %}"><img src="{{ MEDIA_URL}}kms_logo.png" alt="404 image" class="logo_img"></a>
         <!-- HAMBURGER MENU FOR SMALLER SCREEN WIDTHS-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler1" aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="" role="button" ><i class="fa fa-bars color-yellow" aria-hidden="true"></i></span>
         </button>
         <!-- NAVBAR -->
         <div class="collapse navbar-collapse" id="navbarToggler1">
             <ul class="nav navbar-nav ml-auto">
-                <li class="nav-right mr-2">
-                <a class="nav-link" href="{% url 'home' %}#about-section">About Us</a>
+                {% url 'home' as url %}
+                <li class="nav-right mr-2 {% if request.path == url %}active{% endif %}">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
                 </li>
-                <li class="nav-right mr-2">
+                {% url 'properties' as url %}
+                <li class="nav-right mr-2 {% if request.path == url %}active{% endif %}">
                 <a class="nav-link" href="{% url 'properties' %}">Properties</a>
                 </li>
-                <li class="nav-right mr-2">
+                {% url 'SellingGuide' as url %}
+                <li class="nav-right mr-2 {% if request.path == url %}active{% endif %}">
                 <a class="nav-link" href="{% url 'SellingGuide' %}">Selling</a>
                 </li>
-                <li class="nav-right mr-2">
+                {% url 'ContactUs' as url %}
+                <li class="nav-right mr-2 {% if request.path == url %}active{% endif %}">
                 <a class="nav-link" href="{% url 'ContactUs' %}">Contact Us</a>
                 </li>
             </ul>

@@ -56,6 +56,23 @@ nav.black a img {
     transition: .5s;
 } 
 
+.navbar-toggler {
+    border: 2px solid #ffdd17;
+    padding: .40rem .80rem;
+}
+
+.navbar button:focus {
+    outline: 5px auto black;
+}
+
+
+@media (max-width:468px) {
+    
+    .navbar{
+        padding: 0 1rem;
+    }
+}
+
 /* 2nd Navbar */
 
 .black-header {
@@ -87,6 +104,10 @@ nav.black a img {
 
 .black .nav-link {
     color: white;
+}
+
+.navbar-nav > .active .nav-link {
+    color: #ffdd17;
 }
 
 /* Hero Image */
