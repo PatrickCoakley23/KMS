@@ -11,7 +11,7 @@
         <a class="navbar-brand uppercase" href="{% url 'home' %}"><img src="{{ MEDIA_URL}}kms_logo.png" alt="404 image" class="logo_img black-logo_img"></a>
         <!-- HAMBURGER MENU FOR SMALLER SCREEN WIDTHS-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler1" aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span role="button" ><i class="fa fa-bars color-yellow" aria-hidden="true"></i></span>
         </button>
         <!-- NAVBAR -->
         <div class="collapse navbar-collapse" id="navbarToggler1">
@@ -41,7 +41,7 @@
 
 {% block content %} 
 
-<div class="container-fluid slider-container my-5">
+<div class="container-fluid slider-container my-5 overflow-hidden">
     <div class="slider">
         {% for image in images %}
         <div class="selected-card-inner">
@@ -129,12 +129,12 @@
                             <img src="{{MEDIA_URL}}{{ property.agent.image }}" alt="{{property.agent.name}}" class="agent-img">
                         </div>
                         <div class="col-md-6 col-lg-7 m-auto">
-                            <h5>{{ property.agent.name}}</h5>
-                            <small class="text-uppercase">{{ property.agent.position }}</small>
+                            <h5 class="text-capitalize">{{ property.agent.name}}</h5>
+                            <small class="text-capitalize">{{ property.agent.position }}</small>
                             <div class="pt-2">               
-                                <p><span class="d-block d-md-inline"><i class="fas fa-phone-alt agent-icon-yellow"></i></span> {{ property.agent.phone_number }}</p>
-                                <p ><span class="d-block d-md-inline"><i class="fas fa-phone-alt agent-icon-yellow"></i></span>  (021) 427 0311 </p>
-                                <p class="email-xs-font"> <span class="d-block d-md-inline"><i class="fas fa-envelope agent-icon-yellow"></i></span> {{ property.agent.email_address }}</p>
+                                <p><a href="tel:{{ property.agent.phone_number}}" target="_blank" class="white-color"><span class="d-block d-md-inline"><i class="fas fa-phone-alt agent-icon-yellow"></i></span> {{ property.agent.phone_number }}</a></p>
+                                <p><a href="tel:+0214270311" target="_blank" class="white-color"><span class="d-block d-md-inline"><i class="fas fa-phone-alt agent-icon-yellow"></i></span>  (021) 427 0311</a></p>
+                                <p class="email-xs-font"><a href="mailto:{{ property.agent.email_address}}" target="_blank" class="white-color"><span class="d-block d-md-inline"><i class="fas fa-envelope agent-icon-yellow"></i></span> {{ property.agent.email_address }}</a></p>
                             </div>
                         </div>
                     </div>

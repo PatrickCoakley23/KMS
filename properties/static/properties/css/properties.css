@@ -298,7 +298,6 @@
     box-shadow: 0 0 0 0.4rem black;
 }
 
-
 /* PROPERTY-SELECTED */
 
 /* Carousel */
@@ -409,12 +408,16 @@
     filter: grayscale(100%);
 }
 
-@media (min-width: 1315px) {
-    
-    .agent-img {    
-        width: fit-content;
-    }
+.agent-container a:hover {
+    color: #ffdd17;
+    text-decoration: none;
 }
+
+.email-xs-font {
+        font-size: small;
+        word-break: break-word; 
+}
+
 
 @media (max-width: 768px) {
     
@@ -436,11 +439,7 @@
 }
 
 @media (max-width: 400px) {
-    
-    .email-xs-font {
-        font-size: small;
-        word-break: break-word;
-    }
+
 
     .agent-kms-logo {
         display: none;

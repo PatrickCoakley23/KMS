@@ -476,7 +476,7 @@ nav.black a img {
     opacity: 1;
 }
 
-.team-card:hover .hover-content span i {
+.team-card:hover .hover-content a span i {
     color: black;
 }
 
@@ -561,10 +561,6 @@ footer {
     margin-bottom: 30px;
 }
 
-.white-color {
-    color: white;
-}
-
 .block {
     display: block;
     padding-bottom: 12px;
@@ -584,6 +580,10 @@ footer {
     color: #ffdd17;
 }
 
+.color-black {
+    color: black;
+}
+
 .social-links-i {
     font-size: 25px;
 }
@@ -596,7 +596,7 @@ footer {
     color: #ffdd17;
 }
 
-.contact-links i, .address-links i, .social-links i {
+footer .contact-links i, footer .address-links i, footer .social-links i {
     color: #ffdd17;
     transition: all 0.35s ease-in-out;
     -moz-transition: all 0.35s ease-in-out;
@@ -604,7 +604,7 @@ footer {
     -o-transition: all 0.35s ease-in-out;
 }
 
-.contact-links a:hover i, .address-links a:hover i, .social-links a:hover i {
+footer .contact-links a:hover i, footer .address-links a:hover i,footer .social-links a:hover i {
     color: #df7b13;
 }
 
@@ -658,4 +658,18 @@ footer {
 
 .contact-img {
     height: 200px;
+}
+
+/* Different Colors */
+
+.color-yellow {
+    color: #ffdd17;
+}
+
+.color-black {
+    color: black;
+}
+
+.white-color {
+    color: white;
 }

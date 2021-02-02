@@ -178,14 +178,18 @@
                             </div>
                             <div class="contact-team">
                                 <div class="info">
-                                <h5 class="team-name">{{ agent.name }}</h5>
+                                <h5 class="team-name text-capitalize">{{ agent.name }}</h5>
                                 <hr class="team-hr">
                                 <small class="job-title text-capitalize">{{ agent.position }}</small>
                                     <div class="contact-links hover-content pt-2">
-                                        <span><i class="fas fa-phone-alt"></i> </span>
+                                        <a href="tel:{{ agent.phone_number }}" target="_blank" class="white-color">
+                                        <span><i class="fas fa-phone-alt color-black"></i> </span>
                                         <p class="p-lighter">{{ agent.phone_number }}</p>
-                                        <span><i class="fas fa-envelope"></i> </span>
+                                        </a>
+                                        <a href="mailto:{{ agent.email_address }}" target="_blank" class="white-color">
+                                        <span><i class="fas fa-envelope color-black"></i></span>
                                         <p class="p-lighter">{{ agent.email_address }}</p>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
