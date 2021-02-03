@@ -3,6 +3,8 @@ from .models import Testimonial
 from properties.models import Agent
 from .forms import ContactForm
 
+
+from django.contrib import messages
 from django.core.mail import EmailMessage
 from django.template.loader import get_template
 from django.conf import settings
@@ -65,13 +67,19 @@ def Contact(request):
             content = template.render(context)
 
             email = EmailMessage(
-                subject,
+                'Contact-Form ' + subject,
                 content,
                 email_address, 
                 ['patrickcoakley23@gmail.com'],
             )
             email.send()
+            messages.success(request, 
+            f'Thanks {name}, Your Contact Form Has Been Successfully Sent.' 
+            )
+
+
             return redirect('ContactUs')
+
 
     context = {
         'contact_form': contact_form,

@@ -92,6 +92,8 @@ TEMPLATES = [
     },
 ]
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
 SITE_ID = 1
 
 WSGI_APPLICATION = 'KMS.wsgi.application'
