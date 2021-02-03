@@ -657,11 +657,11 @@ footer .contact-links a:hover i, footer .address-links a:hover i,footer .social-
 }
 
 .selling-guide-hero-image {
-    background: url('/media/property-management.jpg') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/media/selling_guide.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
     overflow: hidden;
-    height: 70vh;
+    height: 80vh;
     z-index: 1; 
 }
 
