@@ -653,7 +653,7 @@ footer .contact-links a:hover i, footer .address-links a:hover i,footer .social-
 }
 
 .padding-content-down {
-    padding-top: 200px;
+    padding-top: 150px;
 }
 
 .selling-guide-hero-image {
@@ -670,6 +670,13 @@ footer .contact-links a:hover i, footer .address-links a:hover i,footer .social-
     transform: translate(-50%, -50%);
     bottom: 0;
     left: 50%;
+}
+
+@media (max-width: 576px) {
+    
+    .selling-page-heading {
+        display: none;
+    }
 
 }
 
