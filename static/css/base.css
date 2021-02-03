@@ -254,6 +254,16 @@ nav.black a img {
     background-attachment: fixed;
 }
 
+@media (max-width: 992px) {
+
+    .parallax-image-container, 
+    .parallax-image-container-two, 
+    .services-widget-container-parallax {
+        display: none;
+    }
+    
+}
+
 .slogan {
     position: absolute;
     top: 50%;
@@ -350,7 +360,7 @@ nav.black a img {
 /* WIDGET */ 
 
 .services-vertical-widget { 
-    border-left: 3px solid #ffffff;
+    border-left: 3px solid #0f0f0fd9;;
     height: 35px;
     left: 50%;
     bottom: 0;
@@ -358,6 +368,20 @@ nav.black a img {
 }
 
 .services-widget-container {
+    background-color: #F1F2F2;	
+    position: relative;
+}
+
+.services-widget-container-parallax 
+.services-vertical-widget {
+    border-left: 3px solid #ffffff;
+    height: 35px;
+    left: 50%;
+    bottom: 0;
+    position: absolute;
+}
+
+.services-widget-container-parallax {
     background-color: transparent;
     position: relative;
     margin-top: -81.5px;
@@ -365,15 +389,15 @@ nav.black a img {
 
 @media (min-width: 1397px) {
 
-    .services-widget-container {
+    .services-widget-container-parallax {
         margin-top: -81.2px;
     }
-
 }
 
 .margin-widget {
     margin-bottom: 3rem;
 }
+
 
 .testimonials-vertical-widget {
     border-left: 3px solid #968c8c;
