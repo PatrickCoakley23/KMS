@@ -31,8 +31,8 @@ class Agent(models.Model):
 
 
     def clean(self):
-        self.name = self.name.capitalize()
-        self.position = self.position.capitalize()
+        return self.cleaned_data['name'].capitalize()
+        return self.cleaned_data['position'].capitalize()
 
     def __str__(self):
         return self.name
