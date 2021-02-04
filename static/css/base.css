@@ -777,3 +777,43 @@ footer .contact-links a:hover i, footer .address-links a:hover i,footer .social-
     color: white;
 }
 
+/* 404 PAGE */
+
+.error-logo i {
+    font-size: 150px;
+}
+
+.error-logo h4 {
+    font-size: 75px;
+}
+
+.error-kms-logo {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    height: 100px;
+    padding-bottom: 1rem;
+}
+
+.error-jumbotron {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+}
+
+.error-jumbotron span, .error-jumbotron span i {
+    color: #ffdd17;
+}
+
+.error-content-down {
+    padding-top: 100px;
+}
+
+.btn-error {
+    background-color: rgba(0,0,0,0.8);
+    border-color: #ffdd17;
+}
+
+.button-center {
+    text-align: center;
+}
+
