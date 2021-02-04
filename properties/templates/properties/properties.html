@@ -54,7 +54,6 @@
 
 <div class="properties-container col-10 offset-1">
    <div class="row my-5">
-        
         <div class="col-8 offset-1 col-sm-5 offset-sm-7 col-md-3 offset-md-9 my-auto d-flex           justify-content-md-end">
             <button class="btn dropdown-toggle btn-dropdown w-75" type="button" data-toggle="dropdown">Sort By: </button>
                 <ul class="dropdown-menu w-100 rounded-0">
@@ -69,7 +68,7 @@
     
     <div class="row">
         {% for properties in page_obj %}
-        <div class="col-10 offset-1 col-sm-6 offset-sm-0 col-lg-4 mb-4">
+        <div class="col-12 col-sm-6 offset-sm-0 col-lg-4 mb-4">
             <div class="card properties-card h-100">
                 {% if properties.sale_status == 'Sale Agreed' %}
                 <h5 class="sale-status-banner sale-agreed-banner text-uppercase">Sale Agreed </h5>
@@ -153,7 +152,7 @@
         {% endfor %}
     </div>
    
-    <div class="pagination d-flex justify-content-center mt-3 mb-2">
+    <div class="pagination d-flex justify-content-center mb-3">
         <div class="row">
             {% if page_obj.has_previous %}
                 <a href="{% properties_url 1 'page' request.GET.urlencode  %}" class="btn btn-pagination-reg btn-pagination btn-pagination-arrow"><i class="fas fa-angle-double-left"></i></a>
@@ -174,7 +173,7 @@
             {% endif %}
         </div>
     </div>
-    <div class="text-center mb-3">
+    <div class="text-center mb-4">
         <p>
         Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
         </p>

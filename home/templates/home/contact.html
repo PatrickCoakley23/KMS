@@ -6,17 +6,18 @@
     <div class="padding-content-down">
         <h1 class="color-yellow text-center">Contact Us</h1>
     </div>
-    <div class="container">
+    <div class="container contact-page-container">
         <div class="row my-5">
-            <div class="col-12 col-sm-6 order-second order-sm-first white-color mt-3">
+            <div class="col-12 col-sm-6 order-second order-sm-first white-color mt-3 contact-links">
                 <div class="row">
                     <div class="col">
-                        <p><i class="fas fa-map-marker-alt color-yellow pr-1"></i>
+                        <p><a href="" class="text-decoration-white"><i class="fas fa-map-marker-alt color-yellow pr-1"></i>
                         City Park House,<br>
                         21 Sullivans Quay,<br>
                         Cork <br>
                         T12 N6CW
-                        </P>
+                        </a>
+                        </p>
                     </div>
                 </div>
                 <div class="row">
@@ -39,7 +40,7 @@
                         {{ contact_form|crispy }}
                     </fieldset>
                     <div class="form-group">
-                        <button class="btn btn-warning" type="submit">Send</button>
+                        <button class="btn btn-yellow" type="submit">Send</button>
                     </div>
                 </form>
             </div>

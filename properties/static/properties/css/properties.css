@@ -3,6 +3,7 @@
 .properties-hero-image-container {
     padding-right: 0;
     padding-left: 0;
+    margin-top: 0;
 }
 
  .properties-hero-image {
@@ -246,26 +247,6 @@
     font-size: 8px;
 }
 
-@media (max-width: 992px) {
-    
-    .btn-pagination {
-        margin: 0 2px;
-        height: 30px;
-        width: 30px;
-        padding: 7px 0px;
-        font-size: 8px;
-    }
-
-    .btn-pagination-arrow {
-        height: 20px;
-        width: 20px;
-        padding: 5px 0px;
-        font-size: 6px;
-        margin-top: 5px;
-    }
-
-}
-
 .btn-pagination-reg {
     color: #ffdd17;
     background-color: #343a40;
@@ -371,10 +352,6 @@
     }
 }
 
-.prop-desc-padding {
-    padding: 0 3rem;
-}
-
 #map {
    min-height: 360px;
    width: 100%;
@@ -413,12 +390,6 @@
     text-decoration: none;
 }
 
-.email-xs-font {
-        font-size: small;
-        word-break: break-word; 
-}
-
-
 @media (max-width: 768px) {
     
     .agent-img {
@@ -443,6 +414,11 @@
 
     .agent-kms-logo {
         display: none;
+    }
+
+    .email-xs-font {
+        font-size: small;
+        word-break: break-word; 
     }
 
 }
