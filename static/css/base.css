@@ -416,12 +416,12 @@ nav.black a img {
 @media (max-width: 310px) {
     
     .testimonials-widget {
+        flex: 1;
+        max-width: 100%;
         margin-left: 0;
     }
 
-    .testimonials-vertical-widget {
-        left: 75%;
-    }
+   
 
 }
 
