@@ -721,3 +721,9 @@ footer .contact-links a:hover i, footer .address-links a:hover i,footer .social-
 .white-color {
     color: white;
 }
+
+.toggle-background {
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: background 2000ms linear;
+}
+

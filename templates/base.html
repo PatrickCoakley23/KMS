@@ -50,6 +50,11 @@
                     previousScroll = currentScroll;
                 }
             });
+            // Make nav bg black when button is click
+            $(".navbar-toggler").click(function() {
+                $("nav").toggleClass("toggle-background");
+            });
+
         });  
     </script>
    
