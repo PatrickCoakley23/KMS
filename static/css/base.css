@@ -81,12 +81,6 @@ nav.black a img {
     top: 0;
 }
 
-/*
-.navbar-black {
-    background: rgba(0, 0, 0, 0.6);
-}
-*/
-
 .navbar-nav-2 .nav-link {
     color: black;
     font-weight: 500;
@@ -172,7 +166,16 @@ nav.black a img {
     bottom: 5%;
     left: 38%;  
     color: #F1F2F2;
- 
+}
+
+@media (max-width: 992px) {
+    
+    .about-kms {
+    left: 50%;
+    bottom: 3%;
+    transform: translate(-50%, -50%);
+    }
+
 }
 
 .signature {
@@ -658,7 +661,7 @@ footer .contact-links a:hover i, footer .address-links a:hover i,footer .social-
     color: white;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .text-align {
         text-align: right;
     }
@@ -768,5 +771,9 @@ footer .contact-links a:hover i, footer .address-links a:hover i,footer .social-
 .toggle-background {
     background-color: rgba(0, 0, 0, 0.8);
     transition: background 2000ms linear;
+}
+
+.toggle-background .nav-link {
+    color: white;
 }
 

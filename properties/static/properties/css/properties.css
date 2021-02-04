@@ -3,7 +3,6 @@
 .properties-hero-image-container {
     padding-right: 0;
     padding-left: 0;
-    margin-top: 0;
 }
 
  .properties-hero-image {
@@ -15,11 +14,17 @@
     z-index: -1; 
  }
 
- @media (max-width: 600px) {
+ @media (max-width:1025px) {
     
     .properties-hero-image {
-        background: url('/media/properties_page_lg.jpg') no-repeat left;
+    background: url('/media/properties_page_lg.jpg') no-repeat left;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    height: 70vh;
+    z-index: -1; 
     }
+
  }
 
  .font-w700 {
@@ -173,7 +178,7 @@
     margin-top: -80px;
     box-shadow: 0 5px 14px 0 rgba(0,0,0,.1);
     border-radius: 8px;
-   /* background: rgba(0,0,0,0.5); */
+   background: rgba(0,0,0,0.5);
     background: rgb(39 44 47 / 42%)
 }
 
