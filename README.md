@@ -1,43 +1,65 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# **Keane Mahony Smith**
 
-Welcome PatrickCoakley23,
+[View Live Project here](https://keane-mahony-smith.herokuapp.com/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+<h2 align="center"><img src="media/kms_logo.png" max-width="50%"></h2>
 
-## Gitpod Reminders
+This was an exciting project for me as it was the first professional website I developed as a free lance developer after graduating from [Code Institute](https://codeinstitute.net/). 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+[Keane Mahony Smith](http://www.keanemahonysmith.ie/) is an established auctioneering firm based in Cork City. Their previous website was a templated website which was very limited and lacked its own unique style. [Darragh Taaffe](https://www.linkedin.com/in/darragh-taaffe-232745154/) of Keane Mahony Smith's main brief of the new website was to be unique and edgy so it stood out from the industry normal mundane real estate/ auctioneer websites.
 
-`python3 -m http.server`
+The website was built using the [Django Framework]( https://www.djangoproject.com/start/overview/) as it was ideal to build a centrally-owned dataset to handle all the properties listed for sale.
 
-A blue button should appear to click: *Make Public*,
+## **User Experience (UX)**
 
-Another blue button should appear to click: *Open Browser*.
+-   ### User Stories
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+    - As a Seller 
 
-A blue button should appear to click: *Make Public*,
+    - As a user i want to read an 'about section', so i can get a feel for the type of company and brand KMS is and what makes them different from other auctioneers. 
+        - Reason for 'About' section on Homepage.
 
-Another blue button should appear to click: *Open Browser*.
+    - As a user I want to see the different services KMS offers as some auctioneers specialize in specific services eg. rental's only or property management etc
+        - Reason for 'Services' section which highlights that KMS works with residential, commercial and land sales only. 
+    
+    - As a user I want to read some testimonials from clients who have dealt with KMS in the past.
+        - Reason for 'Testimonials' section. 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+    - As a user I want to see some of the properties KMS have sold in the past, in order to get a better insight into the type of houses they sell and the price they achieved for that sale. 
+        - Reason for having not only the properties for sale but also the properties KMS have 'sold in the past and the properties that are 'sale agreed'. 
 
-## Updates Since The Instructional Video
+    - As a user i want to understand the process of a house sale. 
+        - Reason for 'Selling Guide'
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+    
+    - As a Buyer
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+        - As a user i want to be able to see all the properties for sale. 
+            - Reason for 'Properties' page. 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+        - As a user i want to be able to filter my search so i can narrow my set of properties to ones which are more specific to me. 
+            - Reason for filtered search. 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+        - As a user i want to be able to get a detailed insight into each property.
+            - Reason for 'Property Selected' page. 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+        - As a user i want to get in contact with KMS or one of their agents. 
+            - Reason for 'Contact Page', 'Meet the Team' section.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+        - As a user i want to see the exact location of the property so i can get a better understanding for the services in the locality. 
+            - Reason for Google Maps API. 
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
---------
+    - As an Owner 
 
-Happy coding!
+        - As the owner of KMS i want a website that is unique and stands out from my competitors. 
+            - Reason for a colour scheme that remains constant throughout the website. Imagery is used across the website in order to interest and evoke emotion from the user. 
+            - Use of slide carousel in order to add a sense of play to the testimonial and property images section.
+    
+-   ### **WIREFRAMES**
+
+
+
+
+    
+    
