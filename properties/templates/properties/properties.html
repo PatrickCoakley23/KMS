@@ -146,9 +146,10 @@
                     </a>
                 </div>
             </div>
+            <!-- If Filtered Queryset Returns No Properties -->
             {% empty %}
-            <div class="col-12 mx-auto card text-center p-1">
-                <p class="">Sorry, we currently do not have any properties listed under those filtered terms</p>
+            <div class="col-12 mx-auto card text-center mb-5">
+                <p class="p-2">Sorry, we currently do not have any properties listed under those filtered terms</p>
             </div>
             {% endfor %}
         </div>
