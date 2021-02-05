@@ -365,24 +365,16 @@ nav.black a img {
     }
 }
 
-.services-header-small-extra a {
-    text-decoration: none;
-    color: white;
-}
 
-.services-header-small-extra a:hover {
-    color: #ffdd17;
-    text-decoration: none;
-}
-
-.Services-anchor-lg {
+.information-column span a {
     text-decoration: none;
     color: #ffdd17;
 }
 
-.Services-anchor:hover {
+.information-column span a:hover h3 {
     color: white;
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color:#ffdd17
 }
 
 /* WIDGET */ 
