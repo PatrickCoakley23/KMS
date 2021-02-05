@@ -1,38 +1,42 @@
-{% extends "base.html" %} {% load static %} {% load properties_extras %} 
+{% extends "base.html" %}
+{% load static %}
+{% load properties_extras %} 
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'properties/css/properties.css' %}">
 {% endblock %}
 
 {% block page_header %}
+    <!-- Black Navbar for White Page (different from base.html) -->
     <header class="black-header">
         <nav class="navbar navbar-black navbar-expand-lg w-100">
-        <!-- BRAND AND LOGO-->
-        <a class="navbar-brand uppercase" href="{% url 'home' %}"><img src="{{ MEDIA_URL}}kms_logo.png" alt="404 image" class="logo_img black-logo_img"></a>
-        <!-- HAMBURGER MENU FOR SMALLER SCREEN WIDTHS-->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler1" aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
-        <span role="button" ><i class="fa fa-bars color-yellow" aria-hidden="true"></i></span>
-        </button>
-        <!-- NAVBAR -->
-        <div class="collapse navbar-collapse" id="navbarToggler1">
-            <ul class="nav navbar-nav navbar-nav-2 ml-auto">
-                <li class="nav-right mr-2">
-                <a class="nav-link" href="{% url 'home' %}">Home</a>
-                </li>
-                <li class="nav-right mr-2">
-                <a class="nav-link" href="{% url 'properties' %}">Properties</a>
-                </li>
-                <li class="nav-right mr-2">
-                <a class="nav-link" href="{% url 'SellingGuide' %}">Selling</a>
-                </li>
-                <li class="nav-right mr-2">
-                <a class="nav-link" href="{% url 'ContactUs' %}">Contact Us</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+            <!-- BRAND AND LOGO-->
+            <a class="navbar-brand uppercase" href="{% url 'home' %}"><img src="{{ MEDIA_URL}}kms_logo.png" alt="404 image" class="logo_img black-logo_img"></a>
+            <!-- HAMBURGER MENU FOR SMALLER SCREEN WIDTHS-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler1" aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
+            <span role="button" ><i class="fa fa-bars color-yellow" aria-hidden="true"></i></span>
+            </button>
+            <!-- NAVBAR -->
+            <div class="collapse navbar-collapse" id="navbarToggler1">
+                <ul class="nav navbar-nav navbar-nav-2 ml-auto">
+                    <li class="nav-right mr-2">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-right mr-2">
+                        <a class="nav-link" href="{% url 'properties' %}">Properties</a>
+                    </li>
+                    <li class="nav-right mr-2">
+                        <a class="nav-link" href="{% url 'SellingGuide' %}">Selling</a>
+                    </li>
+                    <li class="nav-right mr-2">
+                        <a class="nav-link" href="{% url 'ContactUs' %}">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
-       <div class="container header-container">
+    <!-- Push Content Down -->
+    <div class="container header-container">
         <div class="row">
             <div class="col"></div>
         </div>
@@ -40,101 +44,101 @@
 {% endblock %}
 
 {% block content %} 
-
-<div class="container-fluid slider-container my-5 overflow-hidden">
-    <div class="slider">
-        {% for image in images %}
-        <div class="selected-card-inner">
-            <img src="{{ MEDIA_URL}}{{ image.image }}" alt="{{ MEDIA_URL}}{{ image.image }}">
-        </div>
-        {% endfor %}  
-    </div>
-</div>
-
-<div class="container-fluid prop-details-container">   
-    <div class="row mb-5">
-        <div class="col listing-address">
-            <h3 class="text-center text-uppercase">{{ property.name }}</h3> 
-            <h3 class="text-center text-uppercase">{{ property.address }}</h3> 
-            <h3 class="text-center text-uppercase">{{ property.county }}</h3> 
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-            <div class="row mb-5">
-                {% if property.price == 5000000 %}
-                <div class="col-6 col-sm-3 text-center listing-border xs-bottom-border py-4">
-                    <h5>Price</h5>
-                    <h5>Upon</h5>
-                    <h5>Request</h5>
-                </div>
-                {% else %}
-                <div class="col-6 col-sm-3 text-center listing-border xs-bottom-border py-4">
-                    <h5>{{ property.price}}</h5>
-                    <div><i class="fas fa-euro-sign"></i></div>
-                </div>
-                {% endif %}
-                <div class="col-6 col-sm-2 text-center listing-border listing-border-xs-none xs-bottom-border  py-4">
-                    <h5>{{ property.bedrooms}}</h5>
-                    <div><i class="fas fa-bed"></i></div>
-                </div>
-                <div class="col-6 col-sm-2 text-center listing-border py-4">
-                    <h5>{{ property.bathrooms}}</h5>
-                    <div><i class="fas fa-bath"></i></div>
-                </div>
-                
-                <div class="col-6 col-sm-3 text-center listing-border listing-border-xs-none py-4">
-                    <h5>{{ property.size }} m</h5>
-                    <div><i class="fas fa-ruler-combined"></i></div>
-                </div>
-                <div class="d-none d-sm-block col-sm-2 text-center py-4">
-                    <img src="{{MEDIA_URL}}{{ property.ber_rating.image }}" alt="{{ property.name}}" class="ber_image">
-                </div>
+    <!-- Image Slider from Slide Carousel -->
+    <div class="container-fluid slider-container my-5 overflow-hidden">
+        <div class="slider">
+            {% for image in images %}
+            <div class="selected-card-inner">
+                <img src="{{ MEDIA_URL}}{{ image.image }}" alt="{{ MEDIA_URL}}{{ image.image }}">
             </div>
-            <div class="row">
-                <div class="col-md-10 offset-md-1 text-justify">              
-                    <p class="prop-desc-padding">{{ property.description|linebreaksbr }}</p>
-                </div>
+            {% endfor %}  
+        </div>
+    </div>
+    <!-- Property Details Container -->
+    <div class="container-fluid prop-details-container">
+        <div class="row mb-5">
+            <div class="col listing-address">
+                <h3 class="text-center text-uppercase">{{ property.name }}</h3>
+                <h3 class="text-center text-uppercase">{{ property.address }}</h3>
+                <h3 class="text-center text-uppercase">{{ property.county }}</h3>
             </div>
         </div>
-    </div>
-</div>
-
-<div class="container-fluid my-5">
-    <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-            <div class="row">
-                <div class="col-12 col-md-10 offset-md-1">
-                <div id="map"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-{% if property.agent %}
-<div class="container-fluid">
-    <div class="row mt-5">
-        <div class="col-12 col-lg-8 offset-lg-2">
-            <div class="row">
-                <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 agent-container mb-5">
-                    <div class="row">
-                        <div class="col-12">
-                            <h4 class="agent-header text-uppercase">Agent</h4>
-                            <img src="{{ MEDIA_URL}}kms_logo.png" alt="" class="agent-kms-logo">
-                        </div>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="row mb-5">
+                    {% if property.price == 5000000 %}
+                    <div class="col-6 col-sm-3 text-center listing-border xs-bottom-border py-4">
+                        <h5>Price</h5>
+                        <h5>Upon</h5>
+                        <h5>Request</h5>
                     </div>
-                    <div class="row agent-body">
-                        <div class="col-lg-5 m-auto">
-                            <img src="{{MEDIA_URL}}{{ property.agent.image }}" alt="{{property.agent.name}}" class="agent-img">
+                    {% else %}
+                    <div class="col-6 col-sm-3 text-center listing-border xs-bottom-border py-4">
+                        <h5>{{ property.price}}</h5>
+                        <div><i class="fas fa-euro-sign"></i></div>
+                    </div>
+                    {% endif %}
+                    <div class="col-6 col-sm-2 text-center listing-border listing-border-xs-none xs-bottom-border  py-4">
+                        <h5>{{ property.bedrooms}}</h5>
+                        <div><i class="fas fa-bed"></i></div>
+                    </div>
+                    <div class="col-6 col-sm-2 text-center listing-border py-4">
+                        <h5>{{ property.bathrooms}}</h5>
+                        <div><i class="fas fa-bath"></i></div>
+                    </div>
+                    <div class="col-6 col-sm-3 text-center listing-border listing-border-xs-none py-4">
+                        <h5>{{ property.size }} m</h5>
+                        <div><i class="fas fa-ruler-combined"></i></div>
+                    </div>
+                    <div class="d-none d-sm-block col-sm-2 text-center py-4">
+                        <img src="{{MEDIA_URL}}{{ property.ber_rating.image }}" alt="{{ property.name}}" class="ber_image">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1 text-justify">
+                        <p class="prop-desc-padding">{{ property.description|linebreaksbr }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Google Maps -->
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="row">
+                    <div class="col-12 col-md-10 offset-md-1">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Property Agent Card -->
+{% if property.agent %}
+    <div class="container-fluid">
+        <div class="row mt-5">
+            <div class="col-12 col-lg-8 offset-lg-2">
+                <div class="row">
+                    <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 agent-container mb-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <h4 class="agent-header text-uppercase">Agent</h4>
+                                <img src="{{ MEDIA_URL}}kms_logo.png" alt="" class="agent-kms-logo">
+                            </div>
                         </div>
-                        <div class="col-lg-7 m-lg-auto">
-                            <h5 class="text-capitalize">{{ property.agent.name}}</h5>
-                            <small class="text-capitalize">{{ property.agent.position }}</small>
-                            <div class="pt-2">               
-                                <p><a href="tel:{{ property.agent.phone_number}}" target="_blank" class="white-color"><span class="d-block d-md-inline"><i class="fas fa-phone-alt agent-icon-yellow"></i></span> {{ property.agent.phone_number }}</a></p>
-                                <p><a href="tel:+0214270311" target="_blank" class="white-color"><span class="d-block d-md-inline"><i class="fas fa-phone-alt agent-icon-yellow"></i></span>  (021) 427 0311</a></p>
-                                <p class="email-xs-font"><a href="mailto:{{ property.agent.email_address}}" target="_blank" class="white-color"><span class="d-block d-md-inline"><i class="fas fa-envelope agent-icon-yellow"></i></span> {{ property.agent.email_address }}</a></p>
+                        <div class="row agent-body">
+                            <div class="col-lg-5 m-auto">
+                                <img src="{{MEDIA_URL}}{{ property.agent.image }}" alt="{{property.agent.name}}" class="agent-img">
+                            </div>
+                            <div class="col-lg-7 m-lg-auto">
+                                <h5 class="text-capitalize">{{ property.agent.name}}</h5>
+                                <small class="text-capitalize">{{ property.agent.position }}</small>
+                                <div class="pt-2">
+                                    <p><a href="tel:{{ property.agent.phone_number}}" target="_blank" class="white-color"><span class="d-block d-md-inline"><i class="fas fa-phone-alt agent-icon-yellow"></i></span> {{ property.agent.phone_number }}</a></p>
+                                    <p><a href="tel:+0214270311" target="_blank" class="white-color"><span class="d-block d-md-inline"><i class="fas fa-phone-alt agent-icon-yellow"></i></span>  (021) 427 0311</a></p>
+                                    <p class="email-xs-font"><a href="mailto:{{ property.agent.email_address}}" target="_blank" class="white-color"><span class="d-block d-md-inline"><i class="fas fa-envelope agent-icon-yellow"></i></span> {{ property.agent.email_address }}</a></p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -142,7 +146,6 @@
             </div>
         </div>
     </div>
-</div>
 {% else %}
 {% endif%}
 
@@ -151,15 +154,15 @@
 {% block postloadjs %}
     {{ lat|json_script:"id_latitude" }}
     {{ lng|json_script:"id_longitude" }}
-    <script src="{% static 'properties/js/map.js' %}"></script>
     <script>
-    $(".slider").slick({
-        slidesToShow: 1,
-        centerMode: true,
-        centerPadding: '25%',
-        focusOnSelect: true,
-    });
+        $(".slider").slick({
+            slidesToShow: 1,
+            centerMode: true,
+            centerPadding: '25%',
+            focusOnSelect: true,
+        });
     </script>
+    <script src="{% static 'properties/js/map.js' %}"></script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ google_api_key}}&callback=initMap"></script>
-{% endblock %} 
+{% endblock %}

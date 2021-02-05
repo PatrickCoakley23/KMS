@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 
-
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/testimonial.css' %}">
 {% endblock %}
 
 {% block content %}
+    <!-- Hero Image -->
     <div class="hero-image-container">
         <div class="cta">
             <h1 class="text-uppercase">KMS</h1>
@@ -14,23 +14,23 @@
         </div>
         <div class="about-kms" id="about-section">
             <h3>About Us</h3>
-            <div class="vertical"></div> 
+            <div class="vertical"></div>
         </div>
     </div>
-
+    <!-- About Section -->
     <section class="about">
-        <div class="container-fluid about-container about-wrapper-cream about overflow-hidden">    
+        <div class="container-fluid about-container about-wrapper-cream about overflow-hidden">
             <div class="row padding-row">
                 <div class="col-12 col-lg-3 offset-lg-1">
                     <h4 class="text-uppercase">a Boutique Agency who cares</h4>
                 </div>
                 <div class="col-12 col-lg-6 offset-lg-1 about-paragraph">
                     <p>Keane Mahony Smith auctioneers and estate agents are one of the largest and most established property selling agents in the south of Ireland, 
-                    specializing in quality residential and commercial property, farms and lands, coastal and country.
+                        specializing in quality residential and commercial property, farms and lands, coastal and country.
                     </p>
                     <p> We pride ourselves on our “one to one” personal service, giving both vendors and customers our undivided personal attention.
-                    We are confident that, whatever your property requirements, 
-                    selling or purchasing we can cater for them at Keane Mahony Smith Cork.
+                        We are confident that, whatever your property requirements, 
+                        selling or purchasing we can cater for them at Keane Mahony Smith Cork.
                     </p>
                 </div>
             </div>
@@ -56,6 +56,7 @@
                     <h3 class="signature">Anthony O'Regan</h3>
                 </div>
             </div>
+            <!-- Vertical Widget Not Displayed for < LG Screens -->
             <div class="row services-widget-container">
                 <div class="col-6 offset-3 d-lg-none services-widget">
                     <h3 class="text-center margin-widget charcoal-text">Our Services</h3>
@@ -64,7 +65,7 @@
             </div>
         </div>
     </section>
-
+    <!-- Background Attachment Fixed Image for LG Screens Only -->
     <div class="parallax-image-container overflow-hidden">
         <div class="slogan">
             <h3>Creating Real Value In Property And Places</h3>
@@ -76,64 +77,81 @@
             <div class="services-vertical-widget"></div>
         </div>
     </div>
-    
+    <!-- Services Section -->
     <section class="services">
         <div class="container-fluid charcoal-wrapper">
             <div class="row">
                 <div class="col-10 col-lg-3 offset-1 offset-lg-2 order-second order-lg-first information-column residential-info my-auto d-none d-lg-inline" data-aos="fade-up"  data-aos-duration="1000" data-aos-offset="200">
-                    <span><h3 class="yellow-text">Residential Property</h3></span>
+                    <span>
+                        <h3 class="yellow-text">Residential Property</h3>
+                    </span>
                     <p>We pride ourselves on our “one to one” personal service, giving both vendors and customers our undivided personal attention.</p>
                     <p>Feel assured you are in safe hands with an experienced auctioneers in a wide range of residential sales, from country and equestrian houses, to waterfront property and new developments.</p>
                 </div>
-                <div class="col-10 offset-1 col-lg-7 offset-lg-0 order-first order-lg-second p-lg-0" data-aos="fade-left" data-aos-delay="800"> 
+                <div class="col-10 offset-1 col-lg-7 offset-lg-0 order-first order-lg-second p-lg-0" data-aos="fade-left" data-aos-delay="800">
                     <img src="{{ MEDIA_URL}}residential_interiorlg.jpg" alt="" class="services-image residential-img">
-                        <span class="d-lg-none services-header-small-extra"><h2 data-aos="fade-left" class="small-h2-service">Residential</h2></span>
-                        <span class="d-lg-none services-header-small"><h2 data-aos="fade-left" class="small-h2-service">Property</h2></span>
-                        <span class="d-lg-none plus-icon"><i class="fas fa-plus"></i></span>
+                    <span class="d-lg-none services-header-small-extra">
+                        <h2 data-aos="fade-left" class="small-h2-service">Residential</h2>
+                    </span>
+                    <span class="d-lg-none services-header-small">
+                        <h2 data-aos="fade-left" class="small-h2-service">Property</h2>
+                    </span>
+                    <span class="d-lg-none plus-icon"><i class="fas fa-plus"></i></span>
                 </div>
             </div>
-          
             <div class="row">
                 <div class="col-10 offset-1 col-lg-5 offset-lg-0 p-lg-0" data-aos="fade-right">
                     <img src="{{ MEDIA_URL}}land_sales.jpg" alt="image of agriculture property" class="services-image land-img">
-                        <span class="d-lg-none services-header-small-extra"><h2 data-aos="fade-left" class="small-h2-service">Land</h2></span>
-                        <span class="d-lg-none services-header-small"><h2 data-aos="fade-left" class="small-h2-service">Sales</h2></span>
-                        <span class="d-lg-none plus-icon"><i class="fas fa-plus"></i></span>
+                    <span class="d-lg-none services-header-small-extra">
+                        <h2 data-aos="fade-left" class="small-h2-service">Land</h2>
+                    </span>
+                    <span class="d-lg-none services-header-small">
+                        <h2 data-aos="fade-left" class="small-h2-service">Sales</h2>
+                    </span>
+                    <span class="d-lg-none plus-icon"><i class="fas fa-plus"></i></span>
                 </div>
                 <div class="col-10 col-lg-5 offset-1 offset-lg-1 information-column land-info my-auto d-none d-lg-inline" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-                    <span><h3 class="yellow-text">Land Sales</h3></span>
+                    <span>
+                        <h3 class="yellow-text">Land Sales</h3>
+                    </span>
                     <p>Whether you are buying or selling land for commercial or residential purposes, Keane Mahony Smith can work with you throughout the entire process, offering valuable insight and hands-on expertise at every stage.</p>
                 </div>
             </div>
-         
             <div class="row padding-lg">
                 <div class="col-10 col-lg-3 offset-1 offset-lg-2 order-second order-lg-first information-column commercial-info my-auto d-none d-lg-inline" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-                     <span><h3 class="yellow-text">Commercial Property</h3></span>
+                    <span>
+                        <h3 class="yellow-text">Commercial Property</h3>
+                    </span>
                     <p>Working with national and international commercial property owners, occupiers, investors and developers, our specialist teams have an in-depth knowledge of, and experience in, all aspects of commercial property markets in Ireland.</p>
                     <p>From offices to business parks and industrial units to development land, our exceptional commercial acumen allows us to respond to a wide range of commercial property needs across Ireland and globally.</p>
                 </div>
                 <div class="col-10 offset-1 col-lg-7 offset-lg-0 order-first order-lg-second p-lg-0" data-aos="fade-left">
                     <img src="{{ MEDIA_URL}}office_interiorlg.jpg" alt="image of office property" class="services-image commercial-property-img">
-                        <span class="d-lg-none services-header-small-extra"><h2 data-aos="fade-right" class="small-h2-service">Commercial</h2></span>
-                        <span class="d-lg-none services-header-small"><h2 data-aos="fade-right" class="small-h2-service">Property</h2></span>
-                        <span class="d-lg-none plus-icon"><i class="fas fa-plus"></i></span>
+                    <span class="d-lg-none services-header-small-extra">
+                        <h2 data-aos="fade-right" class="small-h2-service">Commercial</h2>
+                    </span>
+                    <span class="d-lg-none services-header-small">
+                        <h2 data-aos="fade-right" class="small-h2-service">Property</h2>
+                    </span>
+                    <span class="d-lg-none plus-icon"><i class="fas fa-plus"></i></span>
                 </div>
             </div>
         </div>
     </section>
-
+    <!-- Background Attachment Fixed Image for LG Screens Only -->
     <div class="parallax-image-container-two overflow-hidden">
         <div class="slogan">
             <h3>Beautiful Places To Live</h3>
         </div>
     </div>
-     <div class="row services-widget-container-parallax mx-0">
+
+    <div class="row services-widget-container-parallax mx-0">
         <div class="d-none d-lg-block col-lg-6 offset-lg-3 services-widget">
             <h3 class="text-center margin-widget color-yellow" data-aos="fade" data-aos-duration="3000">Testimonials</h3>
             <div class="testimonial-vertical-widget"></div>
         </div>
     </div>
-
+    <!-- Vertical Widget Not Displayed for < LG Screens -->
     <div class="container-fluid testimonials-widget-container">
         <div class="row">
             <div class="col-8 offset-2 d-lg-none testimonials-widget">
@@ -142,7 +160,7 @@
             </div>
         </div>
     </div>
- 
+    <!-- Testimonial Section With Slide Carousel -->
     <div class="overlay">
         <section class="testimonials">
             <div class="container testimonials-container overflow-hidden">
@@ -153,30 +171,30 @@
                         <img src="{{ MEDIA_URL}}{{ testimonial.image }}" alt="{{ testimonial.clients_name }}" class="rounded-circle w-50 mx-auto">
                         {% else %}
                         <img class="rounded-circle w-50 mx-auto" src="{{ MEDIA_URL }}noimage.jpg" 
-                        alt="{{ testimonial.clients_name }}"/>
+                            alt="{{ testimonial.clients_name }}"/>
                         {% endif %}
-                            <div class="testimonial-body">
-                                <h5 class="card-title">{{ testimonial.clients_name }}</h5>
-                                <p class="card-text mb-4">{{ testimonial.comment }}</p>
-                                <p class="card-text d-flex align-bottom">
+                        <div class="testimonial-body">
+                            <h5 class="card-title">{{ testimonial.clients_name }}</h5>
+                            <p class="card-text mb-4">{{ testimonial.comment }}</p>
+                            <p class="card-text d-flex align-bottom">
                                 <small class="text-muted">{{ testimonial.date_published }}</small>
-                                </p>
-                            </div>
+                            </p>
+                        </div>
                     </div>
                     {% endfor %}
                 </div>
-            </div> 
+            </div>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-6 offset-3 services-widget">
                         <h3 class="text-center margin-widget charcoal-text">Meet the Team</h3>
                         <div class="team-vertical-widget"></div>
                     </div>
-                </div> 
-            </div> 
+                </div>
+            </div>
         </section>
     </div>
-   
+    <!-- Meet The Team Section -->
     <div class="charcoal-overlay">
         <div class="container team-container overflow-hidden">
             <section class="meet-the-team">
@@ -185,25 +203,25 @@
                     <div class="col-10 offset-1 col-sm-6 offset-sm-0 col-lg-3 mb-team team-padding">
                         <div class="team-card">
                             <div class="item">
-                            {% if agent.image %}
+                                {% if agent.image %}
                                 <img src="{{ MEDIA_URL}}{{ agent.image }}" alt="{{ agent.name }}" class="team-img img-fluid">
-                            {% else %}
+                                {% else %}
                                 <img class="team-img img-fluid" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ agent.name }}"/>
-                            {% endif %}
+                                {% endif %}
                             </div>
                             <div class="contact-team">
                                 <div class="info">
-                                <h5 class="team-name text-capitalize">{{ agent.name }}</h5>
-                                <hr class="team-hr">
-                                <small class="job-title text-capitalize">{{ agent.position }}</small>
+                                    <h5 class="team-name text-capitalize">{{ agent.name }}</h5>
+                                    <hr class="team-hr">
+                                    <small class="job-title text-capitalize">{{ agent.position }}</small>
                                     <div class="contact-links hover-content pt-2">
                                         <a href="tel:{{ agent.phone_number }}" target="_blank" class="white-color">
-                                        <span><i class="fas fa-phone-alt color-black"></i> </span>
-                                        <p class="p-lighter">{{ agent.phone_number }}</p>
+                                            <span><i class="fas fa-phone-alt color-black"></i> </span>
+                                            <p class="p-lighter">{{ agent.phone_number }}</p>
                                         </a>
                                         <a href="mailto:{{ agent.email_address }}" target="_blank" class="white-color">
-                                        <span><i class="fas fa-envelope color-black"></i></span>
-                                        <p class="p-lighter">{{ agent.email_address }}</p>
+                                            <span><i class="fas fa-envelope color-black"></i></span>
+                                            <p class="p-lighter">{{ agent.email_address }}</p>
                                         </a>
                                     </div>
                                 </div>
@@ -213,43 +231,41 @@
                     {% endfor %}
                 </div>
             </section>
-        </div>    
+        </div>
     </div>
-
 {% endblock %}
 
 {% block postloadjs %}    
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            offset:200,
-            once: true,
-        });
-    </script>
-    <script>
-        $('.testimonial-carousel').slick({
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            responsive: [
-                {
-                    breakpoint: 992,
-                    settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    arrows: false,
-                    dots: true,
-                    }
+<script>
+    AOS.init({
+        offset:200,
+        once: true,
+    });
+</script>
+<script>
+    $('.testimonial-carousel').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
                 }
-              ]
-        });
-    </script>
-  
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                dots: true,
+                }
+            }
+          ]
+    });
+</script>
 {% endblock %}

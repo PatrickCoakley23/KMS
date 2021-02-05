@@ -1,186 +1,182 @@
-{% extends "base.html" %} {% load static %} {% load properties_extras %}
+{% extends "base.html" %} 
+{% load static %} 
+{% load properties_extras %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'properties/css/properties.css' %}">
 {% endblock %}
 
 {% block content %} 
-<div class="container-fluid properties-hero-image-container mb-3">
-    <div class="properties-hero-image">
-        <div class="row h-100">
-            <div class="col-6 offset-2 col-sm-6 offset-sm-6 my-auto text-center text-white">
-                <h1 class="font-w700">Properties</h1>
-            </div>
-        </div>    
-    </div>
-    <div class="row padding-left-right-off">
-        <div class="col-10 offset-1 col-md-12 offset-md-0 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 filter-jumbotron">
-            <form method="get">
-                <div class="form-row properties-filter">
-                    <div class="form-group col-12 col-sm-6 col-md-2 p-md-0">
-                        <label for="input-prop-type">Property Type</label>
-                        {{ filter.form.property_type |as_crispy_field}}
-                    </div>
-                    <div class="form-group col-12 col-sm-6 col-md-2 p-md-0">
-                        <label for="input-sale-status">Status</label>
-                        {{ filter.form.sale_status |as_crispy_field}}
-                    </div>
-                    <div class="form-group col-12 col-sm-6 col-md-2 p-md-0">
-                        <label for="input-county">County</label>
-                        {{ filter.form.county |as_crispy_field}}
-                    </div>
-                    <div class="form-group d-none d-md-block col-md-2 p-0">
-                        <label for="price-min">Price Min</label>
-                        {{ filter.form.price__gte |as_crispy_field}}
-                    </div>
-                    <div class="form-group d-none d-md-block col-md-2 p-0">
-                        <label for="price-max">Price Max</label>
-                        {{ filter.form.price__lte |as_crispy_field}}
-                    </div>
-                    <div class="form-group  d-none d-md-block col-md-2 p-0">
-                        <label for="min-beds">Min Beds</label>
-                        {{ filter.form.bedrooms__gte |as_crispy_field}}
-                    </div>
-                    <div class="form-group col-12 col-sm-6 offset-sm-3 col-md-1 offset-md-11 p-0">
-                        <button class="btn search-btn" type="submit"><i class="fas fa-search"></i></button>
-                    </div>
+    <!-- Hero Image -->
+    <div class="container-fluid properties-hero-image-container mb-3">
+        <div class="properties-hero-image">
+            <div class="row h-100">
+                <div class="col-6 offset-2 col-sm-6 offset-sm-6 my-auto text-center text-white">
+                    <h1 class="font-w700">Properties</h1>
                 </div>
-            </form>
+            </div>
+        </div>
+        <!-- Django-Filter -->
+        <div class="row padding-left-right-off">
+            <div class="col-10 offset-1 col-md-12 offset-md-0 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 filter-jumbotron">
+                <form method="get">
+                    <div class="form-row properties-filter">
+                        <div class="form-group col-12 col-sm-6 col-md-2 p-md-0">
+                            <label for="input-prop-type">Property Type</label>
+                            {{ filter.form.property_type |as_crispy_field}}
+                        </div>
+                        <div class="form-group col-12 col-sm-6 col-md-2 p-md-0">
+                            <label for="input-sale-status">Status</label>
+                            {{ filter.form.sale_status |as_crispy_field}}
+                        </div>
+                        <div class="form-group col-12 col-sm-6 col-md-2 p-md-0">
+                            <label for="input-county">County</label>
+                            {{ filter.form.county |as_crispy_field}}
+                        </div>
+                        <div class="form-group d-none d-md-block col-md-2 p-0">
+                            <label for="price-min">Price Min</label>
+                            {{ filter.form.price__gte |as_crispy_field}}
+                        </div>
+                        <div class="form-group d-none d-md-block col-md-2 p-0">
+                            <label for="price-max">Price Max</label>
+                            {{ filter.form.price__lte |as_crispy_field}}
+                        </div>
+                        <div class="form-group  d-none d-md-block col-md-2 p-0">
+                            <label for="min-beds">Min Beds</label>
+                            {{ filter.form.bedrooms__gte |as_crispy_field}}
+                        </div>
+                        <div class="form-group col-12 col-sm-6 offset-sm-3 col-md-1 offset-md-11 p-0">
+                            <button class="btn search-btn" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-
-
-
-<div class="properties-container col-10 offset-1">
-   <div class="row my-5">
-        <div class="col-8 offset-1 col-sm-5 offset-sm-7 col-md-3 offset-md-9 my-auto d-flex           justify-content-md-end">
-            <button class="btn dropdown-toggle btn-dropdown w-75" type="button" data-toggle="dropdown">Sort By: </button>
+    <!-- Dropdown Filter -->
+    <div class="properties-container col-10 offset-1">
+        <div class="row my-5">
+            <div class="col-8 offset-1 col-sm-5 offset-sm-7 col-md-3 offset-md-9 my-auto d-flex           justify-content-md-end">
+                <button class="btn dropdown-toggle btn-dropdown w-75" type="button" data-toggle="dropdown">Sort By: </button>
                 <ul class="dropdown-menu w-100 rounded-0">
                     <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?{% query_transform request sort='price' direction='desc' %}">Price: High to Low</a></li>
                     <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?{% query_transform request sort='price' direction='asc' %}">Price: Low to High</a></li>
                     <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?{% query_transform request sort='date_added' direction='asc' %}">Date: Oldest to Newest</a></li>
                     <li><a class="btn dropdown-item" role="button" href="{% url 'properties' %}?{% query_transform request sort='date_added' direction='desc' %}">Date: Newest to Oldest</a></li>
                 </ul>
-        </div>
-   </div>
-   
-    
-    <div class="row">
-        {% for properties in page_obj %}
-        <div class="col-12 col-sm-6 offset-sm-0 col-lg-4 mb-4">
-            <div class="card properties-card h-100">
-                {% if properties.sale_status == 'Sale Agreed' %}
-                <h5 class="sale-status-banner sale-agreed-banner text-uppercase">Sale Agreed </h5>
-                {% elif properties.sale_status == 'Sold' %}
-                <h5 class="sale-status-banner sold-banner text-uppercase"> Sold </h5>
-                {% else %}
-                {% endif %}
-                {% if properties.image %}
-                <a href="{% url 'property_selected' properties.id %}">
-                <img
-                    class="card-img-top img-fluid properties-card-img"
-                    src="{{ MEDIA_URL}}{{ properties.image }}"
-                    alt="{{ properties.name }}"
-                />
-                </a>
-                {% else %}
-                <a href="">
-                <img
-                    class="card-img-top img-fluid"
-                    src="{{ MEDIA_URL }}noimage.jpg"
-                    alt="{{ properties.name }}"
-                />
-                </a>
-                {% endif %}
-                <a href="{% url 'property_selected' properties.id %}">
-                <div class="card-body pb-0">
-                <p class="mb-0">{{ properties.name }}</p>
-                <p class="mb-0">{{ properties.address }}</p>
-                <p class="mb-0">{{ properties.county }}</p>
-                </div>
-                <hr />
-                <div class="row">
-                    {% if properties.price == 5000000 %}
-                    <div class="col-8">
-                    <p class="mb-0 px-3">Price Upon Request</p>
-                    </div>
-                    {% else %}
-                    <div class="col-8">
-                    <p class="lead mb-0 font-weight-bold padding-price">€{{ properties.price }}</p>
-                    </div>
-                    {% endif %}
-                    <div class="col-4">
-                    <img src="{{ MEDIA_URL }}{{ properties.ber_rating.image}}" alt="" class="ber_image-card">
-                    </div> 
-                </div>
-                 </a>
-                 <hr />
-                <a href="{% url 'property_selected' properties.id %}">
-                <div class="card-footer card-footer-properties bg-white pt-0 border-0 text-left">
-                    <div class="row">
-                        {% if properties.property_type.name == 'Residential Sales' %}
-                        <div class="col-4 text-center">
-                            <div><i class="fas fa-bed"></i></div>
-                            <p class="my-0">{{ properties.bedrooms }} <span class="d-none_300">bed{{ properties.bedrooms|pluralize }}</span></p>
-                        </div>
-                        <div class="col-4 text-center">
-                            <div><i class="fas fa-bath"></i></div>
-                            <p>{{ properties.bathrooms }} <span class="d-none_300">
-                                bath{{ properties.bathrooms|pluralize }}</span></p> 
-                        </div>
-                        <div class="col-4 text-center">
-                            <div><i class="fas fa-ruler-combined"></i></div> 
-                            <p>{{ properties.size}}{% if properties.property_type.name == 'Farm Sales' %}<small>Acres</small>{% else %}<small class="d-none_300">sqm</small>{% endif %}</p>
-                        </div>
-                        {% else %}
-                        <div class="col-4 text-center">
-                            <i class="fas fa-ruler-combined"></i>
-                            <p>{{ properties.size}}<small class="d-none_300">sqm</small> </p>
-                        </div>
-                        {% endif %}
-                    </div>
-                </div>
-                </a>
             </div>
-           
         </div>
-           {% empty %}
+        <!-- Properties Card -->
+        <div class="row">
+            {% for properties in page_obj %}
+            <div class="col-12 col-sm-6 offset-sm-0 col-lg-4 mb-4">
+                <div class="card properties-card h-100">
+                    {% if properties.sale_status == 'Sale Agreed' %}
+                    <h5 class="sale-status-banner sale-agreed-banner text-uppercase">Sale Agreed </h5>
+                    {% elif properties.sale_status == 'Sold' %}
+                    <h5 class="sale-status-banner sold-banner text-uppercase"> Sold </h5>
+                    {% else %}
+                    {% endif %}
+                    {% if properties.image %}
+                    <a href="{% url 'property_selected' properties.id %}">
+                    <img
+                        class="card-img-top img-fluid properties-card-img"
+                        src="{{ MEDIA_URL}}{{ properties.image }}"
+                        alt="{{ properties.name }}"
+                        />
+                    </a>
+                    {% else %}
+                    <a href="">
+                    <img
+                        class="card-img-top img-fluid"
+                        src="{{ MEDIA_URL }}noimage.jpg"
+                        alt="{{ properties.name }}"
+                        />
+                    </a>
+                    {% endif %}
+                    <a href="{% url 'property_selected' properties.id %}">
+                        <div class="card-body pb-0">
+                            <p class="mb-0">{{ properties.name }}</p>
+                            <p class="mb-0">{{ properties.address }}</p>
+                            <p class="mb-0">{{ properties.county }}</p>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            {% if properties.price == 5000000 %}
+                            <div class="col-8">
+                                <p class="mb-0 px-3">Price Upon Request</p>
+                            </div>
+                            {% else %}
+                            <div class="col-8">
+                                <p class="lead mb-0 font-weight-bold padding-price">€{{ properties.price }}</p>
+                            </div>
+                            {% endif %}
+                            <div class="col-4">
+                                <img src="{{ MEDIA_URL }}{{ properties.ber_rating.image}}" alt="" class="ber_image-card">
+                            </div>
+                        </div>
+                    </a>
+                    <hr />
+                    <a href="{% url 'property_selected' properties.id %}">
+                        <div class="card-footer card-footer-properties bg-white pt-0 border-0 text-left">
+                            <div class="row">
+                                {% if properties.property_type.name == 'Residential Sales' %}
+                                <div class="col-4 text-center">
+                                    <div><i class="fas fa-bed"></i></div>
+                                    <p class="my-0">{{ properties.bedrooms }} <span class="d-none_300">bed{{ properties.bedrooms|pluralize }}</span></p>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <div><i class="fas fa-bath"></i></div>
+                                    <p>{{ properties.bathrooms }} <span class="d-none_300">
+                                        bath{{ properties.bathrooms|pluralize }}</span>
+                                    </p>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <div><i class="fas fa-ruler-combined"></i></div>
+                                    <p>{{ properties.size}}{% if properties.property_type.name == 'Farm Sales' %}<small>Acres</small>{% else %}<small class="d-none_300">sqm</small>{% endif %}</p>
+                                </div>
+                                {% else %}
+                                <div class="col-4 text-center">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <p>{{ properties.size}}<small class="d-none_300">sqm</small> </p>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% empty %}
             <div class="col-12 mx-auto card text-center p-1">
                 <p class="">Sorry, we currently do not have any properties listed under those filtered terms</p>
             </div>
-        {% endfor %}
-    </div>
-   
-    <div class="pagination d-flex justify-content-center mb-3">
-        <div class="row">
-            {% if page_obj.has_previous %}
+            {% endfor %}
+        </div>
+        <!-- Pagintation -->
+        <div class="pagination d-flex justify-content-center mb-3">
+            <div class="row">
+                {% if page_obj.has_previous %}
                 <a href="{% properties_url 1 'page' request.GET.urlencode  %}" class="btn btn-pagination-reg btn-pagination btn-pagination-arrow"><i class="fas fa-angle-double-left"></i></a>
                 <a href="{% properties_url page_obj.previous_page_number 'page' request.GET.urlencode %}" class="btn btn-pagination-reg btn-pagination btn-pagination-arrow"><i class="fas fa-angle-left"></i></a>
-            {% endif %}
-
-            {% for num in page_obj.paginator.page_range %}
+                {% endif %}
+                {% for num in page_obj.paginator.page_range %}
                 {% if page_obj.number == num %}
                 <a class="btn btn-pagination-focused btn-pagination" href="{% properties_url num 'page' request.GET.urlencode%}">{{num}}</a>
                 {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
                 <a class="btn btn-pagination-reg btn-pagination" href="{%properties_url num 'page' request.GET.urlencode%}">{{num}}</a>
                 {% endif %}
-            {% endfor %}
-
-            {% if page_obj.has_next %}
+                {% endfor %}
+                {% if page_obj.has_next %}
                 <a href="{% properties_url page_obj.next_page_number 'page' request.GET.urlencode %}" class="btn btn-pagination-reg btn-pagination btn-pagination-arrow"><i class="fas fa-angle-right"></i></a>
                 <a href="{% properties_url page_obj.paginator.num_pages 'page' request.GET.urlencode %}" class="btn btn-pagination-reg btn-pagination btn-pagination-arrow"><i class="fas fa-angle-double-right"></i></a>
-            {% endif %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="text-center mb-4">
+            <p>
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </p>
         </div>
     </div>
-    <div class="text-center mb-4">
-        <p>
-        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-        </p>
-    </div>                   
-</div>
-
 {% endblock %}
-{% block postloadjs %}
 
-{% endblock %}

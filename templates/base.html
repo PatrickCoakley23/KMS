@@ -1,194 +1,163 @@
-{% load static %}{% load active_link_tags %}
+{% load static %}
+{% load active_link_tags %}
 
 <!doctype html>
 <html lang="en">
-  <head>
-    
-    {% block meta %}
-    <meta http-equiv=X-UA-Compatible" content="ie=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {% endblock %}
 
-    {% block extra_meta %}
-    {% endblock %}
+    <head>
 
-    
-    {% block corecss %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    {% endblock %}
+        {% block meta %}
+            <meta http-equiv=X-UA-Compatible" content="ie=edge">
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {% endblock %}
 
-    {% block extra_css %}
-    
-    {% endblock %}
+        {% block extra_meta %}
+        {% endblock %}
 
-    {% block corejs %}
-    <script src="https://kit.fontawesome.com/449fb42052.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css">
-    {% endblock %}
+        {% block corecss %}
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+            <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        {% endblock %}
 
-    {% block extra_js %}
-    <script type="text/javascript">
-        $(document).ready(function(){
-            var previousScroll = 0;
-            $(window).scroll(function () {
-                var currentScroll = $(this).scrollTop();
-                if (currentScroll < 60) { //if less than 60px show navbar
-                    $('nav').removeClass('black');
-                } else if (currentScroll > 0 && currentScroll < $(document).height() - $(window).height()) {  
-                    if (currentScroll > previousScroll) { // if scrolled down
-                        $('nav').fadeOut(1000).removeClass('black');
-                    } else { 
-                        $('nav').fadeIn(750).addClass('black');
-                    }7
-                    previousScroll = currentScroll;
-                }
-            });
-            // Make nav bg black when button is click
-            $(".navbar-toggler").click(function() {
-                $("nav").toggleClass("toggle-background");
-            });
+        {% block extra_css %}
+        {% endblock %}
 
-        });  
-    </script>
-   
-    {% endblock %}
-      <title>Keane Mahony Smith {% block extra_title %}{% endblock %}</title>
+        {% block corejs %}
+            <script src="https://kit.fontawesome.com/449fb42052.js" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css">
+        {% endblock %}
+        
+        {% block extra_js %}
+            <script src="{% static 'js/navScroll.js' %}"></script>
+        {% endblock %}
+        <title>Keane Mahony Smith {% block extra_title %}{% endblock %}</title>
+
     </head>
-
     <body>
 
-    {% if messages %}
-        <div class="message-container">
-        </div>
-    {% endif %}
+        {% block page_header %}
+            <header>
+                <nav class="navbar navbar-expand-lg w-100">
+                    <!-- BRAND AND LOGO-->
+                    <a class="navbar-brand uppercase" href="{% url 'home' %}"><img src="{{ MEDIA_URL}}kms_logo.png" alt="404 image" class="logo_img"></a>
+                    <!-- HAMBURGER MENU FOR SMALLER SCREEN WIDTHS-->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler1" aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="" role="button" ><i class="fa fa-bars color-yellow" aria-hidden="true"></i></span>
+                    </button>
+                    <!-- NAVBAR -->
+                    <div class="collapse navbar-collapse" id="navbarToggler1">
+                        <ul class="nav navbar-nav ml-auto">
+                            {% url 'home' as url %}
+                            <li class="nav-right mr-2 {% if request.path == url %}active{% endif %}">
+                                <a class="nav-link" href="{% url 'home' %}">Home</a>
+                            </li>
+                            {% url 'properties' as url %}
+                            <li class="nav-right mr-2 {% if request.path == url %}active{% endif %}">
+                                <a class="nav-link" href="{% url 'properties' %}">Properties</a>
+                            </li>
+                            {% url 'SellingGuide' as url %}
+                            <li class="nav-right mr-2 {% if request.path == url %}active{% endif %}">
+                                <a class="nav-link" href="{% url 'SellingGuide' %}">Selling</a>
+                            </li>
+                            {% url 'ContactUs' as url %}
+                            <li class="nav-right mr-2 {% if request.path == url %}active{% endif %}">
+                                <a class="nav-link" href="{% url 'ContactUs' %}">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+        {% endblock %}
 
-    {% block page_header %}
-    <header>
-        <nav class="navbar navbar-expand-lg w-100">
-        <!-- BRAND AND LOGO-->
-        <a class="navbar-brand uppercase" href="{% url 'home' %}"><img src="{{ MEDIA_URL}}kms_logo.png" alt="404 image" class="logo_img"></a>
-        <!-- HAMBURGER MENU FOR SMALLER SCREEN WIDTHS-->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler1" aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="" role="button" ><i class="fa fa-bars color-yellow" aria-hidden="true"></i></span>
-        </button>
-        <!-- NAVBAR -->
-        <div class="collapse navbar-collapse" id="navbarToggler1">
-            <ul class="nav navbar-nav ml-auto">
-                {% url 'home' as url %}
-                <li class="nav-right mr-2 {% if request.path == url %}active{% endif %}">
-                <a class="nav-link" href="{% url 'home' %}">Home</a>
-                </li>
-                {% url 'properties' as url %}
-                <li class="nav-right mr-2 {% if request.path == url %}active{% endif %}">
-                <a class="nav-link" href="{% url 'properties' %}">Properties</a>
-                </li>
-                {% url 'SellingGuide' as url %}
-                <li class="nav-right mr-2 {% if request.path == url %}active{% endif %}">
-                <a class="nav-link" href="{% url 'SellingGuide' %}">Selling</a>
-                </li>
-                {% url 'ContactUs' as url %}
-                <li class="nav-right mr-2 {% if request.path == url %}active{% endif %}">
-                <a class="nav-link" href="{% url 'ContactUs' %}">Contact Us</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    </header>
-
-    {% endblock %}
-
-     {% if messages %}
-        <div class="message-container">
-            {% for message in messages %}
+        {% if messages %}
+            <div class="message-container">
+                {% for message in messages %}
                 {% with message.level as level %}
-                    {% if level == 40 %}
-                        {% include 'includes/toasts/toast_error.html' %}
-                    {% elif level == 30 %}
-                        {% include 'includes/toasts/toast_warning.html' %}
-                    {% elif level == 25 %}
-                        {% include 'includes/toasts/toast_success.html' %}
-                    {% else %}
-                        {% include 'includes/toasts/toast_info.html' %}
-                    {% endif %}
+                {% if level == 40 %}
+                {% include 'includes/toasts/toast_error.html' %}
+                {% elif level == 30 %}
+                {% include 'includes/toasts/toast_warning.html' %}
+                {% elif level == 25 %}
+                {% include 'includes/toasts/toast_success.html' %}
+                {% else %}
+                {% include 'includes/toasts/toast_info.html' %}
+                {% endif %}
                 {% endwith %}
-            {% endfor %}
-        </div>
-    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
 
-    {% block content %}
+        {% block content %}
+        {% endblock %}
 
-    {% endblock %}
-    {% block footer %}
-        <!--FOOTER-->
-        <footer class="container-fluid overflow-hidden">
-            <div class="footer-body text-align">
-                <div class="row">
-                    <div class="col-lg-12 offset-lg-1 footer-co-heading mb-4">
-                        <h4>Keane Mahony Smith</h4>
+        {% block footer %}
+            <!--FOOTER-->
+            <footer class="container-fluid overflow-hidden">
+                <div class="footer-body text-align">
+                    <div class="row">
+                        <div class="col-lg-12 offset-lg-1 footer-co-heading mb-4">
+                            <h4>Keane Mahony Smith</h4>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 offset-lg-1 contact-links">
-                        <a href="tel:+0214270311" target="_blank" class="white-color"><span class="block"><i class="fas fa-phone-alt pr-1"></i> (021) 4270311</span></a>
-                        <a href="tel:+0214271296" target="_blank" class="white-color"><span class="block"><i class="fas fa-fax pr-1"></i> (021) 4271296</span></a> 
-                        <a href="mailto:info@keanemahonysmith.ie" target="_blank" class="white-color"><span class="block"><i class="far fa-envelope pr-1"></i>info@keanemahonysmith.ie</span></a>
-                    </div>
-                    <div class="col-lg-4 offset-lg-3 address-links">
-                        <a href="https://www.google.com/maps/place/Keane+Mahony+Smith/@51.8955069,-8.4765905,17z/data=!3m1!4b1!4m5!3m4!1s0x4844901a787e1019:0x4c7306f95cf5ab15!8m2!3d51.8955069!4d-8.4744018" class="white-color">
+                    <div class="row">
+                        <div class="col-lg-4 offset-lg-1 contact-links">
+                            <a href="tel:+0214270311" target="_blank" class="white-color"><span class="block"><i class="fas fa-phone-alt pr-1"></i> (021) 4270311</span></a>
+                            <a href="tel:+0214271296" target="_blank" class="white-color"><span class="block"><i class="fas fa-fax pr-1"></i> (021) 4271296</span></a> 
+                            <a href="mailto:info@keanemahonysmith.ie" target="_blank" class="white-color"><span class="block"><i class="far fa-envelope pr-1"></i>info@keanemahonysmith.ie</span></a>
+                        </div>
+                        <div class="col-lg-4 offset-lg-3 address-links">
+                            <a href="https://www.google.com/maps/place/Keane+Mahony+Smith/@51.8955069,-8.4765905,17z/data=!3m1!4b1!4m5!3m4!1s0x4844901a787e1019:0x4c7306f95cf5ab15!8m2!3d51.8955069!4d-8.4744018" class="white-color">
                             <i class="fas fa-map-marker-alt"></i>
                             City Park House, <br>
                             21 Sullivans Quay,<br>
                             Cork <br>
                             T12 N6CW
-                        </a>
-                        <p class="pt-2">PRS Licence Number : 001394</p>
+                            </a>
+                            <p class="pt-2">PRS Licence Number : 001394</p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 offset-lg-1 mb-4">
-                        <img src="{{ MEDIA_URL}}kms_logo.png" alt="404 image" class="">
-                    </div>
-                    <div class="col-lg-4 offset-lg-3 social-links">
-                        <li class="list-inline-item">
-                            <a href="https://www.facebook.com/Keane-Mahony-Smith-380117782034207" target="_blank" class="">
+                    <div class="row">
+                        <div class="col-lg-4 offset-lg-1 mb-4">
+                            <img src="{{ MEDIA_URL}}kms_logo.png" alt="404 image" class="">
+                        </div>
+                        <div class="col-lg-4 offset-lg-3 social-links">
+                            <li class="list-inline-item">
+                                <a href="https://www.facebook.com/Keane-Mahony-Smith-380117782034207" target="_blank" class="">
                                 <i class="fa fa-facebook social-links-i"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://www.instagram.com/keanemahonysmith/" target="_blank">
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.instagram.com/keanemahonysmith/" target="_blank">
                                 <i class="fa fa-instagram social-links-i" ></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://ww1.daft.ie/cork/estate-agents/cork-city/k-m-s/?d_rd=1" target="_blank">
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://ww1.daft.ie/cork/estate-agents/cork-city/k-m-s/?d_rd=1" target="_blank">
                                 <img src="{{ MEDIA_URL}}daft-logo.png" alt="daft-logo" class="daft-logo">                        
-                            </a>
-                        </li>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 offset-lg-1  web-design">
+                            <p>Website Design: <a href="https://www.linkedin.com/in/patrick-coakley-a0919410b/"
+                                target="_blank"  class="white-color underline">Patrick Coakley</span></p>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4 offset-lg-1  web-design">
-                        <p>Website Design: <a href="https://www.linkedin.com/in/patrick-coakley-a0919410b/"
-                        target="_blank"  class="white-color underline">Patrick Coakley</span></p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    {% endblock%}
+            </footer>
+        {% endblock%}
 
-    {% block postloadjs %}
-    <script type="text/javascript">
-        $('.toast').toast('show');
-    </script>
-    {% endblock %}
-
- 
-  </body>
+        {% block postloadjs %}
+            <script type="text/javascript">
+                $('.toast').toast('show');
+            </script>
+        {% endblock %}
+    </body>
 </html>
