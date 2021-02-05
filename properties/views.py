@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-from django.db.models import Max
 from django.core.paginator import Paginator
-from .models import Property, Type, County, PropertyImage
+from .models import Property, PropertyImage
 from .filters import PropertyFilter
 from django.conf import settings
+from django.db.models.functions import Lower
 
 
 def properties(request):
@@ -11,17 +11,15 @@ def properties(request):
     context = {}
     properties = Property.objects.all().order_by('?')
     propFilter = PropertyFilter(request.GET, queryset=properties)
-    sort = None 
-    direction = None 
-    
-    if request.GET: 
+    direction = None
+
+    if request.GET:
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
-            sort = sortkey
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 properties = Property.annotate(lower_name=Lower('name'))
-            
+
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -34,15 +32,14 @@ def properties(request):
     page_obj = paginator.get_page(page)
 
     context = {
-    'filter': propFilter, 
-    'page_obj': page_obj
+        'filter': propFilter,
+        'page_obj': page_obj
     }
-  
-    return render(request, 'properties/properties.html', context )
+
+    return render(request, 'properties/properties.html', context)
 
 
-    
-def property_selected(request, properties_id): 
+def property_selected(request, properties_id):
     """ A view that gives more details on the property selected """
 
     property = get_object_or_404(Property, pk=properties_id)
@@ -53,13 +50,11 @@ def property_selected(request, properties_id):
 
     referer = str(request.META.get('HTTP_REFERER'))
     host = str(request.META.get('HTTP_HOST'))
-    try:
-	    if host in referer:
-	        referer = request.META.get('HTTP_REFERER')
-	    else:
-	        referer = None
-    except:
-    	referer = None
+
+    if host in referer:
+        referer = request.META.get('HTTP_REFERER')
+    else:
+        referer = None
 
     context = {
         'property': property,

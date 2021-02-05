@@ -79,7 +79,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth', 
+                'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
 
@@ -114,9 +114,8 @@ else:
     }
 
 #DATABASES = {
-#   'default': dj_database_url.parse()   
+#   'default': dj_database_url.parse()
 # }
-
 
 
 # Password validation

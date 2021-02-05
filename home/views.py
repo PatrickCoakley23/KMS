@@ -3,13 +3,12 @@ from .models import Testimonial
 from properties.models import Agent
 from .forms import ContactForm
 
-
 from django.contrib import messages
 from django.core.mail import EmailMessage
 from django.template.loader import get_template
-from django.conf import settings
 
 # Create your views here.
+
 
 def index(request):
     """ a view to return the index page """
@@ -37,24 +36,13 @@ def Contact(request):
 
     if request.method == 'POST':
         form = ContactForm(request.POST)
-        
-        if form.is_valid():
-            name = request.POST.get(
-                'name'
-            , '')
-            email_address = request.POST.get(
-                'email'
-            , '')
-            subject = request.POST.get(
-                'subject'
-            , '')
-            phone_number = request.POST.get(
-                'phone_number'
-            , '')
-            message = request.POST.get(
-                'message'
-            , '')
 
+        if form.is_valid():
+            name = request.POST.get('name', '')
+            email_address = request.POST.get('email', '')
+            subject = request.POST.get('subject', '')
+            phone_number = request.POST.get('phone_number', '')
+            message = request.POST.get('message', '')
             template = get_template('home/contact_template.txt')
 
             context = {
@@ -69,17 +57,14 @@ def Contact(request):
             email = EmailMessage(
                 'Contact-Form ' + subject,
                 content,
-                email_address, 
+                email_address,
                 ['patrickcoakley23@gmail.com'],
             )
             email.send()
-            messages.success(request, 
-            f'Thanks {name}, Your Contact Form Has Been Successfully Sent.' 
-            )
-
+            messages.success(request, f'Thanks {name}, Your Contact Form Has'
+                                      'Been Successfully Sent.')
 
             return redirect('ContactUs')
-
 
     context = {
         'contact_form': contact_form,

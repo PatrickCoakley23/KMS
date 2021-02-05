@@ -8,4 +8,4 @@ Phone Number:
 {{ phone_number }}
 
 Message:
-{{ message|safe|striptags }}
+{{ message|safe }}

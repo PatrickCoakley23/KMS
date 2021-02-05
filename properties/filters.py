@@ -1,8 +1,7 @@
-from django import forms
-
 import django_filters
 
 from .models import Property, Type, County
+""" Used Django_filter to create property filter on properties.html """
 
 
 class PropertyFilter(django_filters.FilterSet):
@@ -37,16 +36,23 @@ class PropertyFilter(django_filters.FilterSet):
         ('Sale Agreed', ('Sale Agreed')),
         ('Sold', ('Sold')),
     )
-    
 
-    property_type = django_filters.ModelChoiceFilter(queryset=Type.objects.all(), empty_label="All", label="")
-    sale_status = django_filters.ChoiceFilter(choices=SALE_STATUS_CHOICES, field_name='sale_status', label="", empty_label="All")
-    county = django_filters.ModelChoiceFilter(queryset=County.objects.all(), empty_label="All", label="")
-    price__gte = django_filters.ChoiceFilter(choices=PRICE_CHOICES, field_name='price', lookup_expr='gte', label="", empty_label="No Min")
-    price__lte = django_filters.ChoiceFilter(choices=PRICE_CHOICES, field_name='price', lookup_expr='lte', label="", empty_label="No Max")
-    bedrooms__gte = django_filters.ChoiceFilter(choices=BED_CHOICES, field_name='bedrooms', lookup_expr='gte', label="", empty_label="No Min" )
-   
-    
+    property_type = django_filters.ModelChoiceFilter(
+        queryset=Type.objects.all(), empty_label="All", label="")
+    sale_status = django_filters.ChoiceFilter(
+        choices=SALE_STATUS_CHOICES, field_name='sale_status',
+        label="", empty_label="All")
+    county = django_filters.ModelChoiceFilter(
+        queryset=County.objects.all(), empty_label="All", label="")
+    price__gte = django_filters.ChoiceFilter(
+        choices=PRICE_CHOICES, field_name='price',
+        lookup_expr='gte', label="", empty_label="No Min")
+    price__lte = django_filters.ChoiceFilter(
+        choices=PRICE_CHOICES, field_name='price',
+        lookup_expr='lte', label="", empty_label="No Max")
+    bedrooms__gte = django_filters.ChoiceFilter(
+        choices=BED_CHOICES, field_name='bedrooms',
+        lookup_expr='gte', label="", empty_label="No Min")
 
     class Meta:
         model = Property
@@ -58,4 +64,3 @@ class PropertyFilter(django_filters.FilterSet):
             'price__lte',
             'bedrooms__gte'
         ]
-
