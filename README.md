@@ -58,6 +58,13 @@ The website was built using the [Django Framework]( https://www.djangoproject.co
     
 -   ### **WIREFRAMES**
 
+After speaking with Keane Mahony Smith and taking their requirements and needs into account I formulated a idea and jotted down notes and rough sketches on pen and paper. These ideas evolved into creating user stories which helped me formulate a plan to draw up some wireframes.
+I used [Balsamiq](https://balsamiq.com/) to build the wireframe's. I created mockups for desktop, tablet and mobile view ports, so I could have an idea of what my website would look like, and I could follow a plan to avoid scope creep.
+
+- Large Devices Wireframe  [view](Wireframes/KMS-WIREFRAME-LG.pdf)
+- Ipad Devices Wireframe  [view](Wireframes/KMS-WIREFRAME-IPAD.pdf)
+- Mobile Wireframe [view](Wireframes/KMS-WIREFRAME-MOBILE.pdf)
+
 
 
 
