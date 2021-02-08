@@ -61,7 +61,7 @@ def Contact(request):
                 ['patrickcoakley23@gmail.com'],
             )
             email.send()
-            messages.success(request, f'Thanks {name}, Your Contact Form Has'
+            messages.success(request, f'Thanks {name}, Your Contact Form Has '
                                       'Been Successfully Sent.')
 
             return redirect('ContactUs')

@@ -9,7 +9,7 @@ from django.db.models.functions import Lower
 def properties(request):
     """ A view to show all products, including sorting and search queries """
     context = {}
-    properties = Property.objects.all().order_by('?')
+    properties = Property.objects.all().order_by("-pk")
     propFilter = PropertyFilter(request.GET, queryset=properties)
     direction = None
 
