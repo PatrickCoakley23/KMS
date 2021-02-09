@@ -6,17 +6,29 @@ class PropertyImageAdmin(admin.StackedInline):
     model = PropertyImage
 
 
-@admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
+    list_display = ('combine_name_and_address', 'county',
+                    'property_type',
+                    'price', 'sale_status')
+    list_filter = ('property_type',)
+    search_fields = ('name', 'address')
     inlines = [PropertyImageAdmin]
 
     class Meta:
         model = Property
 
+    def combine_name_and_address(self, obj):
+        return "{}, {}".format(obj.name, obj.address)
 
-@admin.register(PropertyImage)
+
+admin.site.register(Property, PropertyAdmin)
+
+
 class PropertyImageAdmin(admin.ModelAdmin):
     pass
+
+
+admin.site.register(PropertyImage, PropertyImageAdmin)
 
 
 class TypeAdmin(admin.ModelAdmin):

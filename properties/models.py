@@ -61,14 +61,21 @@ class Property(models.Model):
                                blank=True, on_delete=models.SET_NULL)
     latitude = models.DecimalField(
         max_digits=25, decimal_places=20,
-        null=False, blank=False)
+        null=False, blank=False, help_text="Navigate to Google's Maps, "
+        "Enter the address you want to find, "
+        "Right click on the Map's pin point and the lat-lng will appear. "
+        "Latitude is the first number, longitude is second. "
+        "eg. (51.89371, -8.49649) (latitude, longitude)")
     longitude = models.DecimalField(
         max_digits=25, decimal_places=20,
-        null=False, blank=False)
+        null=False, blank=False,)
     description = models.TextField()
     bedrooms = models.DecimalField(max_digits=3, decimal_places=0)
     bathrooms = models.DecimalField(max_digits=3, decimal_places=0)
-    price = models.DecimalField(max_digits=8, decimal_places=0)
+    price = models.DecimalField(max_digits=8,
+                                decimal_places=0,
+                                help_text="Put price as 5000000 "
+                                "if you want 'Price Upon Request'")
     size = models.DecimalField(max_digits=8, decimal_places=0)
     description = models.TextField()
     ber_rating = models.ForeignKey(
