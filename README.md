@@ -456,13 +456,13 @@ On devices larger then 992 px wide the images and the content take up a column e
 <details>
 <summary>Testimonials Responsiveness <strong> (Click dropdown for images)</strong></summary>
 <p align="center">
-  <img height="350" src="README/images/responsiveness_testimonials_lg.png" style="max-width:100%;"></a>
+  <img height="350" src="README/images/responsiveness_testimonial_lg.png" style="max-width:100%;"></a>
 </p>
 <p align="center">
-  <img height="350" src="README/images/responsiveness_testimonials_ipad.png" style="max-width:100%;"></a>
+  <img height="350" src="README/images/responsiveness_testimonial_ipad.png" style="max-width:100%;"></a>
 </p>
 <p align="center">
-  <img height="350" src="README/images/responsiveness_testimonials_mobile.png" style="max-width:100%;"></a>
+  <img height="350" src="README/images/responsiveness_testimonial_mobile.png" style="max-width:100%;"></a>
 </p>
 </details>
 
