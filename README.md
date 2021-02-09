@@ -91,7 +91,7 @@ Imagery is a reoccurring theme throughout the website. Imagery plays a vital rol
 
 The homepage sets out to be the most eye catching and enticing page of the website. The homepage clearly describes who Keane Mahony Smith are and what they are about. 
 
-- Hero image - Sets to eye catching a draw the user in. 
+**Hero image** - Sets to eye catching a draw the user in. 
 
 <details>
 <summary>Hero Image <strong>(Click dropdown for images)</strong></summary>
@@ -100,19 +100,19 @@ The homepage sets out to be the most eye catching and enticing page of the websi
 </p>
 </details>  
 
-- About Section - I attempted to mirror a written letter to give this 'About' Section a authentic and personal feel.
+**About Section** - I attempted to mirror a written letter to give this 'About' Section a authentic and personal feel.
 
 <details>
-<summary>About Section<strong>(Click dropdown for images)</strong></summary>
+<summary>About Section<strong> (Click dropdown for images)</strong></summary>
 <p align="center">
   <img height="350" src="README/images/features_about.png" style="max-width:100%;"></a>
 </p>
 </details>  
 
-- Parallax Images - These images are not in fact parallax, they simply give the feel of parallax by having a background attachment of fixed. The user is drawn in as the image is revealed as the scroll with the page. 
+**Parallax Images** - These images are not in fact parallax, they simply give the feel of parallax by having a background attachment of fixed. The user is drawn in as the image is revealed as the scroll with the page. 
 
 <details>
-<summary>Parallax Images<strong>(Click dropdown for images)</strong></summary>
+<summary>Parallax Images<strong> (Click dropdown for images)</strong></summary>
 <p align="center">
   <img height="350" src="README/images/features_para1.png" style="max-width:100%;"></a>
 </p>
@@ -121,30 +121,59 @@ The homepage sets out to be the most eye catching and enticing page of the websi
 </p>
 </details>  
 
-- Our Services Section - This section uses the [AOS](https://michalsnik.github.io/aos/) plugin to slide content as the user scrolls down. The images chosen feature the colours black and yellow to align with the colour scheme of the website. 
+**Our Services Section** - This section uses the [AOS](https://michalsnik.github.io/aos/) plugin to slide content as the user scrolls down. The images chosen feature the colours black and yellow to align with the colour scheme of the website. 
 
 <details>
-<summary>Our Services Section<strong>(Click dropdown for images)</strong></summary>
+<summary>Our Services Section<strong> (Click dropdown for images)</strong></summary>
 <p align="center">
   <img height="350" src="README/images/features_services.png" style="max-width:100%;"></a>
 </p>
 </details>  
 
-- Testimonials Section - This section uses the [Slick Carousel](https://kenwheeler.github.io/slick/) plugin to add a sense of play as the user can slide between the different testimonials. 
+**Testimonials Section** - This section uses the [Slick Carousel](https://kenwheeler.github.io/slick/) plugin to add a sense of play as the user can slide between the different testimonials. 
 
 <details>
-<summary>Testimonials Section<strong>(Click dropdown for images)</strong></summary>
+<summary>Testimonials Section<strong> (Click dropdown for images)</strong></summary>
 <p align="center">
   <img height="350" src="README/images/features_testimonials.png" style="max-width:100%;"></a>
 </p>
 </details>  
 
-- Meet The Team - This section the images are black and white and upon the user hovering on each individual card the image's full colour is revealed.
+**Meet The Team** - This section the images are black and white and upon the user hovering on each individual card the image's full colour is revealed.
 
 <details>
-<summary>Meet The Team Section<strong>(Click dropdown for images)</strong></summary>
+<summary>Meet The Team Section<strong> (Click dropdown for images)</strong></summary>
 <p align="center">
   <img height="350" src="README/images/features_meet_team.png" style="max-width:100%;"></a>
+</p>
+</details>  
+
+---
+### Properties Page 
+
+The Property Page simply includes bootstrap card decks to list all the properties for sale. 
+
+<details>
+<summary>Property Section <strong> (Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/properties_page.png" style="max-width:100%;"></a>
+</p>
+</details>  
+
+**Django-Paginator** was used to limit each page to 15 properties so a user is not endlessly scrolling down the page to see all the properties. 
+
+<details>
+<summary>Pagination<strong> (Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/pagination.jpg" style="max-width:100%;"></a>
+</p>
+</details>  
+
+**Django-Filter** was implemented so users can filter their property search. 
+<details>
+<summary>Filter <strong> (Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/filter.jpg" style="max-width:100%;"></a>
 </p>
 </details>  
 
