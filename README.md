@@ -65,6 +65,99 @@ I used [Balsamiq](https://balsamiq.com/) to build the wireframe's. I created moc
 - Ipad Devices Wireframe  [view](Wireframes/KMS-WIREFRAME-IPAD.pdf)
 - Mobile Wireframe [view](Wireframes/KMS-WIREFRAME-MOBILE.pdf)
 
+## **Design**
+
+### Framework
+I used Bootstrap 4 to build the framework of the website. Bootstrap was the main tool frame responsible for making the Keane Mahony Smith website responsive. This means the website automatically resizes itself to look good on all devices, be it mobile, tablet, laptop or desktop.
+
+### Colour Scheme
+
+- **Black** And **Yellow** - Black and yellow is the colours of the Keane Mahony Smith brand. At first i was contemplating using these colours subtly throughout the website as they are quite dominating colours. I decided to be brave and bold and use these colours for the majority of the homepage. I believe the colours work well and there is a sense of change with some sections having black text with yellow background and vice versa. 
+
+- **White** - On some of the pages there is a white background as opposed to the dominant black. The reason being, I wanted to go for a clean look that doesn't distract the user. This is evident in the 'Properties' and the 'Property Selected' page where i wanted the details on each property to be the main focus of the user.
+
+There are other colours used on the site but they are used for minor style touches. 
+
+### Typography
+The “IBM Plex Serif” font is the font used for all the headings and the “Open Sans” font is the font used for the body of the website. "Montserrat" is used for the branding over the hero image to give a sense of importance. Sans serif and serif is set as the fallback font in case for any reason these fonts aren't being imported into the site correctly.
+
+### Imagery
+Imagery is a reoccurring theme throughout the website. Imagery plays a vital role in the property industry. I used [Shutterstock]( https://www.shutterstock.com/home) for majority of the images as i felt clean top quality images was necessary to improve the quality of the website.
+
+
+## **Layout**
+
+### Homepage
+
+The homepage sets out to be the most eye catching and enticing page of the website. The homepage clearly describes who Keane Mahony Smith are and what they are about. 
+
+- Hero image - Sets to eye catching a draw the user in. 
+
+<details>
+<summary>Hero Image <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/features_hero.png" style="max-width:100%;"></a>
+</p>
+</details>  
+
+- About Section - I attempted to mirror a written letter to give this 'About' Section a authentic and personal feel.
+
+<details>
+<summary>About Section<strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/features_about.png" style="max-width:100%;"></a>
+</p>
+</details>  
+
+- Parallax Images - These images are not in fact parallax, they simply give the feel of parallax by having a background attachment of fixed. The user is drawn in as the image is revealed as the scroll with the page. 
+
+<details>
+<summary>Parallax Images<strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/features_para1.png" style="max-width:100%;"></a>
+</p>
+<p align="center">
+  <img height="350" src="README/images/features_para2.png" style="max-width:100%;"></a>
+</p>
+</details>  
+
+- Our Services Section - This section uses the [AOS](https://michalsnik.github.io/aos/) plugin to slide content as the user scrolls down. The images chosen feature the colours black and yellow to align with the colour scheme of the website. 
+
+<details>
+<summary>Our Services Section<strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/features_services.png" style="max-width:100%;"></a>
+</p>
+</details>  
+
+- Testimonials Section - This section uses the [Slick Carousel](https://kenwheeler.github.io/slick/) plugin to add a sense of play as the user can slide between the different testimonials. 
+
+<details>
+<summary>Testimonials Section<strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/features_testimonials.png" style="max-width:100%;"></a>
+</p>
+</details>  
+
+- Meet The Team - This section the images are black and white and upon the user hovering on each individual card the image's full colour is revealed.
+
+<details>
+<summary>Meet The Team Section<strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/features_meet_team.png" style="max-width:100%;"></a>
+</p>
+</details>  
+
+
+
+
+
+
+
+
+
+
+
 
 
 
