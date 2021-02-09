@@ -319,7 +319,7 @@ I wasn't thought test driven development too extensively during my time in [Code
 <details>
 <summary>Testing Forms<strong>(Click dropdown for images)</strong></summary>
 <p align="center">
-  <img height="350" src="README/testing/images/testing_forms.png" style="max-width:100%;"></a>
+  <img height="350" src="README/images/testing_forms.png" style="max-width:100%;"></a>
 </p>
 </details>
 
@@ -330,7 +330,7 @@ I wasn't thought test driven development too extensively during my time in [Code
 <details>
 <summary>Testing Views<strong>(Click dropdown for images)</strong></summary>
 <p align="center">
-  <img height="350" src="README/testing/images/testing_views.png" style="max-width:100%;"></a>
+  <img height="350" src="README/images/testing_views.png" style="max-width:100%;"></a>
 </p>
 </details>
 
@@ -342,7 +342,7 @@ I carried out manual testing and documented any errors/random side-effects captu
 <details>
 <summary>Dev Tool Testing<strong> (Click dropdown for images)</strong></summary>
 <p align="center">
-  <img height="350" src="README/testing/images/dev_tools.jpg" style="max-width:100%;"></a>
+  <img height="350" src="README/images/dev_tools.jpg" style="max-width:100%;"></a>
 </p>
 </details>
 
@@ -356,7 +356,7 @@ If I directly inputted my code into the validator I would only get errors relate
 <details>
     <summary>HTML Validator <strong>(Click dropdown for images)</strong></summary>
     <p align="center">
-    <img height="350" src="README/testing/images/html_validator.png" style="max-width:100%;"></a>
+    <img height="350" src="README/images/html_validator.png" style="max-width:100%;"></a>
 </details> 
 
 #### Pep8
@@ -365,7 +365,7 @@ I carried out [PEP8 testing]( http://pep8online.com/) to improve the readability
 <details>
 <summary>Pep8 Pass<strong> (Click dropdown for images)</strong></summary>
 <p align="center">
-  <img height="350" src="README/testing/images/pep_8.png" style="max-width:100%;"></a>
+  <img height="350" src="README/images/pep_8.png" style="max-width:100%;"></a>
 </p>
 </details>
 
@@ -376,7 +376,7 @@ I used [JSHint](https://jshint.com/) to check if my javascript source code compl
 <details>
 <summary>JSHint Pass<strong> (Click dropdown for images)</strong></summary>
 <p align="center">
-  <img height="350" src="README/testing/images/jshint.png" style="max-width:100%;"></a>
+  <img height="350" src="README/images/jshint.png" style="max-width:100%;"></a>
 </p>
 </details>
 
