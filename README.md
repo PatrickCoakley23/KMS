@@ -17,44 +17,30 @@ The website was built using the [Django Framework]( https://www.djangoproject.co
     - As a Seller 
 
         - As a user i want to read an 'about section', so i can get a feel for the type of company and brand KMS is and what makes them different from other auctioneers. 
-            - Reason for 'About' section on Homepage.
-
+        
         - As a user I want to see the different services KMS offers as some auctioneers specialize in specific services eg. rental's only or property management etc
-            - Reason for 'Services' section which highlights that KMS works with residential, commercial and land sales only. 
-    
+
         - As a user I want to read some testimonials from clients who have dealt with KMS in the past.
-            - Reason for 'Testimonials' section. 
 
         - As a user I want to see some of the properties KMS have sold in the past, in order to get a better insight into the type of houses they sell and the price they achieved for that sale. 
-            - Reason for having not only the properties for sale but also the properties KMS have 'sold in the past and the properties that are 'sale agreed'. 
 
         - As a user i want to understand the process of a house sale. 
-            - Reason for 'Selling Guide'
 
-    
     - As a Buyer
 
         - As a user i want to be able to see all the properties for sale. 
-            - Reason for 'Properties' page. 
 
         - As a user i want to be able to filter my search so i can narrow my set of properties to ones which are more specific to me. 
-            - Reason for filtered search. 
 
         - As a user i want to be able to get a detailed insight into each property.
-            - Reason for 'Property Selected' page. 
 
         - As a user i want to get in contact with KMS or one of their agents. 
-            - Reason for 'Contact Page', 'Meet the Team' section.
 
         - As a user i want to see the exact location of the property so i can get a better understanding for the services in the locality. 
-            - Reason for Google Maps API. 
-
 
     - As an Owner 
 
         - As the owner of KMS i want a website that is unique and stands out from my competitors. 
-            - Reason for a colour scheme that remains constant throughout the website. Imagery is used across the website in order to interest and evoke emotion from the user. 
-            - Use of slide carousel in order to add a sense of play to the testimonial and property images section.
     
 -   ### **WIREFRAMES**
 
@@ -601,6 +587,159 @@ The Contact US page renders the exact same on all devices with one exception, th
   - Yet again, Internet Explorer performed poorly. Buttons are either positioned incorrectly or don’t appear at all. Horizontal rules are also out of position on Internet Explorer.         
 
 ## Testing of User Stories 
+
+### As a Seller
+
+1. As a user i want to read an 'about section', so i can get a feel for the type of company and brand KMS is and what makes them different from other auctioneers.
+    * The main purpose of the 'About Us' section is to reaffirm what the KMS brand is about and what they do. 
+
+<details>
+<summary>User story 1 <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/features_about.png" style="max-width:100%;"></a>
+</p>
+</details>
+
+---
+
+2. As a user I want to see the different services KMS offers as some auctioneers specialize in specific services eg. rental's only or property management etc
+    * The 'Our Services Section' Clearly states to the user that KMS only provides residential, land and commercial sales only. 
+
+<details>
+<summary>User story 2 <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/features_services.png" style="max-width:100%;"></a>
+</p>
+</details>
+
+---
+
+3. As a user I want to read some testimonials from clients who have dealt with KMS in the past. 
+    * The testimonial section allows users to slide to different testimonials provided by clients who have dealt with KMS in the past. 
+
+<details>
+<summary>User story 3 <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/features_testimonails.png" style="max-width:100%;"></a>
+</p>
+</details>
+
+---
+
+4. As a user I want to see some of the properties KMS have sold in the past in order to get a better insight into the type of houses they sell and the price they achieved for that sale.
+    *Reason for having not only the properties for sale but also the properties KMS have 'sold in the past and the properties that are 'sale agreed'.
+
+<details>
+<summary>User story 4 <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/user_story3.0.jpg" style="max-width:100%;">
+</p>
+<p align="center">
+  <img height="350" src="README/images/user_story3.1.jpg" style="max-width:100%;">
+</p>
+</details>
+
+---
+
+5. As a user i want to understand the process of a house sale.
+    * Reason for 'Selling Guide'
+
+<details>
+<summary>User story 5 <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/selling_guide.png" style="max-width:100%;">
+</p>
+</details>
+
+---
+
+### As a Buyer 
+
+6. As a user i want to be able to see all the properties for sale.
+    *Reason for 'Properties' page.
+
+<details>
+<summary>User story 6 <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/properties_page.png" style="max-width:100%;">
+</p>
+</details>
+
+---
+
+7. As a user i want to be able to filter my search so i can narrow my set of properties to ones which are more specific to me.
+    * Reason for filtered search.
+
+<details>
+<summary>User story 6 <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/responsiveness_filter_lg.png" style="max-width:100%;">
+</p>
+</details>
+
+---
+
+8. As a user i want to be able to get a detailed insight into each property.
+    * As a user i want to be able to get a detailed insight into each property.
+
+<details>
+<summary>User story 8 <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/responsiveness_details_lg.png" style="max-width:100%;">
+</p>
+</details>
+
+---
+
+9. As a user i want to get in contact with KMS or one of their agents.
+    *Reason for 'Contact Page' and 'Meet the Team' section.
+
+<details>
+<summary>User story 9 <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/responsiveness_contact_lg.png" style="max-width:100%;">
+</p>
+<p align="center">
+  <img height="350" src="README/images/features_meet_team.png" style="max-width:100%;">
+</p>
+</details>
+
+---
+
+10. As a user i want to see the exact location of the property so i can get a better understanding for the services in the locality.
+    * Reason for Google Maps API.
+
+<details>
+<summary>User story 10 <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/google_map.png" style="max-width:100%;">
+</p>
+</details>
+
+---
+
+### As an Owner 
+
+11. As the owner of KMS i want a website that is unique and stands out from my competitors.
+    * Reason for a colour scheme that remains constant throughout the website. Imagery is used across the website in order to interest and evoke emotion from the user.
+    * Use of slide carousel in order to add a sense of play to the testimonial and property images section.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
