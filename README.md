@@ -724,15 +724,205 @@ The Contact US page renders the exact same on all devices with one exception, th
     * Reason for a colour scheme that remains constant throughout the website. Imagery is used across the website in order to interest and evoke emotion from the user.
     * Use of slide carousel in order to add a sense of play to the testimonial and property images section.
 
+## SCHEMA 
+<h2 align="center"><img src="README/images/schema.png" max-width="30%"></h2>
+In development I used the relational database SQLite which is set up as default in Django. 
+
+This is how the schema is organised. The Ber ratings, Agent and Type models all have a foreign key relationship with the Property model so they can be accessed when im calling the Property model in my templates. 
+
+This is how the Keane Mahony Smith database is organised and how the relations among them are associated.
+
+## Deployment 
+
+I first set up my repository on Github. Github is a hosting platform which stores and presents my code. When logged into GitHub I click the green button on the right handside under repositories to create a new repository. After creating a repository on github I click the green 'Gitpod' button which opens my repository in Gitpod. I don't ever create projects directly in Gitpod, I create them in Github, and use the green button to open my project and begin coding.
+
+Gitpod is an IDE (integrated development environment) that allows for software development. Once I have inserted some code, I can run my page in the browser and within seconds, I can view the web version of my page. Gitpod is where I develop my project, write code and complete debugging issues.
+
+An important note, after I have created the repo in Github, I then open the repository each time from the Gitpod homepage, which shows me my most recent workspaces. If I were to click the green button in Github every time, this would just create a new version of my repository each time.
+
+In Gitpod, the next step is to commit any significant work and push it to Github.
+
+### Installing Django 
+Once I had my gitpod workspace set up I then progressed to installing django. I used the [Code Institute Full template]( https://github.com/Code-Institute-Org/gitpod-full-template) 
+so pip, python3 and Git were already installed on my workspace. Below are the steps to get started with Django. 
+
+** In the terminal** follow the steps below:
+
+1.       pip3 install django
+
+2.       django-admin startproject KMS .
+
+    * The dot at the end just means to set up this django app in the current directory
+    ** where I have 'angels-share' you can enter whatever name you'd like for your django app. 
+
+3.      touch .gitignore
+
+    * In this file I added:  *.sqlite3 (this is to ignore my database file)
+    * *.pyc
+    * __pycache__ (these two are to ignore any compiled python code)
+
+4.      python3 manage.py runserver 
+
+    * I exposed port 8000 here, and I am prompted with the below page indicating I installed django successfully. 
+
+<h2 align="center"><img src="README/images/django_install.png" max-width="30%"></h2>
+
+5. * Then stop the server and go back to the terminal 
+
+        python3 manage.py migrate
+
+    *this is to make the initial migrations. 
+
+6. * We can then create a superuser
+
+        python3 manage.py createsuperuser
+
+    * enter your username, email and password. 
+
+From here I was able to get started on my project, install apps, create my views, models, urls etc. 
+
+This project it is hosted on [Heroku]( https://signup.heroku.com/?c=70130000000NeLCAA0&gclid=Cj0KCQjwjer4BRCZARIsABK4QeUrUsqWM9q6V3aC9FczWoV80QkJn_rR-MNe3GDdz7XdQsVdGUbv3X8aAufJEALw_wcB) and I have outlined below how to deploy your project on Heroku.
+
+### Heroku Deployment 
+To deploy a Django project to heroku, follow the steps I took below:
+
+1. Create a new app on the [Heroku Website]( https://signup.heroku.com/?c=70130000000NeLCAA0&gclid=Cj0KCQjwjer4BRCZARIsABK4QeUrUsqWM9q6V3aC9FczWoV80QkJn_rR-MNe3GDdz7XdQsVdGUbv3X8aAufJEALw_wcB)
+Give it a name and set the region to whichever is applicable for your location.
+
+2. I used a [Postgres](https://www.postgresql.org/) database for my django app when hosted on heroku. 
+In heroku I clicked the **Resources** tab and searched for Postgres in the addons.
+Once added I clicked the **Settings** tab and within the **config vars** section I can access my Postgres Url. 
+
+3. Over in the Gitpod workspace terminal install dj_database_url, and psycopg2. 
+
+        pip3 install dj_database_url
+
+        pip3 install psycopg2-binary
+
+4. Create a `requirements.txt` file using the terminal command `pip freeze > requirements.txt`
+
+    * to update the requirements folder after further downloads type the same command. 
+
+5. I then import dj_database_url to my settings.py file and changed my database to
+
+    DATABASES = {
+        'default': dj_database_url.parse('<enter postgres url here as mentioned in step 2>'))
+    }
+
+6. Migrate changes to Postgres. 
+
+                python3 manage.py migrate
+
+    ** can then create a superuser again for the postgres admin
+
+7. Intall gunicorn to act as webserver 
+
+        pip3 install unicorn 
+
+    * then freeze requirements
+
+8. Create a `Procfile` with the terminal command `echo web: python app.py > Procfile`.
+
+9. `git add` and `git commit` the new requirements and Procfile and then `git push` the project to GitHub.
+
+10. From the heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
+
+11. Confirm the linking of the heroku app to the correct GitHub repository.
+
+12. I set up [Amazon Webservers](https://aws.amazon.com/) to host my media and static files. (S3)[https://aws.amazon.com/s3/) Simple Storage Service is the service app I used to store my static files like JavaScript and CSS and my images. 
+
+    * [Here] is a link on how to set up an S3 bucket. 
+
+13. Within my config vars in heroku I made sure it had my AWS Access keys, Secret keys, Google Api key etc. 
+
+<h2 align="center"><img src="README/images/config_vars.png" max-width="30%"></h2>
+
+## How to run this project locally
+To run this project on your own IDE follow the instructions below. Ensure you have an IDE such as GitPod and the following installed:
+
+1. PIP
+2. Git
+3. Python3
+4. If you are using the [Code Institute Full template]( https://github.com/Code-Institute-Org/gitpod-full-template) the above will already be installed
+
+6. To allow you to access all functionality on the site locally, ensure you have created free accounts with the following services:
+    - Google Maps API
+    - [AWS](https://aws.amazon.com/) and [set up an S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html)
+    - Set up SMTP server with a [Gmail](https://mail.google.com/) account for automatic emails. Steps to download [here]( https://www.siteground.com/kb/google_free_smtp_server/) 
+
+#### Instructions
+1. Save a copy of the github repository located at https://github.com/PatrickCoakley23/Angels_Share
+
+    * Click on the "Clone or download" green button located above and to the right of the File Structure table.
+    *Click on the "clipboard icon" to the right of the Git URL to copy the web URL of the Clone.
+
+2.        git clone https://github.com/PatrickCoakley23/Angels_Share
+
+        * enter the Git url you copied in step one. 
+
+3.  In the settings.py file set your AWS Bucket name and allowed hosts.
+
+4. Locate your settings file for storing enivonment variables. If using Gitpod it is located in the settings dropdown from https://gitpod.io/workspaces/. 
+Do not forget to restart your machine to activate your environment variables or your code will not be able to see them:
+
+Set the variables to match the names in Keane Mahony Smith Workspace. 
+
+    {
+        "KMS_SECRET_KEY": "<enter key here>",
+        "GOOGLE_API_KEY": "<enter key here>"
+    }
+
+5. Migrate the admin panel models to create your database template with the terminal command
 
 
+         python3 manage.py migrate
 
+    *this is to make the inital migrations. 
 
+6. * We can then create a superuser
 
+        python3 manage.py createsuperuser
 
+    * enter your username, email and password. 
 
+#### Heroku Deployment 
 
+To deploy Angel's Share to heroku, take the following steps:
 
+1. Create a `requirements.txt` file using the terminal command `pip freeze > requirements.txt`.
+
+2. Create a `Procfile` with the terminal command `echo web: python app.py > Procfile`.
+
+3. `git add` and `git commit` the new requirements and Procfile and then `git push` the project to GitHub.
+
+3. Create a new app on the [Heroku website](https://dashboard.heroku.com/apps) by clicking the "New" button in your dashboard. Give it a name and set the region to whichever is applicable for your location.
+
+4. From the heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
+
+5. Confirm the linking of the heroku app to the correct GitHub repository.
+
+6. In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+
+7. Set the following config vars:
+
+<h2 align="center"><img src="README/images/config_vars_2.jpg" max-width="30%"></h2>
+
+8.  Once instances of these items exist in your database your heroku site will run as expected.
+
+## Credits
+
+### Media 
+- [Font Awesome]( https://fontawesome.com/start) was the source of all the icons. 
+- All of the images were sourced from from [Shutterstock]( https://www.shutterstock.com/).
+
+### Code
+- I found [this tutorial](https://simpleisbetterthancomplex.com/tutorial/2016/11/28/how-to-filter-querysets-dynamically.html) on [Django-Filter](https://django-filter.readthedocs.io/en/stable/) very useful in implementing my filtered search for properties. 
+- I found [this tutorial](https://simpleisbetterthancomplex.com/snippet/2016/08/22/dealing-with-querystring-parameters.html) helpful in implementing [Django-Paginator](https://docs.djangoproject.com/en/3.1/topics/pagination/) with Django-Filter. 
+- I used [Slick Carousel](https://kenwheeler.github.io/slick/) for both the carousels on the website. 
+- I used [AOS](https://michalsnik.github.io/aos/) for the animation on scroll events in the 'Our Services' section.
+
+### ACKNOWLEDGEMENTS
+- I would like to thank [Darragh Taaffe](https://www.linkedin.com/in/darragh-taaffe-232745154/) for having the confidence in me to build a new website for [Keane Mahony Smith](http://www.keanemahonysmith.ie/kms/).
 
 
 
