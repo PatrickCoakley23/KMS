@@ -920,6 +920,7 @@ To deploy Angel's Share to heroku, take the following steps:
 - I found [this tutorial](https://simpleisbetterthancomplex.com/snippet/2016/08/22/dealing-with-querystring-parameters.html) helpful in implementing [Django-Paginator](https://docs.djangoproject.com/en/3.1/topics/pagination/) with Django-Filter. 
 - I used [Slick Carousel](https://kenwheeler.github.io/slick/) for both the carousels on the website. 
 - I used [AOS](https://michalsnik.github.io/aos/) for the animation on scroll events in the 'Our Services' section.
+- I found this site [yesviz](https://yesviz.com/devices/ipad-2019/) handy for checking specific devices viewport dimensions for media queries. 
 
 ### ACKNOWLEDGEMENTS
 - I would like to thank [Darragh Taaffe](https://www.linkedin.com/in/darragh-taaffe-232745154/) for having the confidence in me to build a new website for [Keane Mahony Smith](http://www.keanemahonysmith.ie/kms/).
