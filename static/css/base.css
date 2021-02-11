@@ -272,6 +272,28 @@ nav.black a img {
     background-attachment: fixed;
 }
 
+@media (max-width: 1200px) {
+    .parallax-image-container {
+    background: url('/media/port_of_cork2_ipad.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    background-attachment: fixed;
+    }
+
+    .parallax-image-container-two {
+        background: url('/media/blackrock_castle_ipad.jpg') no-repeat center center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        height: 100vh;
+        width: 100%;
+        background-attachment: fixed;
+    }
+}
+
 @media (max-width: 992px) {
     .parallax-image-container, 
     .parallax-image-container-two, 
@@ -718,6 +740,28 @@ footer .contact-links a:hover i, footer .address-links a:hover i,footer .social-
     overflow: hidden;
     height: 80vh;
     z-index: 1; 
+}
+
+@media (max-width: 992px) {
+    .selling-guide-hero-image {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/media/selling_guide_ipad.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    height: 80vh;
+    z-index: 1; 
+    }  
+}
+
+@media (max-width: 500px) {
+    .selling-guide-hero-image {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/media/selling_guide_mobile.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    height: 80vh;
+    z-index: 1; 
+    }  
 }
 
 .selling-page-heading {
