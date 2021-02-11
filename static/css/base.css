@@ -133,7 +133,6 @@ nav.black a img {
  }
 
  @media (max-width: 576px) {
-
     .cta h2  {
         font-size: 20px;
     }
@@ -169,13 +168,11 @@ nav.black a img {
 }
 
 @media (max-width: 992px) {
-    
     .about-kms {
     left: 50%;
     bottom: 3%;
     transform: translate(-50%, -50%);
     }
-
 }
 
 .signature {
@@ -264,13 +261,11 @@ nav.black a img {
 }
 
 @media (max-width: 992px) {
-
     .parallax-image-container, 
     .parallax-image-container-two, 
     .services-widget-container-parallax {
         display: none;
     }
-    
 }
 
 .slogan {
