@@ -404,7 +404,7 @@ nav.black a img {
 .information-column a:hover h3 {
     color: white;
     text-decoration: underline;
-    text-decoration-color:black;
+    text-decoration-color: #ffdd17;;
 }
 
 /* WIDGET */ 
@@ -892,6 +892,20 @@ footer .contact-links a:hover i, footer .address-links a:hover i,footer .social-
 
 /* For Internet Explorer Only */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+    .testimonials-widget-container {
+        background-color: #272424;
+        color: #968c8c;
+        position: relative;
+    } 
+
+    .services-vertical-widget {
+        border-left: 3px solid #272424;
+        height: 35px;
+        left: 50%;
+        bottom: 0;
+        position: absolute;
+    }
     
     .information-column {
         display: -ms-flexbox !important;
