@@ -274,7 +274,7 @@ nav.black a img {
 
 @media (max-width: 1200px) {
     .parallax-image-container {
-    background: url('/media/port_of_cork2.jpg') no-repeat center center;
+    background: url('/media/port_of_cork2_ipad.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
     overflow: hidden;
@@ -284,7 +284,7 @@ nav.black a img {
     }
 
 .parallax-image-container-two {
-    background: url('/media/blackrock_castle.jpg') no-repeat center center;
+    background: url('/media/blackrock_castle_ipad.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
     overflow: hidden;
@@ -319,6 +319,7 @@ nav.black a img {
 
 .charcoal-wrapper {
     background-color: #0f0f0fd9;
+    -ms-background-color: #272424;
     color: white;
     overflow: hidden;
     height: 100%;
@@ -395,15 +396,15 @@ nav.black a img {
 }
 
 
-.information-column span a {
+.information-column a {
     text-decoration: none;
     color: #ffdd17;
 }
 
-.information-column span a:hover h3 {
+.information-column a:hover h3 {
     color: white;
     text-decoration: underline;
-    text-decoration-color:#ffdd17
+    text-decoration-color:black;
 }
 
 /* WIDGET */ 
@@ -887,5 +888,69 @@ footer .contact-links a:hover i, footer .address-links a:hover i,footer .social-
 
 .button-center {
     text-align: center;
+}
+
+/* For Internet Explorer Only */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    
+    .information-column {
+        display: -ms-flexbox !important;
+        text-align: center !important;
+        -ms-flex-align: center !important;
+    }
+
+    .ie-div {
+        margin: auto !important;
+        text-align: left;
+    }
+
+    .charcoal-wrapper {
+    background-color: #272424;
+    color: white;
+    overflow: hidden;
+    height: 100%;
+    }
+    
+    .parallax-image-container {
+    background: url('/media/port_of_cork2.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    background-attachment: scroll;
+}
+
+.parallax-image-container-two {
+    background: url('/media/blackrock_castle.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    background-attachment: scroll;
+}
+
+    @media (max-width: 1200px) {
+        .parallax-image-container {
+        background: url('/media/port_of_cork2_ipad.jpg') no-repeat center center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        height: 100vh;
+        width: 100%;
+        background-attachment: scroll;
+        }
+
+        .parallax-image-container-two {
+            background: url('/media/blackrock_castle_ipad.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+            width: 100%;
+            background-attachment: scroll;
+            }
+    }
 }
 
