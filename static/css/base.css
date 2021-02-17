@@ -893,6 +893,16 @@ footer .contact-links a:hover i, footer .address-links a:hover i,footer .social-
 /* For Internet Explorer Only */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 
+    .team-img {
+        height: 250px;
+        width: 100%;
+        filter: grayscale(100%);
+    }
+
+    .team-card:hover .team-img {
+        filter: grayscale(0%);
+    }
+
     .testimonials-widget-container {
         background-color: #272424;
         color: #968c8c;

@@ -584,7 +584,12 @@ The Contact US page renders the exact same on all devices with one exception, th
 
   - Friends and family members were asked to review the site and point out any bugs and/or user experience issues.
 
-  - Yet again, Internet Explorer performed poorly. Buttons are either positioned incorrectly or don’t appear at all. Horizontal rules are also out of position on Internet Explorer.         
+  - Yet again, Internet Explorer performed poorly. Buttons are either positioned incorrectly or don’t appear at all. Horizontal rules are also out of position on Internet Explorer.  
+
+  ### Known Bug 
+  As mentioned above there is a bug on Internet Explorer when it comes to the jQuery scroll event with the navbar. <a href="https://www.youtube.com/watch?v=PQ0iYKLcvTM"><img src="README/images/youtube_kms.png" max-width="50%"></a>
+
+**Click the image or the link here [Youtube Video](https://www.youtube.com/watch?v=PQ0iYKLcvTM)**        
 
 ## Testing of User Stories 
 
@@ -620,7 +625,7 @@ The Contact US page renders the exact same on all devices with one exception, th
 <details>
 <summary>User story 3 <strong>(Click dropdown for images)</strong></summary>
 <p align="center">
-  <img height="350" src="README/images/features_testimonails.png" style="max-width:100%;"></a>
+  <img height="350" src="README/images/features_testimonials.png" style="max-width:100%;"></a>
 </p>
 </details>
 
