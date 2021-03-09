@@ -81,7 +81,7 @@ class Property(models.Model):
                               help_text="if acres leave blank")
     acres = models.DecimalField(max_digits=8, decimal_places=0,
                                 blank=True, null=True,
-                                help_text="if acres leave blank")
+                                help_text="if sqm leave blank")
     description = models.TextField()
     ber_rating = models.ForeignKey(
         'Ber_Rating', null=True,
