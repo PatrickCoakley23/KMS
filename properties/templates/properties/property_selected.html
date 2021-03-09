@@ -102,9 +102,20 @@
                         <div><i class="fas fa-bath"></i></div>
                     </div>
                     <div class="col-6 col-sm-3 text-center listing-border listing-border-xs-none py-4">
-                        <h5>{{ property.size }} sqm</h5>
+                        {% if properties.sqm %}
+                            <h5>{{ property.sqm }} sqm</h5>
+                        {% elif property.acres %} 
+                            <h5>{{ property.acres }} ac</h5>
+                        {% else %}
+                        {% endif %}
                         <div><i class="fas fa-ruler-combined"></i></div>
                     </div>
+                       <div><i class="fas fa-ruler-combined"></i></div>
+                                  
+                                   
+                                  
+
+
                     <div class="d-none d-sm-block col-sm-2 text-center py-4">
                         <img src="{{MEDIA_URL}}{{ property.ber_rating.image }}" alt="{{ property.name}}" class="ber_image">
                     </div>

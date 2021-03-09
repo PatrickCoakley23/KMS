@@ -76,7 +76,12 @@ class Property(models.Model):
                                 decimal_places=0,
                                 help_text="Put price as 5000000 "
                                 "if you want 'Price Upon Request'")
-    size = models.DecimalField(max_digits=8, decimal_places=0)
+    sqm = models.DecimalField(max_digits=8, decimal_places=0,
+                              blank=True, null=True,
+                              help_text="if acres leave blank")
+    acres = models.DecimalField(max_digits=8, decimal_places=0,
+                                blank=True, null=True,
+                                help_text="if acres leave blank")
     description = models.TextField()
     ber_rating = models.ForeignKey(
         'Ber_Rating', null=True,

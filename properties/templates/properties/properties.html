@@ -133,7 +133,12 @@
                                 </div>
                                 <div class="col-4 text-center">
                                     <div><i class="fas fa-ruler-combined"></i></div>
-                                    <p>{{ properties.size}}{% if properties.property_type.name == 'Farm Sales' %}<small>Acres</small>{% else %}<small class="d-none_300">sqm</small>{% endif %}</p>
+                                    {% if properties.sqm %}
+                                        <p>{{ properties.sqm}} <small class="d-none_300">sqm</small></p>
+                                    {% elif properties.acres %} 
+                                        <p>{{ properties.acres}}</p> <small class="d-none_300">ac</small>
+                                    {% else %}
+                                    {% endif %}
                                 </div>
                                 {% else %}
                                 <div class="col-4 text-center">
