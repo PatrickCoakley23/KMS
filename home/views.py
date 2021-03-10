@@ -57,7 +57,7 @@ def Contact(request):
                 'Contact-Form ' + subject,
                 content,
                 email_address,
-                ['patrickcoakley23@gmail.com'],
+                ['keanemahonysmith@gmail.com'],
             )
             email.send()
             messages.success(request, f'Thanks {name}, Your Contact Form Has '
