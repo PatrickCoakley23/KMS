@@ -58,7 +58,7 @@ def Contact(request):
                 'Contact-Form ' + subject,
                 content,
                 email_address,
-                [settings.EMAIL_HOST_USER]
+                settings.EMAIL_HOST_USER
             )
             email.send()
             messages.success(request, f'Thanks {name}, Your Contact Form Has '
