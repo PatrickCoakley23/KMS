@@ -3,20 +3,18 @@
     border-radius: 0;
     box-shadow: 5px 5px 15px #f8f9fa;
     transition: all 0.3s ease-in;
-    webkit-transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
     background-color: #332f2f;
     color: white;
 }
 
 @media (min-width: 992px ) {
-    
     .card-testimonials:hover {
         background-color: whitesmoke;
         color: black;
         box-shadow: 5px 5px 15px #111111;
         transition: all 0.3s ease-in;
     }
-
 }
 
 .slick-slide img {
@@ -46,4 +44,3 @@
 .slick-next {
     right: 0%!important;
 }
-

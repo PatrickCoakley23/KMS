@@ -34,7 +34,6 @@ h1, h2, h3, h4, h5 {
     text-transform: uppercase;
 }
 
-
 .navbar-nav .nav-link:hover {
     color: #ffdd17;
     font-family: 'IBM Plex Serif', serif;
@@ -65,9 +64,7 @@ nav.black a img {
     outline: 5px auto black;
 }
 
-
 @media (max-width:468px) {
-    
     .navbar{
         padding: 0 1rem;
     }
@@ -85,7 +82,6 @@ nav.black a img {
     color: black;
     font-weight: 500;
 }
-
 
 .header-container {
     padding-top: 120px;
@@ -130,24 +126,23 @@ nav.black a img {
     overflow: hidden;
     height: 100vh;
     width: 100%;
- }
+}
 
- @media (max-width: 768px) {
+@media (max-width: 768px) {
     .hero-image-container {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/media/hero_image_sm.jpg') no-repeat center center;
-    background-size: cover;
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-    width: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/media/hero_image_sm.jpg') no-repeat center center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        height: 100vh;
+        width: 100%;
     }
- }
+}
 
- @media (max-width: 576px) {
+@media (max-width: 576px) {
     .cta h2  {
         font-size: 20px;
-    }
-    
+    }    
 }
 
 .cta {
@@ -181,9 +176,9 @@ nav.black a img {
 
 @media (max-width: 992px) {
     .about-kms {
-    left: 50%;
-    bottom: 3%;
-    transform: translate(-50%, -50%);
+        left: 50%;
+        bottom: 3%;
+        transform: translate(-50%, -50%);
     }
 }
 
@@ -228,25 +223,25 @@ nav.black a img {
 
 @media (max-width: 991.98px) {
     .about-paragraph {
-    padding: 1rem;
+        padding: 1rem;
     }
 }
 
 @media (max-width: 991.98px) {
     .about-paragraph {
-    padding: 1rem;
+        padding: 1rem;
     }
 }
 
 @media (max-width: 576px) {
     .signature {
-    font-size: 25px;
+        font-size: 25px;
     }
 }
 
 @media (max-width: 310px) {
     .signature {
-    font-size: 20qpx;
+        font-size: 20px;
     }
 }
 
@@ -274,23 +269,23 @@ nav.black a img {
 
 @media (max-width: 1200px) {
     .parallax-image-container {
-    background: url('/media/port_of_cork2_ipad.jpg') no-repeat center center;
-    background-size: cover;
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-    width: 100%;
-    background-attachment: scroll;
+        background: url('/media/port_of_cork2_ipad.jpg') no-repeat center center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        height: 100vh;
+        width: 100%;
+        background-attachment: scroll;
     }
 
 .parallax-image-container-two {
-    background: url('/media/blackrock_castle_ipad.jpg') no-repeat center center;
-    background-size: cover;
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-    width: 100%;
-    background-attachment: scroll;
+        background: url('/media/blackrock_castle_ipad.jpg') no-repeat center center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        height: 100vh;
+        width: 100%;
+        background-attachment: scroll;
     }
 }
 
@@ -366,20 +361,16 @@ nav.black a img {
 }
 
 @media (max-width: 310px) {
-
     .small-h2-service {
         font-size: 25px;
     }
-
 }
 
 .padding-lg {
     padding-bottom: 3rem;
 }
 
-
 @media (max-width: 991.98px) {
-
     .services-image {
         height: 360px;
         padding-top: 3rem;
@@ -387,11 +378,11 @@ nav.black a img {
     }
 
     [data-aos-delay] {
-    transition-delay: 0s !important;
+        transition-delay: 0s !important;
     }
 
     .padding-lg {
-    padding-bottom: 0;
+        padding-bottom: 0;
     }
 }
 
@@ -438,7 +429,6 @@ nav.black a img {
 }
 
 @media (min-width: 1397px) {
-
     .services-widget-container-parallax {
         margin-top: -81.2px;
     }
@@ -447,7 +437,6 @@ nav.black a img {
 .margin-widget {
     margin-bottom: 3rem;
 }
-
 
 .testimonials-vertical-widget {
     border-left: 3px solid #968c8c;
@@ -463,16 +452,12 @@ nav.black a img {
     position: relative;
 }
 
-@media (max-width: 310px) {
-    
+@media (max-width: 310px) {    
     .testimonials-widget {
         flex: 1;
         max-width: 100%;
         margin-left: 0;
     }
-
-   
-
 }
 
 .margin-widget {
@@ -604,8 +589,8 @@ nav.black a img {
         padding-bottom: 2rem;
     }
     .pt-team {
-    padding-top: 35px;
-    padding-bottom: 35px;
+        padding-top: 35px;
+        padding-bottom: 35px;
     }
 }
 
@@ -644,7 +629,6 @@ footer {
 }
 
 @media (max-width:398px) {
-    
     .footer-co-heading h4 {
         font-size: large;
     }
@@ -745,23 +729,23 @@ footer .contact-links a:hover i, footer .address-links a:hover i,footer .social-
 
 @media (max-width: 992px) {
     .selling-guide-hero-image {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/media/selling_guide_ipad.jpg') no-repeat center center;
-    background-size: cover;
-    position: relative;
-    overflow: hidden;
-    height: 80vh;
-    z-index: 1; 
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/media/selling_guide_ipad.jpg') no-repeat center center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        height: 80vh;
+        z-index: 1; 
     }  
 }
 
 @media (max-width: 500px) {
     .selling-guide-hero-image {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/media/selling_guide_mobile.jpg') no-repeat center center;
-    background-size: cover;
-    position: relative;
-    overflow: hidden;
-    height: 80vh;
-    z-index: 1; 
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/media/selling_guide_mobile.jpg') no-repeat center center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        height: 80vh;
+        z-index: 1; 
     }  
 }
 
@@ -773,14 +757,12 @@ footer .contact-links a:hover i, footer .address-links a:hover i,footer .social-
 }
 
 @media (max-width: 576px) {
-    
     .selling-page-heading {
         display: none;
     }
-
 }
 
-/* CONTACT PAGE */ 
+/* CONTACT PAGE */
 
 .contact-page-container .contact-links i {
     color: #ffdd17;
@@ -892,68 +874,67 @@ footer .contact-links a:hover i, footer .address-links a:hover i,footer .social-
 
 /* For Internet Explorer Only */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        .team-img { 
+            height: 250px;
+            width: 100%;
+            filter: grayscale(100%);
+        }
 
-    .team-img {
-        height: 250px;
-        width: 100%;
-        filter: grayscale(100%);
-    }
+        .team-card:hover .team-img {
+            filter: grayscale(0%);
+        }
 
-    .team-card:hover .team-img {
-        filter: grayscale(0%);
-    }
+        .testimonials-widget-container {
+            background-color: #272424;
+            color: #968c8c;
+            position: relative;
+        } 
 
-    .testimonials-widget-container {
+        .services-vertical-widget {
+            border-left: 3px solid #272424;
+            height: 35px;
+            left: 50%;
+            bottom: 0;
+            position: absolute;
+        }
+        
+        .information-column {
+            display: -ms-flexbox !important;
+            text-align: center !important;
+            -ms-flex-align: center !important;
+        }
+
+        .ie-div {
+            margin: auto !important;
+            text-align: left;
+        }
+
+        .charcoal-wrapper {
         background-color: #272424;
-        color: #968c8c;
+        color: white;
+        overflow: hidden;
+        height: 100%;
+        }
+        
+        .parallax-image-container {
+        background: url('/media/port_of_cork2.jpg') no-repeat center center;
+        background-size: cover;
         position: relative;
-    } 
-
-    .services-vertical-widget {
-        border-left: 3px solid #272424;
-        height: 35px;
-        left: 50%;
-        bottom: 0;
-        position: absolute;
-    }
-    
-    .information-column {
-        display: -ms-flexbox !important;
-        text-align: center !important;
-        -ms-flex-align: center !important;
+        overflow: hidden;
+        height: 100vh;
+        width: 100%;
+        background-attachment: scroll;
     }
 
-    .ie-div {
-        margin: auto !important;
-        text-align: left;
+    .parallax-image-container-two {
+        background: url('/media/blackrock_castle.jpg') no-repeat center center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        height: 100vh;
+        width: 100%;
+        background-attachment: scroll;
     }
-
-    .charcoal-wrapper {
-    background-color: #272424;
-    color: white;
-    overflow: hidden;
-    height: 100%;
-    }
-    
-    .parallax-image-container {
-    background: url('/media/port_of_cork2.jpg') no-repeat center center;
-    background-size: cover;
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-    width: 100%;
-    background-attachment: scroll;
-}
-
-.parallax-image-container-two {
-    background: url('/media/blackrock_castle.jpg') no-repeat center center;
-    background-size: cover;
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-    width: 100%;
-    background-attachment: scroll;
-}
 
     @media (max-width: 1200px) {
         .parallax-image-container {
