@@ -53,12 +53,15 @@ def Contact(request):
             }
             content = template.render(context)
 
+          
+
             email = EmailMessage(
                 'Contact-Form ' + subject,
                 content,
                 email_address,
                 ['keanemahonysmith@gmail.com'],
             )
+            
             email.send()
             messages.success(request, f'Thanks {name}, Your Contact Form Has '
                                       'Been Successfully Sent.')
