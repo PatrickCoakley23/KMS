@@ -6,7 +6,7 @@
 
 This was an exciting project for me as it was the first professional website I developed as a free lance developer after graduating from [Code Institute](https://codeinstitute.net/). 
 
-[Keane Mahony Smith](http://www.keanemahonysmith.ie/) is an established auctioneering firm based in Cork City. Their previous website was a templated website which was very limited and lacked its own unique style. [Darragh Taaffe](https://www.linkedin.com/in/darragh-taaffe-232745154/) of Keane Mahony Smith's main brief of the new website was to be unique and edgy so it stood out from the industry normal mundane real estate/ auctioneer websites.
+[Keane Mahony Smith](http://www.keanemahonysmith.ie/) is an established auctioneering firm based in Cork City. Their previous website was a templated website which was very limited and lacked its own unique style. [Darragh Taaffe](https://www.linkedin.com/in/darragh-taaffe-232745154/) of Keane Mahony Smith's main brief for the new website was for it to be unique and edgy so it stood out from the industry norm mundane real estate/ auctioneering websites.
 
 The website was built using the [Django Framework]( https://www.djangoproject.com/start/overview/) as it was ideal to build a centrally-owned dataset to handle all the properties listed for sale.
 
@@ -17,8 +17,8 @@ The website was built using the [Django Framework]( https://www.djangoproject.co
     - As a Seller 
 
         - As a user i want to read an 'about section', so i can get a feel for the type of company and brand KMS is and what makes them different from other auctioneers. 
-        
-        - As a user I want to see the different services KMS offers as some auctioneers specialize in specific services eg. rental's only or property management etc
+        09
+        - As a user I want to see the different services KMS offers as some auctioneers specialise in specific services eg. rental's only or property management etc
 
         - As a user I want to read some testimonials from clients who have dealt with KMS in the past.
 
@@ -54,11 +54,11 @@ I used [Balsamiq](https://balsamiq.com/) to build the wireframe's. I created moc
 ## **Design**
 
 ### Framework
-I used Bootstrap 4 to build the framework of the website. Bootstrap was the main tool frame responsible for making the Keane Mahony Smith website responsive. This means the website automatically resizes itself to look good on all devices, be it mobile, tablet, laptop or desktop.
+I used [Bootstrap 4](https://getbootstrap.com/) to build the framework of the website. Bootstrap was the main tool frame responsible for making the Keane Mahony Smith website responsive. This means the website automatically resizes itself to look good on all devices, be it mobile, tablet, laptop or desktop.
 
 ### Colour Scheme
 
-- **Black** And **Yellow** - Black and yellow is the colours of the Keane Mahony Smith brand. At first i was contemplating using these colours subtly throughout the website as they are quite dominating colours. I decided to be brave and bold and use these colours for the majority of the homepage. I believe the colours work well and there is a sense of change with some sections having black text with yellow background and vice versa. 
+- **Black** And **Yellow** - Black and yellow are the colours of the Keane Mahony Smith brand. At first i was contemplating using these colours sparingly throughout the website as they are quite dominating colours. I decided to be brave and bold and use these colours for the majority of the homepage. I believe the colours work well and there is a sense of change with some sections having black text with yellow background and vice versa. 
 
 - **White** - On some of the pages there is a white background as opposed to the dominant black. The reason being, I wanted to go for a clean look that doesn't distract the user. This is evident in the 'Properties' and the 'Property Selected' page where i wanted the details on each property to be the main focus of the user.
 
@@ -77,7 +77,7 @@ Imagery is a reoccurring theme throughout the website. Imagery plays a vital rol
 
 The homepage sets out to be the most eye catching and enticing page of the website. The homepage clearly describes who Keane Mahony Smith are and what they are about. 
 
-**Hero image** - Sets to eye catching a draw the user in. 
+**Hero image** - Sets out to be eye catching and draw the user in. 
 
 <details>
 <summary>Hero Image <strong>(Click dropdown for images)</strong></summary>
@@ -86,7 +86,7 @@ The homepage sets out to be the most eye catching and enticing page of the websi
 </p>
 </details>  
 
-**About Section** - I attempted to mirror a written letter to give this 'About' Section a authentic and personal feel.
+**About Section** - I attempted to mirror a written letter to give this 'About' Section an authentic and personal feel.
 
 <details>
 <summary>About Section<strong> (Click dropdown for images)</strong></summary>
@@ -301,7 +301,7 @@ I wasn't thought test driven development too extensively during my time in [Code
 
 ### Testing OrderForm
 
- 2. I then tested to see if required feels are treated as valid when left blank. I submitted a blank field and self.assertFalse(form.is_valid()) so the form would not be valid.
+ 1. I then tested to see if required feels are treated as valid when left blank. I submitted a blank field and self.assertFalse(form.is_valid()) so the form would not be valid.
 <details>
 <summary>Testing Forms<strong>(Click dropdown for images)</strong></summary>
 <p align="center">
@@ -401,7 +401,7 @@ The About section is split between two columns on devices above 992 px wide. On 
   <img height="350" src="README/images/responsiveness_about_ipad.png" style="max-width:100%;"></a>
 </p>
 <p align="center">
-  <img height="350" src="README/images/responsiveness_about_mobile.png" style="max-width:100%;"></a>
+  <img height="350" src="README/images/responsiveness_about.png" style="max-width:100%;"></a>
 </p>
 </details>
 
@@ -419,7 +419,7 @@ The parallax effect sections are not displayed on devices below 992px as they di
 </details>
 
 **Our Services Section**
-On devices larger then 992 px wide the images and the content take up a column each. On Mobile and Ipad devices the paragraphs are not displayed, and the Headings are displayed on top of the image. On mobile and Ipad devives a '+' sign is placed on top of the image to indicate to the user that the image works as an anchor element if selected.
+On devices larger than 992 px wide the images and the content take up a column each. On Mobile and Ipad devices the paragraphs are not displayed, and the Headings are displayed on top of the image. On mobile and Ipad devives a '+' sign is placed on top of the image to indicate to the user that the image works as an anchor element if selected.
 
 <details>
 <summary>Our Services Section <strong> (Click dropdown for images)</strong></summary>
@@ -435,7 +435,7 @@ On devices larger then 992 px wide the images and the content take up a column e
 </details>
 
 **Testimonials Section** 
-- On devices larger then 992px wide three testimonial cards are visible. 
+- On devices larger than 992px wide three testimonial cards are visible. 
 - On devices between 992px and 768px two testimonial cards are visible
 - On mobile devices one testimonial card is visible. 
 
@@ -472,7 +472,7 @@ On devices larger then 992 px wide the images and the content take up a column e
 
 ---
 ### Properties Page 
-For the filter tab 3 of the filter options (price min, price max and min beds) are removed on devices below 768px as the filtered search took up too my real estate on the website. 
+For the filter tab 3 of the filter options (price min, price max and min beds) are removed on devices below 768px as the filtered search took up too much real estate on the website. 
 
 <details>
 <summary>Filter <strong> (Click dropdown for images)</strong></summary>
@@ -584,12 +584,8 @@ The Contact US page renders the exact same on all devices with one exception, th
 
   - Friends and family members were asked to review the site and point out any bugs and/or user experience issues.
 
-  - Yet again, Internet Explorer performed poorly. Buttons are either positioned incorrectly or don’t appear at all. Horizontal rules are also out of position on Internet Explorer.  
-
-  ### Known Bug 
-  As mentioned above there is a bug on Internet Explorer when it comes to the jQuery scroll event with the navbar. <a href="https://www.youtube.com/watch?v=PQ0iYKLcvTM"><img src="README/images/youtube_kms.png" max-width="50%"></a>
-
-**Click the image or the link here [Youtube Video](https://www.youtube.com/watch?v=PQ0iYKLcvTM)**        
+  - Yet again, Internet Explorer performed poorly. A media query was set up to handle issues with IE10 and IE11. There is still a bug with the jQuery Scroll event with the navbar meant to disappear. I search endlessly for a solution but couldn't solve the problem. 
+    
 
 ## Testing of User Stories 
 
@@ -632,7 +628,7 @@ The Contact US page renders the exact same on all devices with one exception, th
 ---
 
 4. As a user I want to see some of the properties KMS have sold in the past in order to get a better insight into the type of houses they sell and the price they achieved for that sale.
-    *Reason for having not only the properties for sale but also the properties KMS have 'sold in the past and the properties that are 'sale agreed'.
+    * Reason for having not only the properties for sale but also the properties KMS have 'sold in the past and the properties that are 'sale agreed'.
 
 <details>
 <summary>User story 4 <strong>(Click dropdown for images)</strong></summary>
@@ -661,7 +657,7 @@ The Contact US page renders the exact same on all devices with one exception, th
 ### As a Buyer 
 
 6. As a user i want to be able to see all the properties for sale.
-    *Reason for 'Properties' page.
+    * Reason for 'Properties' page.
 
 <details>
 <summary>User story 6 <strong>(Click dropdown for images)</strong></summary>
@@ -685,7 +681,7 @@ The Contact US page renders the exact same on all devices with one exception, th
 ---
 
 8. As a user i want to be able to get a detailed insight into each property.
-    * As a user i want to be able to get a detailed insight into each property.
+   * Property selected page
 
 <details>
 <summary>User story 8 <strong>(Click dropdown for images)</strong></summary>
@@ -697,7 +693,7 @@ The Contact US page renders the exact same on all devices with one exception, th
 ---
 
 9. As a user i want to get in contact with KMS or one of their agents.
-    *Reason for 'Contact Page' and 'Meet the Team' section.
+    * Reason for 'Contact Page' and 'Meet the Team' section.
 
 <details>
 <summary>User story 9 <strong>(Click dropdown for images)</strong></summary>
@@ -733,7 +729,7 @@ The Contact US page renders the exact same on all devices with one exception, th
 <h2 align="center"><img src="README/images/schema.png" max-width="30%"></h2>
 In development I used the relational database SQLite which is set up as default in Django. 
 
-This is how the schema is organised. The Ber ratings, Agent and Type models all have a foreign key relationship with the Property model so they can be accessed when im calling the Property model in my templates. 
+This is how the schema is organised. The Ber ratings, Agent and Type models all have a foreign key relationship with the Property model so they can be accessed when calling the Property model in the templates. 
 
 This is how the Keane Mahony Smith database is organised and how the relations among them are associated.
 
@@ -776,7 +772,7 @@ so pip, python3 and Git were already installed on my workspace. Below are the st
 
         python3 manage.py migrate
 
-    *this is to make the initial migrations. 
+    * this is to make the initial migrations. 
 
 6. * We can then create a superuser
 
@@ -840,7 +836,7 @@ Once added I clicked the **Settings** tab and within the **config vars** section
 
 13. Within my config vars in heroku I made sure it had my AWS Access keys, Secret keys, Google Api key etc. 
 
-<h2 align="center"><img src="README/images/config_vars.png" max-width="30%"></h2>
+<h2 align="center"><img src="README/images/convig_vars.png" max-width="30%"></h2>
 
 ## How to run this project locally
 To run this project on your own IDE follow the instructions below. Ensure you have an IDE such as GitPod and the following installed:
@@ -856,12 +852,12 @@ To run this project on your own IDE follow the instructions below. Ensure you ha
     - Set up SMTP server with a [Gmail](https://mail.google.com/) account for automatic emails. Steps to download [here]( https://www.siteground.com/kb/google_free_smtp_server/) 
 
 #### Instructions
-1. Save a copy of the github repository located at https://github.com/PatrickCoakley23/Angels_Share
+1. Save a copy of the github repository located at https://github.com/PatrickCoakley23/KMS
 
     * Click on the "Clone or download" green button located above and to the right of the File Structure table.
     *Click on the "clipboard icon" to the right of the Git URL to copy the web URL of the Clone.
 
-2.        git clone https://github.com/PatrickCoakley23/Angels_Share
+2.        git clone https://github.com/PatrickCoakley23/KMS
 
         * enter the Git url you copied in step one. 
 
@@ -910,7 +906,7 @@ To deploy Angel's Share to heroku, take the following steps:
 
 7. Set the following config vars:
 
-<h2 align="center"><img src="README/images/config_vars_2.jpg" max-width="30%"></h2>
+<h2 align="center"><img src="README/images/convig_vars_2.jpg" max-width="30%"></h2>
 
 8.  Once instances of these items exist in your database your heroku site will run as expected.
 
@@ -925,7 +921,8 @@ To deploy Angel's Share to heroku, take the following steps:
 - I found [this tutorial](https://simpleisbetterthancomplex.com/snippet/2016/08/22/dealing-with-querystring-parameters.html) helpful in implementing [Django-Paginator](https://docs.djangoproject.com/en/3.1/topics/pagination/) with Django-Filter. 
 - I used [Slick Carousel](https://kenwheeler.github.io/slick/) for both the carousels on the website. 
 - I used [AOS](https://michalsnik.github.io/aos/) for the animation on scroll events in the 'Our Services' section.
-- I found this site [yesviz](https://yesviz.com/devices/ipad-2019/) handy for checking specific devices viewport dimensions for media queries. 
+- I found this site [yesviz](https://yesviz.com/devices/ipad-2019/) handy for checking specific devices viewport dimensions for media queries.
+- i found this [hack](https://philipnewcomer.net/2014/04/target-internet-explorer-10-11-css/) handy to implement a media query for Internet Explorer 10 & 11.
 
 ### ACKNOWLEDGEMENTS
 - I would like to thank [Darragh Taaffe](https://www.linkedin.com/in/darragh-taaffe-232745154/) for having the confidence in me to build a new website for [Keane Mahony Smith](http://www.keanemahonysmith.ie/kms/).
