@@ -89,13 +89,19 @@ class Property(models.Model):
     image = models.ImageField(null=True, blank=True)
     youtube_id = models.CharField(max_length=1024,
                                  null=True, blank=True,
-                                 help_text="Requires the id of youtube video "
+                                 help_text="Requires the ID of youtube video "
                                  "Not the full url. "
-                                 "Id is the last part of the url eg. "
+                                 "ID is the last part of the url eg. "
                                  "https://www.youtube.com/watch?v=ZIOCKqk4x3A "
-                                 "the id here is "
+                                 "the ID here is "
                                  "ZIOCKqk4x3A ")
-    matterport_link = models.URLField(max_length=1024, null=True, blank=True)
+    matterport_id = models.CharField(max_length=1024, null=True, blank=True,
+                                     help_text="Requires the ID of matterport video "
+                                     "Not the full url. "
+                                     "ID is the last part of the url eg. "
+                                     "https://my.matterport.com/show/?m=PhqeQDhKBYd "
+                                     "the ID here is "
+                                     "PhqeQDhKBYd ")
     date_added = models.DateTimeField(auto_now_add=False)
     agent = models.ForeignKey(
         'Agent', null=True, blank=True,
