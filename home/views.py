@@ -9,6 +9,7 @@ from django.template.loader import get_template
 
 # Create your views here.
 
+
 def index(request):
     """ a view to return the index page """
     testimonials = Testimonial.objects.all().order_by('-date_published')

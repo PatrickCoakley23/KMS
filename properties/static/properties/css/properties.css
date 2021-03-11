@@ -351,6 +351,11 @@
     width: 100%;
 }
 
+.matterport-video {
+    min-height: 360px;
+    width: 100%;
+}
+
 /* CONTACT AGENT */
 
 .agent-container {

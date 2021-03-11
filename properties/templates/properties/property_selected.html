@@ -143,7 +143,38 @@
             </div>
         </div>
     </div>
-    <!-- Property Agent Card -->
+    <!-- Matterport Tour-->
+    {% if property.matterport_link %}
+        <div class="container-fluid my-5">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="row">
+                        <div class="col-12 col-md-10 offset-md-1">
+                            <iframe src="{{ property.matterport_link }}" frameborder="0"  allow="xr-spatial-tracking" class="matterport-video"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+    {% endif %}
+    <!-- Youtube Video -->
+    {% if property.youtube_id %}
+        <div class="container-fluid my-5">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="row">
+                        <div class="col-12 col-md-10 offset-md-1">
+                            <iframe src="https://www.youtube.com/embed/{{ property.youtube_id }}" class="matterport-video"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+    {% endif %}
+
+<!-- Property Agent Card -->
 {% if property.agent %}
     <div class="container-fluid">
         <div class="row mt-5">
