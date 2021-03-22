@@ -8,8 +8,8 @@ from django.contrib import messages
 from django.core.mail import EmailMessage
 from django.template.loader import get_template
 
+import requests
 # Create your views here.
-
 
 def index(request):
     """ a view to return the index page """
@@ -61,9 +61,23 @@ def Contact(request):
                 email_address,
                 ['keanemahonysmith@gmail.com'],
             )
-            email.send()
-            messages.success(request, f'Thanks {name}, Your Contact Form Has '
+
+            ''' Begin reCAPTCHA validation '''
+            recaptcha_response = request.POST.get('g-recaptcha-response')
+            data = {
+                'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+                'response': recaptcha_response
+            }
+            r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+            result = r.json()
+            ''' End reCAPTCHA validation '''
+
+            if result['success']:
+                email.send()
+                messages.success(request, f'Thanks {name}, Your Contact Form Has '
                                       'Been Successfully Sent.')
+            else:
+                messages.error(request, 'Invalid reCAPTCHA. Please try again.')
 
             return redirect('ContactUs')
 
@@ -73,5 +87,5 @@ def Contact(request):
         'contact_form': contact_form,
         'google_site_key': google_site_key,
     }
-    
+
     return render(request, "home/contact.html", context)
