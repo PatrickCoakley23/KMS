@@ -3,6 +3,7 @@ from .models import Testimonial
 from properties.models import Agent
 from .forms import ContactForm
 
+from django.conf import settings
 from django.contrib import messages
 from django.core.mail import EmailMessage
 from django.template.loader import get_template
@@ -66,8 +67,11 @@ def Contact(request):
 
             return redirect('ContactUs')
 
+    google_site_key = settings.GOOGLE_RECAPTCHA_SITE_KEY
+
     context = {
         'contact_form': contact_form,
+        'google_site_key': google_site_key,
     }
-
+    
     return render(request, "home/contact.html", context)

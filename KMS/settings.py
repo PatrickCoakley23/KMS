@@ -194,6 +194,8 @@ if 'USE_AWS' in os.environ:
 
 # Google Maps
 GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY', '')
+GOOGLE_RECAPTCHA_SECRET_KEY = os.getenv('GOOGLE_RECAPTCHA_SECRET_KEY', '')
+GOOGLE_RECAPTCHA_SITE_KEY = os.getenv('GOOGLE_RECAPTCHA_SITE_KEY', '')
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
