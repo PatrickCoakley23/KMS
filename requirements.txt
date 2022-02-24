@@ -23,7 +23,7 @@ idna==2.7
 importlib-metadata==4.11.1
 jmespath==0.10.0
 pathspec==0.5.9
-Pillow==8.0.1
+Pillow==9.0.0
 psycopg2-binary==2.9.3
 pycparser==2.21
 PyNaCl==1.4.0
