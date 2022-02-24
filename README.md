@@ -6,7 +6,7 @@
 
 This was an exciting project for me as it was the first professional website I developed as a free lance developer after graduating from [Code Institute](https://codeinstitute.net/). 
 
-[Keane Mahony Smith](http://www.keanemahonysmith.ie/) is an established auctioneering firm based in Cork City. Their previous website was a templated website which was very limited and lacked its own unique style. [Darragh Taaffe](https://www.linkedin.com/in/darragh-taaffe-232745154/) of Keane Mahony Smith's main brief for the new website was for it to be unique and edgy so it stood out from the industry norm mundane real estate/ auctioneering websites.
+[Keane Mahony Smith](https://www.keanemahonysmith.ie/) is an established auctioneering firm based in Cork City. Their previous website was a templated website which was very limited and lacked its own unique style. [Darragh Taaffe](https://www.linkedin.com/in/darragh-taaffe-232745154/) of Keane Mahony Smith's main brief for the new website was for it to be unique and edgy so it stood out from the industry norm mundane real estate/ auctioneering websites.
 
 The website was built using the [Django Framework]( https://www.djangoproject.com/start/overview/) as it was ideal to build a centrally-owned dataset to handle all the properties listed for sale.
 
@@ -277,7 +277,7 @@ The navbar is the same across all sites so we only needed to create it once in t
 8. [Balsamiq:]( https://balsamiq.com/)
     - Balsamiq was used to create the wireframes during the design process.
 
-9. [PEP8]( http://pep8online.com/)
+9. [PEP8]( https://pep8online.com/)
     - Python style guide checker. PEP8 is a tool to check your Python code against some of the style conventions in PEP 8.
 
 10. [Heroku]( www.heroku.com)
@@ -346,7 +346,7 @@ If I directly inputted my code into the validator I would only get errors relate
 </details> 
 
 #### Pep8
-I carried out [PEP8 testing]( http://pep8online.com/) to improve the readability and consistency of my Python code. Pep8 is installed on my [Gitpod](https://gitpod.io/) workspace, so I check it regularly for errors or warnings. They are usually only minor issue like; like a line being too long or having a trailing whitespace on a line. Sometimes I would use [PEP8 Online Testing]( http://pep8online.com/) as I find it easier to spot the errors on that site. Below is my pass result for pep8. 
+I carried out [PEP8 testing]( https://pep8online.com/) to improve the readability and consistency of my Python code. Pep8 is installed on my [Gitpod](https://gitpod.io/) workspace, so I check it regularly for errors or warnings. They are usually only minor issue like; like a line being too long or having a trailing whitespace on a line. Sometimes I would use [PEP8 Online Testing]( https://pep8online.com/) as I find it easier to spot the errors on that site. Below is my pass result for pep8. 
 
 <details>
 <summary>Pep8 Pass<strong> (Click dropdown for images)</strong></summary>
@@ -925,7 +925,7 @@ To deploy Angel's Share to heroku, take the following steps:
 - i found this [hack](https://philipnewcomer.net/2014/04/target-internet-explorer-10-11-css/) handy to implement a media query for Internet Explorer 10 & 11.
 
 ### ACKNOWLEDGEMENTS
-- I would like to thank [Darragh Taaffe](https://www.linkedin.com/in/darragh-taaffe-232745154/) for having the confidence in me to build a new website for [Keane Mahony Smith](http://www.keanemahonysmith.ie/kms/).
+- I would like to thank [Darragh Taaffe](https://www.linkedin.com/in/darragh-taaffe-232745154/) for having the confidence in me to build a new website for [Keane Mahony Smith](https://www.keanemahonysmith.ie/kms/).
 
 
 
