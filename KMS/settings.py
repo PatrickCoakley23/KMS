@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('KMS_SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
-ALLOWED_HOSTS = ['KMS-Lin.eba-aucgvp2k.us-west-2.elasticbeanstalk.com','www.kmsdjango.eba-k3btpj5g.us-west-2.elasticbeanstalk.com','kmsdjango.eba-k3btpj5g.us-west-2.elasticbeanstalk.com', 'www.keanemahonysmith.ie',
+ALLOWED_HOSTS = ['KMS-AL2-Prod.us-west-2.elasticbeanstalk.com','KMS-Lin.eba-aucgvp2k.us-west-2.elasticbeanstalk.com','www.kmsdjango.eba-k3btpj5g.us-west-2.elasticbeanstalk.com','kmsdjango.eba-k3btpj5g.us-west-2.elasticbeanstalk.com', 'www.keanemahonysmith.ie',
 'keanemahonysmith.ie', 'localhost',]
 
 
@@ -176,8 +176,8 @@ if 'USE_AWS' in os.environ:
     }
 
     # Bucket Config
-    AWS_STORAGE_BUCKET_NAME = 'test-branch-bucket'
-    AWS_S3_REGION_NAME = 'us-west-2'
+    AWS_STORAGE_BUCKET_NAME = 'kms-keanemahonysmith'
+    AWS_S3_REGION_NAME = 'eu-west-1'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
