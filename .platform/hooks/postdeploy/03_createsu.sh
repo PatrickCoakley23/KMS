@@ -2,4 +2,4 @@
 
 source /var/app/venv/*/bin/activate
 cd /var/app/staging
-python3 manage.py createsu
+from django.contrib.auth.models import User; User.objects.create_superuser( "patrick","patrickcoakley23@outlook.com", "020408")
