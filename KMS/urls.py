@@ -23,6 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('properties/', include('properties.urls')),
-    path("robots.txt",TemplateView.as_view(template_name="KMS/robots.txt", content_type="text/plain")),  #add the robots.txt file
+    path("robots.txt",TemplateView.as_view(template_name="main/robots.txt", content_type="text/plain")),  #add the robots.txt file
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
