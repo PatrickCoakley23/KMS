@@ -1,0 +1,12 @@
+User-agent: * 
+Disallow: .ebextensions/
+Disallow: .elasticbeanstalk/
+Disallow: .platform/
+Disallow: home/
+Disallow: README/
+Disallow: static/
+Disallow: templates/404.html
+Disallow: templates/500.html
+Disallow: templates/includes
+Disallow: Wireframes/
+Disallow: KMS/
