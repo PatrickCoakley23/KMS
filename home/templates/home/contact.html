@@ -38,7 +38,6 @@
                 <form id="contact-form" method="POST">
                     {% csrf_token %}
                     <fieldset class="form-group">
-                        {{ contact_form|crispy }}
                     </fieldset>
                     <script src='https://www.google.com/recaptcha/api.js'></script>
                     <div class="g-recaptcha" data-sitekey="{{ google_site_key}}"></div>

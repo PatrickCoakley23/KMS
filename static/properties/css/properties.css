@@ -147,13 +147,20 @@
     }
 }
 
-.properties-filter .form-control {
+.properties-filter .form-select {
     height: 3rem;
     background: black;
     color: #ffdd17;
 }
 
-.properties-filter .form-control:focus {
+.properties-filter .form-select:focus {
+    color: #ffdd17;
+    background-color: black;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(255 237 23 / 79%);
+}
+
+.properties-filter .form-select:focus {
     color: #ffdd17;
     background-color: black;
     outline: 0;

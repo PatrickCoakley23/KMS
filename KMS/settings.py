@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
+from dotenv import load_dotenv
+load_dotenv() 
+
 
 from pathlib import Path
 
@@ -25,7 +28,7 @@ SECRET_KEY = os.environ.get('KMS_SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
-ALLOWED_HOSTS = ['KMS-AL2-Prod.us-west-2.elasticbeanstalk.com','KMS-Lin.eba-aucgvp2k.us-west-2.elasticbeanstalk.com','www.kmsdjango.eba-k3btpj5g.us-west-2.elasticbeanstalk.com','kmsdjango.eba-k3btpj5g.us-west-2.elasticbeanstalk.com', 'www.keanemahonysmith.ie',
+ALLOWED_HOSTS = ['kms-al2-prod.us-west-2.elasticbeanstalk.com','newenv.eba-sgz2eaey.us-west-2.elasticbeanstalk.com', 'www.keanemahonysmith.ie',
 'keanemahonysmith.ie', 'localhost',]
 
 
@@ -49,6 +52,7 @@ INSTALLED_APPS = [
     # Other
     'widget_tweaks',
     'crispy_forms',
+    'crispy_bootstrap5',
     'storages',
     'active_link',
 
@@ -66,7 +70,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'KMS.urls'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 TEMPLATES = [
     {
@@ -163,7 +168,9 @@ USE_THOUSAND_SEPARATOR = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = '/static/'
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -183,14 +190,17 @@ if 'USE_AWS' in os.environ:
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
     # Static and media files
-    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
     STATICFILES_LOCATION = 'static'
-    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-    MEDIAFILES_LOCATION = 'media'
-
-    # Override static and media URLs in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+
+
+    MEDIAFILES_LOCATION = 'media'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+    STORAGES = {
+    "default": {"BACKEND": "custom_storages.MediaStorage"},
+    "staticfiles": {"BACKEND": "custom_storages.StaticStorage"},
+    }
 
 # Google Maps
 GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY', '')
