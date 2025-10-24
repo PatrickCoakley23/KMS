@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
+from dotenv import load_dotenv
+load_dotenv() 
+
 
 from pathlib import Path
 
@@ -49,6 +52,7 @@ INSTALLED_APPS = [
     # Other
     'widget_tweaks',
     'crispy_forms',
+    'crispy_bootstrap5',
     'storages',
     'active_link',
 
@@ -66,7 +70,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'KMS.urls'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 TEMPLATES = [
     {
