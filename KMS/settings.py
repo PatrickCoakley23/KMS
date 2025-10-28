@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('KMS_SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
-ALLOWED_HOSTS = ['KMS-AL2-Prod.us-west-2.elasticbeanstalk.com','KMS-Lin.eba-aucgvp2k.us-west-2.elasticbeanstalk.com','www.kmsdjango.eba-k3btpj5g.us-west-2.elasticbeanstalk.com','kmsdjango.eba-k3btpj5g.us-west-2.elasticbeanstalk.com', 'www.keanemahonysmith.ie',
+ALLOWED_HOSTS = ['KMS-AL2-Prod.us-west-2.elasticbeanstalk.com','kms2025-env.eba-h64jr7mx.us-west-2.elasticbeanstalk.com', 'www.keanemahonysmith.ie',
 'keanemahonysmith.ie', 'localhost',]
 
 
