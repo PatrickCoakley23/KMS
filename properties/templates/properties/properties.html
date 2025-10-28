@@ -19,33 +19,33 @@
         <!-- Django-Filter -->
         <div class="row padding-left-right-off">
             <div class="col-10 offset-1 col-md-12 offset-md-0 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 filter-jumbotron">
-                <form method="get">
-                    <div class="form-row properties-filter">
-                        <div class="form-group col-12 col-sm-6 col-md-2 p-md-0">
+                <form method="get" id="property-filter">
+                    <div class="row properties-filter">
+                        <div class="col-12 col-sm-6 col-md-2 p-md-0 prop-filter">
                             <label for="input-prop-type">Property Type</label>
                             {{ filter.form.property_type |as_crispy_field}}
                         </div>
-                        <div class="form-group col-12 col-sm-6 col-md-2 p-md-0">
+                        <div class="col-12 col-sm-6 col-md-2 p-md-0">
                             <label for="input-sale-status">Status</label>
                             {{ filter.form.sale_status |as_crispy_field}}
                         </div>
-                        <div class="form-group col-12 col-sm-6 col-md-2 p-md-0">
+                        <div class="col-12 col-sm-6 col-md-2 p-md-0">
                             <label for="input-county">County</label>
                             {{ filter.form.county |as_crispy_field}}
                         </div>
-                        <div class="form-group d-none d-md-block col-md-2 p-0">
+                        <div class="d-none d-md-block col-md-2 p-0">
                             <label for="price-min">Price Min</label>
                             {{ filter.form.price__gte |as_crispy_field}}
                         </div>
-                        <div class="form-group d-none d-md-block col-md-2 p-0">
+                        <div class="d-none d-md-block col-md-2 p-0">
                             <label for="price-max">Price Max</label>
                             {{ filter.form.price__lte |as_crispy_field}}
                         </div>
-                        <div class="form-group  d-none d-md-block col-md-2 p-0">
+                        <div class="d-none d-md-block col-md-2 p-0">
                             <label for="min-beds">Min Beds</label>
                             {{ filter.form.bedrooms__gte |as_crispy_field}}
                         </div>
-                        <div class="form-group col-12 col-sm-6 offset-sm-3 col-md-1 offset-md-11 p-0">
+                        <div class="col-12 col-sm-6 offset-sm-3 col-md-1 offset-md-11 p-0">
                             <button class="btn search-btn" type="submit"><i class="fas fa-search"></i></button>
                         </div>
                     </div>
